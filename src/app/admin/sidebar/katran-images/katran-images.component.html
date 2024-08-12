@@ -1,0 +1,31 @@
+<mat-card-content>
+  <form [formGroup]="paperCuttingForm">
+    <div class="row mb-3 pt-5">
+      <label for="newspaper" class="col-sm-2 col-form-label">
+        <b>Select Newspaper</b>
+      </label>
+      <div class="col-sm-5">
+        <mat-form-field appearance="fill">
+          <!-- <mat-label>Select Newspaper</mat-label> -->
+          <mat-select formControlName="k_paper">
+            <mat-option value="" disabled>Select Newspaper</mat-option>
+            <mat-option value="Sakal">Sakal</mat-option>
+            <mat-option value="Lokmat">Lokmat</mat-option>
+            <mat-option value="Pudhari">Pudhari</mat-option>
+            <mat-option value="Prabhat">Prabhat</mat-option>
+            <mat-option value="Loksatta">Loksatta</mat-option>
+            <mat-option value="Other">Other</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</mat-card-content>
+
+<div class="gallery pt-4">
+  <div *ngFor="let image of filteredImages">
+    <a *ngIf="image.k_image" [href]="image.k_image" target="_blank">
+      <img [src]="image.k_image" alt="Images">
+    </a>
+  </div>
+</div>

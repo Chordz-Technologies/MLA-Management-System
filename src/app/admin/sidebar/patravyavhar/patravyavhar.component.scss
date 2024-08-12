@@ -1,0 +1,39 @@
+#template-content {
+    display: block;
+}
+
+.btn {
+    margin: 20px 20px 20px 0;
+}
+
+.card {
+    // margin-right: 50px;
+    width: 98%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-container .btn {
+    width: 20%;
+}
+
+p {
+    font-size: 18px;
+    line-height: 50px;
+}
+
+.bottom-line-input {
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    // padding: 5px 0;
+    font-size: 18px;
+    width: 30%;
+    box-sizing: border-box;
+    line-height: 20px;
+
+}

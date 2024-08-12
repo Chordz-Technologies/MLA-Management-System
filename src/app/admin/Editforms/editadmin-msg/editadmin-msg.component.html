@@ -1,0 +1,68 @@
+<div class="main-div" style="padding-top: 20px">
+  <div class="py-2">
+    <div class="card me-4 px-5 py-3">
+      <mat-card-title>
+        <h2 class="py-2 border-bottom">
+          <i class="fa-solid fa-user"></i> Upload Files/Photos
+        </h2>
+      </mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="AdminForm">
+          <div class="row mb-3">
+            <label for="id" class="col-sm-2 col-form-label"><b>ID</b></label>
+            <div class="col-sm-10">
+              <input type="text" id="id" class="form-control" formControlName="id" placeholder="ID" readonly/>
+            </div>
+          </div>
+          <!-- <div class="row mb-3">
+            <label for="contactno" class="col-sm-2 col-form-label"
+              >Message</label
+            >
+            <div class="col-sm-10">
+              <textarea
+                type="text"
+                class="form-control"
+                formControlName="smessage"
+                placeholder="Description"
+              ></textarea>
+            </div>
+            <div
+              class="form-text text-danger fw-bold"
+              *ngIf="Adminmessage.errors?.['required'] && (Adminmessage.dirty || Adminmessage.touched)"
+            >
+              Message is required.
+            </div>
+
+            <div
+              class="form-text text-danger fw-bold"
+              *ngIf="Adminmessage.errors?.['maxlength'] && (Adminmessage.dirty || Adminmessage.touched)"
+            >
+              Message is length is too large please Enter under 150 characters.
+            </div>
+          </div> -->
+          <div class="row mb-3">
+            <label for="pracharImage" class="col-sm-2 col-form-label"><b>Upload files/photos </b></label>
+            <div class="col-sm-10">
+              <input type="file" id="pracharImage" class="form-control" (change)="onImageSelected($event)" />
+            </div>
+          </div>
+
+          <!-- <img [src]="url" class="card-img-top" alt="Event" /> -->
+          <br />
+
+          <div class="text-center my-3">
+            <button type="submit" class="btn btn-primary me-3" *ngIf="showupdate" (click)="updateAdmin()">
+              Upload Data
+            </button>
+            <button type="submit" class="btn btn-primary me-3" *ngIf="showsubmit" (click)="postSuperAdminDetails()">
+              Submit
+            </button>
+            <button type="button" class="btn btn-danger" routerLink="/dashboard">
+              Close
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </div>
+  </div>
+</div>
