@@ -41,12 +41,12 @@ export class AavakJavakPageComponent implements OnInit {
       a_photos: this.aavakjavakImage,
     };
 
-    // const { a_inward, a_outward, a_date, a_photos } = aavakjavakData;
+    const { a_photos } = aavakjavakData;
 
-    // if (!a_inward || !a_outward || !a_date || !a_photos) {
-    //   this.toastr.error('Please fill all the fields.', 'Error');
-    //   return;
-    // }
+    if (!a_photos) {
+      this.toastr.error('Please fill all the fields.', 'Error');
+      return;
+    }
 
     const formData: FormData = new FormData();
     for (const [key, value] of Object.entries(aavakjavakData)) {
