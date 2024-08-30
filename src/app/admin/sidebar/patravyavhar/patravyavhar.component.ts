@@ -7,12 +7,28 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
 })
 export class PatravyavharComponent {
   currentTemplate: string = 'शिधापत्रिका शिफारस पत्र';
-  javak_no: string = '';
-  date: string = '';
-  name: string = '';
-  address: string = '';
+  javak_no1: string = '';
+  javak_no2: string = '';
+  javak_no3: string = '';
+  javak_no4: string = '';
+  javak_no5: string = '';
+  javak_no6: string = '';
+  date1: string = '';
+  date2: string = '';
+  date3: string = '';
+  date4: string = '';
+  date5: string = '';
+  date6: string = '';
+  name1: string = '';
+  name2: string = '';
+  name3: string = '';
+  name4: string = '';
+  address1: string = '';
+  address2: string = '';
+  address3: string = '';
   family_count: string = '';
-  year: string = '';
+  year1: string = '';
+  year2: string = '';
   patientName: string = '';
   patientAge: string = '';
   patientAddress: string = '';
@@ -29,6 +45,8 @@ export class PatravyavharComponent {
   PNRNo: string = '';
   waitingNo: string = '';
   heading: string = '';
+  subheading: string = '';
+  paragraph: string = '';
 
   showTemplate(template: string) {
     this.currentTemplate = template;

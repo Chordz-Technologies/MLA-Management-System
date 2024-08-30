@@ -7,7 +7,7 @@
   <ng-container *ngIf="Admin">
     <div class="menu">
       <div class="menu-head text-center">
-        <span class="text-center">जनसंपर्क कार्यालय (भाजप)</span>
+        <span class="text-center">Admin</span>
       </div>
       <div class="menu-item pt-5">
         <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/dashboard']">
@@ -90,10 +90,10 @@
       </div>
     </div>
   </ng-container>
-  <ng-container *ngIf="SuperAdmin || SuperSuperadmin">
+  <ng-container *ngIf="SuperAdmin">
     <div class="menu">
       <div class="menu-head text-center">
-        <span class="text-center">जनसंपर्क कार्यालय (भाजप)</span>
+        <span class="text-center">Super Admin</span>
       </div>
       <div class="menu-item pt-5">
         <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/admin']">

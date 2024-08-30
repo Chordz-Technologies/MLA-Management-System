@@ -42,6 +42,17 @@ export class AavakJavakImagesComponent implements OnInit {
   onChange(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  downloadReport() {
+    this.service.getExcelReport().subscribe((response: Blob) => {
+      const blob = new Blob([response], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      const downloadURL = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = downloadURL;
+      link.download = 'Aavak-Javak-Report.xlsx';  // Set the desired file name
+      link.click();
+    });
+  }
 }
 
   // aavakJavakImages!: string[];

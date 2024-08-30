@@ -77,8 +77,9 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     AddRecordsComponent,
     NotificationsPageComponent,
     SplashscreenComponent,
-    ChatbotComponent
+    ChatbotComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -68,22 +68,30 @@ export class ServiceService {
     return this.http.post<any>(`${this.url}/createkaryakram/`, data);
   }
 
-  getAllKatranImages(): Observable<any> {
-    return this.http.get<any>(`${this.url}/allkatranimages/`);
+  getAllKatrans(): Observable<any> {
+    return this.http.get<any>(`${this.url}/allkatrans/`);
   }
- 
+
   getKatranImagesByPaper(paper: string): Observable<any> {
     return this.http.get<any>(`${this.url}/katranfilter/${paper}/`);
+  }
+
+  getKatranImagesByDate(date: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/katranbydate/?k_date=${date}`);
   }
 
   getAllAavakJavakImages(): Observable<any> {
     return this.http.get<any>(`${this.url}/allavakjavak/`);
   }
 
+  getExcelReport(): Observable<Blob> {
+    return this.http.get(`${this.url}/excelreport/`, { responseType: 'blob' });
+  }
+
   getAllNivedaneImages(): Observable<any> {
     return this.http.get<any>(`${this.url}/allnivedan/`);
   }
-  
+
   getAllKarykramImages(): Observable<any> {
     return this.http.get<any>(`${this.url}/allkaryakram/`);
   }
@@ -101,5 +109,5 @@ export class ServiceService {
   getNotifications(): Observable<any> {
     return this.http.get<any>(`${this.url}/workendingsoon/`);
   }
-  
+
 }

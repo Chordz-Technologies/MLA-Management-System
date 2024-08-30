@@ -48,7 +48,7 @@ const routes: Routes = [
       { path: 'सर्व-कार्यक्रम', component: EventsImagesComponent },
       { path: 'records', component: RecordsComponent },
       { path: 'add-records', component: AddRecordsComponent },
-      { path: 'notifications', component: NotificationsPageComponent }
+      { path: 'notifications', component: NotificationsPageComponent },
     ]
   },
   { path: '**', redirectTo: 'splash' } // Redirect to splash by default

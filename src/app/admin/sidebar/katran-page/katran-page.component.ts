@@ -18,7 +18,8 @@ export class KatranPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.paperCuttingForm = this.fb.group({
-      k_paper: this.fb.control(''),
+      k_date: this.fb.control(''),
+      k_paper: this.fb.control('')
     })
   }
 
@@ -34,13 +35,14 @@ export class KatranPageComponent implements OnInit {
 
   postPaperCuttings() {
     const paperCuttingData = {
+      k_date: this.paperCuttingForm.value.k_date,
       k_paper: this.paperCuttingForm.value.k_paper,
       k_image: this.paperImage,
     };
 
-    const { k_paper, k_image } = paperCuttingData;
+    const { k_date, k_paper, k_image } = paperCuttingData;
 
-    if (!k_paper || !k_image) {
+    if (!k_date || !k_paper || !k_image) {
       this.toastr.error('Please fill all the fields.', 'Error');
       return;
     }

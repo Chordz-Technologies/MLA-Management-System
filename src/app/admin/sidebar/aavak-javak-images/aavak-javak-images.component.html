@@ -7,10 +7,14 @@
 </div> -->
 
 <div class="main-div pt-5">
-    <mat-form-field>
+    <mat-form-field style="width: 70%">
         <mat-label><mat-icon>search</mat-icon> Search</mat-label>
         <input matInput (keyup)="applyFilter($event)" #input />
     </mat-form-field>
+
+    <button mat-raised-button color="primary" class="float-right mt-3" style="width: 20%; padding: 25px; float: right" (click)="downloadReport()">
+        <b>Download Report</b>
+    </button>    
 
     <div *ngIf="dataLoaded" class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource" matSort>
@@ -30,7 +34,7 @@
                 <th mat-header-cell *matHeaderCellDef mat-sort-header>
                     <b>Outward To</b>
                 </th>
-                <td mat-cell *matCellDef="let row">{{ row.a_outward }}</td>
+                <td mat-cell *matCellDef="let row">{{ row.a_outward }} &nbsp;&nbsp;[{{ row.a_id }}]</td>
             </ng-container>
 
             <ng-container matColumnDef="date">

@@ -11,7 +11,6 @@ export class SidebarComponent {
   isAdmin: boolean = false;
   Admin: boolean = localStorage.getItem('adminType') === 'Admin';
   SuperAdmin: boolean = localStorage.getItem('adminType') === 'Superadmin';
-  SuperSuperadmin: boolean = localStorage.getItem('adminType') === 'SuperSuperadmin';
 
   constructor(private router: Router) { }
 

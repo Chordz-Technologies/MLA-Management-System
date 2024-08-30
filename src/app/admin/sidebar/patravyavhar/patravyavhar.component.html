@@ -8,6 +8,8 @@
         पत्र</button>
     <button class="btn btn-primary" (click)="showTemplate('Reservation in V.I.P Quota')">Reservation in V.I.P
         Quota</button>
+    <button class="btn btn-primary" (click)="showTemplate('Templates')">Templates</button>
+
 </div>
 
 <div *ngIf="currentTemplate === 'शिधापत्रिका शिफारस पत्र'">
@@ -18,17 +20,18 @@
         <div class="letter">
             <div class="row">
                 <div class="col-sm-6">
-                    <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no" /></p>
+                    <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no1" /></p>
                 </div>
                 <div class="col-sm-6">
-                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date" /></p>
+                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date1" /></p>
                 </div>
                 <h1 class="text-center pt-2 pb-2"><b>शिधापत्रिका शिफारस पत्र</b></h1>
-                <p>श्री./श्रीमती/कु./सौ. <input class="bottom-line-input" [(ngModel)]="name" /> राहणार <input
-                        class="bottom-line-input" [(ngModel)]="address" />
+                <p>श्री./श्रीमती/कु./सौ. <input class="bottom-line-input" [(ngModel)]="name1" /> राहणार <input
+                        class="bottom-line-input" [(ngModel)]="address1" />
                     हे माझे परिचित असून त्यांच्या कुटुंबात एकूण <input class="bottom-line-input"
                         [(ngModel)]="family_count" />
-                    व्यक्ती आहेत, त्यांना मी गेली <input class="bottom-line-input" [(ngModel)]="year" /> वर्ष ओळखतो. तरी
+                    व्यक्ती आहेत, त्यांना मी गेली <input class="bottom-line-input" [(ngModel)]="year1" /> वर्ष ओळखतो.
+                    तरी
                     त्यांना शिधापत्रिका
                     देणेबाबत योग्य ते सहकार्य करावे, ही विनंती.<br>
                     सोबत आपल्या माहितीसाठी आवश्यक ती सर्व कागदपत्रे जोडीत आहे.<br>
@@ -47,10 +50,10 @@
         <div class="letter">
             <div class="row">
                 <div class="col-sm-6">
-                    <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no" /></p>
+                    <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no2" /></p>
                 </div>
                 <div class="col-sm-6">
-                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date" /></p>
+                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date2" /></p>
                 </div>
                 <p><b>प्रति,<br> मा. मुख्यमंत्री साहेब<br> महाराष्ट्र राज्य, मंत्रालय,<br> मुंबई-३२.</b></p>
                 <h1 class="text-center pt-3 pb-3"><b>विषय : मुख्यमंत्री सहायता निधीतून वैद्यकीय उपचारासाठी आर्थिक मदत
@@ -77,15 +80,15 @@
         <div class="letter">
             <div class="row">
                 <div class="col-sm-6">
-                    <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no" /></p>
+                    <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no3" /></p>
                 </div>
                 <div class="col-sm-6">
-                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date" /></p>
+                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date3" /></p>
                 </div>
                 <h1 class="text-center pt-2 pb-2"><b>शिफारस पत्र</b></h1>
-                <p>श्री./श्रीमती/कु./सौ. <input class="bottom-line-input" [(ngModel)]="name" /> राहणार <input
-                        class="bottom-line-input" [(ngModel)]="address" />
-                    यांना आम्ही गेल्या <input class="bottom-line-input" [(ngModel)]="year" /> वर्षापासून ओळखतो. ते/त्या
+                <p>श्री./श्रीमती/कु./सौ. <input class="bottom-line-input" [(ngModel)]="name2" /> राहणार <input
+                        class="bottom-line-input" [(ngModel)]="address2" />
+                    यांना आम्ही गेल्या <input class="bottom-line-input" [(ngModel)]="year2" /> वर्षापासून ओळखतो. ते/त्या
                     कष्टाळू असून प्रामाणिक आहेत. त्यांच्यावर सोपविलेली जबाबदारी ते/त्या चांगल्या प्रकारे पार पाडू शकतील,
                     असा आमचा विश्वास आहे. माझ्या माहितीनुसार त्यांची वर्तणूक चांगली आहे.<br>
                     कळावे.<br>
@@ -104,14 +107,14 @@
         <div class="letter">
             <div class="row">
                 <div class="col-sm-6">
-                    <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no" /></p>
+                    <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no4" /></p>
                 </div>
                 <div class="col-sm-6">
-                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date" /></p>
+                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date4" /></p>
                 </div>
                 <p>मा. डॉ. <br>यांसी, <br>महोदय, <br>
-                    माझे परिचीत श्री/सौ. <input class="bottom-line-input" [(ngModel)]="name" />
-                    रा. <input class="bottom-line-input" [(ngModel)]="address" /> हे/ह्या
+                    माझे परिचीत श्री/सौ. <input class="bottom-line-input" [(ngModel)]="name3" />
+                    रा. <input class="bottom-line-input" [(ngModel)]="address3" /> हे/ह्या
                     आपल्या हॉस्पिटलमध्ये उपचार घेत आहेत. त्यांची आर्थिक परिस्थिती हलाखीची असल्याने त्यांना वैद्यकीय
                     बिलात जास्तीत सवलत देऊन सहकार्य करावे, ही विनंती.<br> सहकार्याबद्दल धन्यवाद.
                 </p>
@@ -128,15 +131,15 @@
         <div class="letter">
             <div class="row">
                 <div class="col-sm-6">
-                    <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no" /></p>
+                    <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no5" /></p>
                 </div>
                 <div class="col-sm-6">
-                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date" /></p>
+                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date5" /></p>
                 </div>
                 <p>To, <br><b>The D.R.M./C.C.S.</b><br>Central/West. Railway <br>Pune/ Mumbai Cstm</p>
                 <h1 class="text-center pt-2 pb-2"><b>Subject: Reservation in V.I.P. Quota.</b></h1>
                 <p>Sir, <br>
-                    Name : <input class="bottom-line-input" [(ngModel)]="name" /><br>
+                    Name : <input class="bottom-line-input" [(ngModel)]="name4" /><br>
                     Train : <input class="bottom-line-input" [(ngModel)]="trainName" /><br>
                     Train No. : <input class="bottom-line-input" [(ngModel)]="trainNo" /><br>
                     Date of Journey: <input class="bottom-line-input" [(ngModel)]="trainDate" /><br>
@@ -152,6 +155,24 @@
     </div>
 </div>
 
+<div *ngIf="currentTemplate === 'Templates'">
+    <div class="card shadow p-5">
+        <h1 class="text-center"><b><input class="bottom-line-input" [(ngModel)]="heading" /></b></h1>
+        <div class="letter">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no6" /></p>
+                </div>
+                <div class="col-sm-6">
+                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date6" /></p>
+                </div>
+                <h1 class="text-center"><b><input class="bottom-line-input" [(ngModel)]="subheading" /></b></h1>
+                <p><textarea [(ngModel)]="paragraph" class="form-control pt-2 mt-4" rows="10"></textarea></p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="print-section" style="display: none;">
     <div *ngIf="currentTemplate === 'शिधापत्रिका शिफारस पत्र'" class="letter card shadow p-5">
         <!-- <h1 class="text-center"><b>{{heading}}</b></h1> -->
@@ -159,16 +180,16 @@
         <h2 class="text-center"><b>खडकवासला विधानसभा मतदारसंघ, पुणे</b></h2>
         <div class="row">
             <div class="col-sm-5">
-                <p>जावक क्र. : {{javak_no}}</p>
+                <p>जावक क्र. : {{javak_no1}}</p>
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-5">
-                <p style="text-align: right;">दिनांक : {{date}}</p>
+                <p style="text-align: right;">दिनांक : {{date1}}</p>
             </div>
             <h1 class="text-center"><b>शिधापत्रिका शिफारस पत्र</b></h1>
-            <p>श्री./श्रीमती/कु./सौ. {{name}} राहणार {{address}}
+            <p>श्री./श्रीमती/कु./सौ. {{name1}} राहणार {{address1}}
                 हे माझे परिचित असून त्यांच्या कुटुंबात एकूण {{family_count}}
-                व्यक्ती आहेत, त्यांना मी गेली {{year}} वर्ष ओळखतो. तरी त्यांना शिधापत्रिका
+                व्यक्ती आहेत, त्यांना मी गेली {{year1}} वर्ष ओळखतो. तरी त्यांना शिधापत्रिका
                 देणेबाबत योग्य ते सहकार्य करावे, ही विनंती.<br>
                 सोबत आपल्या माहितीसाठी आवश्यक ती सर्व कागदपत्रे जोडीत आहे.<br>
                 कळावे.
@@ -182,11 +203,11 @@
         <h2 class="text-center"><b>खडकवासला विधानसभा मतदारसंघ, पुणे</b></h2>
         <div class="row">
             <div class="col-sm-5">
-                <p>जावक क्र. : {{javak_no}}</p>
+                <p>जावक क्र. : {{javak_no2}}</p>
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-5">
-                <p style="text-align: right;">दिनांक : {{date}}</p>
+                <p style="text-align: right;">दिनांक : {{date2}}</p>
             </div>
             <p><b>प्रति,<br> मा. मुख्यमंत्री साहेब<br> महाराष्ट्र राज्य, मंत्रालय,<br> मुंबई-३२.</b></p>
             <h1 class="text-center"><b>विषय : मुख्यमंत्री सहायता निधीतून वैद्यकीय उपचारासाठी आर्थिक मदत
@@ -208,14 +229,15 @@
         <h2 class="text-center"><b>खडकवासला विधानसभा मतदारसंघ, पुणे</b></h2>
         <div class="row">
             <div class="col-sm-5">
-                <p>जावक क्र. : {{javak_no}}</p>
+                <p>जावक क्र. : {{javak_no3}}</p>
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-5">
-                <p style="text-align: right;">दिनांक : {{date}}</p>
+                <p style="text-align: right;">दिनांक : {{date3}}</p>
             </div>
             <h1 class="text-center"><b>शिफारस पत्र</b></h1>
-            <p>श्री./श्रीमती/कु./सौ. {{name}} राहणार {{address}} यांना आम्ही गेल्या {{year}} वर्षापासून ओळखतो. ते/त्या
+            <p>श्री./श्रीमती/कु./सौ. {{name2}} राहणार {{address2}} यांना आम्ही गेल्या {{year2}} वर्षापासून ओळखतो.
+                ते/त्या
                 कष्टाळू असून प्रामाणिक आहेत. त्यांच्यावर सोपविलेली जबाबदारी ते/त्या चांगल्या प्रकारे पार पाडू शकतील,
                 असा आमचा विश्वास आहे. माझ्या माहितीनुसार त्यांची वर्तणूक चांगली आहे.<br>
                 कळावे.<br>
@@ -229,16 +251,16 @@
         <h2 class="text-center"><b>खडकवासला विधानसभा मतदारसंघ, पुणे</b></h2>
         <div class="row">
             <div class="col-sm-5">
-                <p>जावक क्र. : {{javak_no}}</p>
+                <p>जावक क्र. : {{javak_no4}}</p>
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-5">
-                <p style="text-align: right;">दिनांक : {{date}}</p>
+                <p style="text-align: right;">दिनांक : {{date4}}</p>
             </div>
             <!-- <h1 class="text-center"><b>शिफारस पत्र</b></h1> -->
             <p>मा. डॉ. <br>यांसी, <br>महोदय, <br>
-                माझे परिचीत श्री/सौ. {{name}}
-                रा. {{address}} हे/ह्या
+                माझे परिचीत श्री/सौ. {{name3}}
+                रा. {{address3}} हे/ह्या
                 आपल्या हॉस्पिटलमध्ये उपचार घेत आहेत. त्यांची आर्थिक परिस्थिती हलाखीची असल्याने त्यांना वैद्यकीय
                 बिलात जास्तीत सवलत देऊन सहकार्य करावे, ही विनंती.<br> सहकार्याबद्दल धन्यवाद.
             </p>
@@ -250,14 +272,14 @@
         <h2 class="text-center"><b>खडकवासला विधानसभा मतदारसंघ, पुणे</b></h2>
         <div class="row">
             <div class="col-sm-5">
-                <p>जावक क्र. : {{javak_no}}</p>
+                <p>जावक क्र. : {{javak_no5}}</p>
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-5">
-                <p style="text-align: right;">दिनांक : {{date}}</p>
+                <p style="text-align: right;">दिनांक : {{date5}}</p>
             </div>
             <p>Sir, <br>
-                Name : {{name}}<br>
+                Name : {{name4}}<br>
                 Train : {{trainName}}<br>
                 Train No. : {{trainNo}}<br>
                 Date of Journey: {{trainDate}}<br>
@@ -269,6 +291,22 @@
                 Thanking you!
             </p>
         </div>
+    </div>
+    <div *ngIf="currentTemplate === 'Templates'" class="letter card shadow p-5">
+        <h1 class="text-center"><b>{{heading}}</b></h1>
+
+        <div class="row">
+            <div class="col-sm-5">
+                <p>जावक क्र. : {{javak_no6}}</p>
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-5">
+                <p style="text-align: right;">दिनांक : {{date6}}</p>
+            </div>
+            <h1 class="text-center"><b>{{subheading}}</b></h1>
+            <p>{{paragraph}}</p>
+        </div>
+
     </div>
 </div>
 

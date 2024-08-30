@@ -103,13 +103,14 @@ export class AddNewadminComponent implements OnInit {
       a_confirmpassword: this.addAdminForm.value.conPassword,
       a_message: this.addAdminForm.value.smessage,
       a_typesuperadmin: 0,
+      a_typesupersuperadmin: 0,
       a_typeadmin: this.addAdminForm.value.options === '1' ? 1 : 0,
       a_files: this.adminImageData,
     };
 
-    const { a_username, a_name, a_contactno, a_password, a_confirmpassword, a_message, a_typeadmin } = adminData;
+    const { a_username, a_name, a_contactno, a_password, a_confirmpassword, a_message, a_typeadmin, a_files } = adminData;
 
-    if (!a_username || !a_name || !a_contactno || !a_password || !a_confirmpassword || !a_typeadmin || !a_message) {
+    if (!a_username || !a_name || !a_contactno || !a_password || !a_confirmpassword || !a_typeadmin ||!a_files || !a_message) {
       this.toastr.error('Please fill all the fields.', 'Error');
       return;
     }
