@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 
 export class KatranImagesComponent implements OnInit {
   paperCuttingForm!: FormGroup;
-  displayedColumns: string[] = ['id', 'date', 'paper', 'images'];
+  displayedColumns: string[] = ['id', 'date', 'paper', 'k_label', 'images'];
   dataSource = new MatTableDataSource([]);
   dataLoaded = false;
 
@@ -98,25 +98,26 @@ export class KatranImagesComponent implements OnInit {
       );
     }
   }
-
-  // filterData() {
-  //   const selectedPaper = this.paperCuttingForm.get('k_paper')?.value || '';
-  //   const selectedDate = this.paperCuttingForm.get('k_date')?.value || '';
-
-  //   if (selectedPaper && !selectedDate) {
-  //     this.service.getKatranImagesByPaper(selectedPaper).subscribe(data => {
-  //       this.dataLoaded = true;
-  //       this.dataSource = new MatTableDataSource(data.data);
-  //     });
-  //   } else if (selectedDate && !selectedPaper) {
-  //     const formattedDate = this.datePipe.transform(selectedDate, 'yyyy-MM-dd') || '';
-  //     this.service.getKatranImagesByDate(formattedDate).subscribe(data => {
-  //       this.dataLoaded = true;
-  //       this.dataSource = new MatTableDataSource(data.filtered_katran);
-  //     });
-  //   }
-  // }
 }
+
+// filterData() {
+//   const selectedPaper = this.paperCuttingForm.get('k_paper')?.value || '';
+//   const selectedDate = this.paperCuttingForm.get('k_date')?.value || '';
+
+//   if (selectedPaper && !selectedDate) {
+//     this.service.getKatranImagesByPaper(selectedPaper).subscribe(data => {
+//       this.dataLoaded = true;
+//       this.dataSource = new MatTableDataSource(data.data);
+//     });
+//   } else if (selectedDate && !selectedPaper) {
+//     const formattedDate = this.datePipe.transform(selectedDate, 'yyyy-MM-dd') || '';
+//     this.service.getKatranImagesByDate(formattedDate).subscribe(data => {
+//       this.dataLoaded = true;
+//       this.dataSource = new MatTableDataSource(data.filtered_katran);
+//     });
+//   }
+// }
+
 // export class KatranImagesComponent implements OnInit {
 //   katranImages: any[] = [];
 //   filteredImages: any[] = [];

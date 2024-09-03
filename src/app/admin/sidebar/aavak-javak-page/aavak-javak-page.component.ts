@@ -19,7 +19,9 @@ export class AavakJavakPageComponent implements OnInit {
   ngOnInit(): void {
     this.aavakjavakForm = this.fb.group({
       a_inward: this.fb.control(''),
+      inward_label: this.fb.control(''),
       a_outward: this.fb.control(''),
+      outward_label: this.fb.control(''),
       a_date: this.fb.control(''),
     });
   }
@@ -36,7 +38,9 @@ export class AavakJavakPageComponent implements OnInit {
   postAavakJavakData() {
     const aavakjavakData = {
       a_inward: this.aavakjavakForm.value.a_inward,
+      inward_label: this.aavakjavakForm.value.inward_label,
       a_outward: this.aavakjavakForm.value.a_outward,
+      outward_label: this.aavakjavakForm.value.outward_label,
       a_date: this.aavakjavakForm.value.a_date,
       a_photos: this.aavakjavakImage,
     };

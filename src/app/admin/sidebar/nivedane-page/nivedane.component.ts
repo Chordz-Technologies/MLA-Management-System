@@ -19,6 +19,7 @@ export class NivedaneComponent implements OnInit {
   ngOnInit(): void {
     this.nivedaneForm = this.fb.group({
       n_date: this.fb.control(''),
+      n_label: this.fb.control('')
       // Add form controls here if needed
     });
   }
@@ -34,13 +35,14 @@ export class NivedaneComponent implements OnInit {
 
   postNivedaneData() {
     const nivedaneData = {
+      n_label: this.nivedaneForm.value.n_label,
       n_date: this.nivedaneForm.value.n_date,
       n_photos: this.nivedaneImage,
     };
 
-    const { n_date, n_photos } = nivedaneData;
+    const { n_label, n_date, n_photos } = nivedaneData;
 
-    if (!n_date || !n_photos ) {
+    if (!n_label || !n_date || !n_photos) {
       this.toastr.error('Please fill all the fields.', 'Error');
       return;
     }

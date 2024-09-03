@@ -9,7 +9,7 @@ import { ServiceService } from 'src/app/shared/service.service';
 })
 export class AavakJavakImagesComponent implements OnInit {
   public dataLoaded: boolean = false;
-  displayedColumns: string[] = ['id', 'inward', 'outward', 'date', 'photos'];
+  displayedColumns: string[] = ['id', 'inward', 'inward_label', 'outward', 'outward_label', 'date', 'photos'];
   dataSource!: MatTableDataSource<any>;
 
   constructor(private service: ServiceService) { }

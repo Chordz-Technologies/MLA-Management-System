@@ -1,4 +1,9 @@
 <div class="main-div pt-5">
+  <mat-form-field>
+    <mat-label><mat-icon>search</mat-icon> Search</mat-label>
+    <input matInput (keyup)="applyFilter($event)" #input />
+  </mat-form-field>
+  
   <div *ngIf="dataLoaded" class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="kid">

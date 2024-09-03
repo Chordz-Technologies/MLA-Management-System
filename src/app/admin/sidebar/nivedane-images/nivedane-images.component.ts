@@ -10,7 +10,7 @@ import { ServiceService } from 'src/app/shared/service.service';
 export class NivedaneImagesComponent implements OnInit {
 
   public dataLoaded: boolean = false;
-  displayedColumns: string[] = ['id', 'date', 'photos'];
+  displayedColumns: string[] = ['id', 'n_label', 'date', 'photos'];
   dataSource!: MatTableDataSource<any>;
 
   constructor(private service: ServiceService) { }
@@ -39,28 +39,28 @@ export class NivedaneImagesComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  
+
   onChange(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 }
 
 
-  // nivedaneImages!: string[];
+// nivedaneImages!: string[];
 
-  // constructor(private service: ServiceService) { }
+// constructor(private service: ServiceService) { }
 
-  // ngOnInit(): void {
-  //   this.getNivedaneImages();
-  // }
+// ngOnInit(): void {
+//   this.getNivedaneImages();
+// }
 
-  // getNivedaneImages() {
-  //   this.service.getAllNivedaneImages()
-  //     .subscribe(response => {
-  //       if (response.status === 'success') {
-  //         this.nivedaneImages = response.all_nivedan_images.map((image:any) => image.n_photos).filter((image:any) => image); // Filter out null images
-  //       }
-  //     });
-  // }
+// getNivedaneImages() {
+//   this.service.getAllNivedaneImages()
+//     .subscribe(response => {
+//       if (response.status === 'success') {
+//         this.nivedaneImages = response.all_nivedan_images.map((image:any) => image.n_photos).filter((image:any) => image); // Filter out null images
+//       }
+//     });
+// }
 
 
