@@ -7,14 +7,19 @@
 </div> -->
 
 <div class="main-div pt-5">
-    <mat-form-field style="width: 70%">
+    <mat-form-field style="width: 45%">
         <mat-label><mat-icon>search</mat-icon> Search</mat-label>
         <input matInput (keyup)="applyFilter($event)" #input />
     </mat-form-field>
 
-    <button mat-raised-button color="primary" class="float-right mt-3" style="width: 20%; padding: 25px; float: right"
-        (click)="downloadReport()">
-        <b>Download Report</b>
+    <button mat-raised-button color="primary" class="float-right mt-3" style="width: 25%; padding: 25px; float: right"
+        (click)="downloadOutwardReport()">
+        <b>Download Outward Report</b>
+    </button>
+
+    <button mat-raised-button color="primary" class="float-right mt-3" style="width: 25%; padding: 25px; float: right"
+        (click)="downloadInwardReport()">
+        <b>Download Inward Report</b>
     </button>
 
     <div *ngIf="dataLoaded" class="mat-elevation-z8">

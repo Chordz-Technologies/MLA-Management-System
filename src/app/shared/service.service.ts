@@ -84,8 +84,12 @@ export class ServiceService {
     return this.http.get<any>(`${this.url}/allavakjavak/`);
   }
 
-  getExcelReport(): Observable<Blob> {
-    return this.http.get(`${this.url}/excelreport/`, { responseType: 'blob' });
+  getInwardExcelReport(): Observable<Blob> {
+    return this.http.get(`${this.url}/inwardexcelreport/`, { responseType: 'blob' });
+  }
+
+  getOutwardExcelReport(): Observable<Blob> {
+    return this.http.get(`${this.url}/outwardexcelreport/`, { responseType: 'blob' });
   }
 
   getAllNivedaneImages(): Observable<any> {
@@ -108,6 +112,10 @@ export class ServiceService {
 
   getNotifications(): Observable<any> {
     return this.http.get<any>(`${this.url}/workendingsoon/`);
+  }
+
+  getVisitorsByDate(date: string): Observable<any> {
+    return this.http.get(`${this.url}/visitorbydate/?v_date=${date}`);
   }
 
 }

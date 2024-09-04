@@ -1,13 +1,13 @@
 <div class="main-div pt-5">
-    <mat-form-field style="width: 60%">
+    <mat-form-field>
         <mat-label><mat-icon>search</mat-icon> Search</mat-label>
         <input matInput (keyup)="applyFilter($event)" #input />
     </mat-form-field>
 
-    <button mat-raised-button color="primary" class="float-right mt-3" style="width: 30%; padding: 25px; float: right"
+    <!-- <button mat-raised-button color="primary" class="float-right mt-3" style="width: 30%; padding: 25px; float: right"
         routerLink="/notifications">
         Notifications
-    </button>
+    </button> -->
 
     <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">

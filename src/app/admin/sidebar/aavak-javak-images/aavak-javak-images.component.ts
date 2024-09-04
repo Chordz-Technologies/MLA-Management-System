@@ -38,37 +38,48 @@ export class AavakJavakImagesComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  
+
   onChange(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  downloadReport() {
-    this.service.getExcelReport().subscribe((response: Blob) => {
+  downloadInwardReport() {
+    this.service.getInwardExcelReport().subscribe((response: Blob) => {
       const blob = new Blob([response], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
       const downloadURL = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = downloadURL;
-      link.download = 'Aavak-Javak-Report.xlsx';  // Set the desired file name
+      link.download = 'Inward Report.xlsx';  // Set the desired file name
+      link.click();
+    });
+  }
+
+  downloadOutwardReport() {
+    this.service.getOutwardExcelReport().subscribe((response: Blob) => {
+      const blob = new Blob([response], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      const downloadURL = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = downloadURL;
+      link.download = 'Outward Report.xlsx';  // Set the desired file name
       link.click();
     });
   }
 }
 
-  // aavakJavakImages!: string[];
+// aavakJavakImages!: string[];
 
-  // constructor(private service: ServiceService) { }
+// constructor(private service: ServiceService) { }
 
-  // ngOnInit(): void {
-  //   this.getAavakJavakImages();
-  // }
+// ngOnInit(): void {
+//   this.getAavakJavakImages();
+// }
 
-  // getAavakJavakImages() {
-  //   this.service.getAllAavakJavakImages()
-  //     .subscribe(response => {
-  //       if (response.status === 'success') {
-  //         this.aavakJavakImages = response.all_avakjavak_images.map((image: any) => image.a_photos).filter((image: any) => image); // Filter out null images
-  //       }
-  //     });
-  // }
+// getAavakJavakImages() {
+//   this.service.getAllAavakJavakImages()
+//     .subscribe(response => {
+//       if (response.status === 'success') {
+//         this.aavakJavakImages = response.all_avakjavak_images.map((image: any) => image.a_photos).filter((image: any) => image); // Filter out null images
+//       }
+//     });
+// }
 
