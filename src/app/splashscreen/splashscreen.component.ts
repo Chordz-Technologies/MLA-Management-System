@@ -16,11 +16,11 @@ export class SplashscreenComponent implements OnInit {
       const userType = localStorage.getItem('adminType');
       this.showSplashScreen = false; // Hide the splash screen
       if (userType === 'Admin') {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/admin-dashboard']);
       } else if (userType === 'Superadmin') {
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/superadmin-dashboard']);
       } else {
-        this.router.navigate(['/dashboard']); // Default route
+        this.router.navigate(['/admin-dashboard']); // Default route
       }
     }, 3000); // Adjust the delay time (3000ms = 3 seconds) as needed
   }

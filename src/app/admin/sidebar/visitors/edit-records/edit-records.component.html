@@ -1,0 +1,87 @@
+<div class="main-div" style="padding-top: 20px">
+    <div class="py-2">
+        <div class="card p-3 me-4 px-md-5 py-3">
+            <mat-card-title>
+                <h2 class="py-2 border-bottom">
+                    <i class="fa-solid fa-user"></i> <b> Edit Visitor Details</b>
+                </h2>
+            </mat-card-title>
+            <mat-card-content>
+                <form [formGroup]="editVisitorsForm" class="row g-3">
+                    <div class="col-md-6">
+                        <label for="v_name" class="form-label"><b>Name</b><span class="text-danger fw-bold">
+                                *</span></label>
+                        <input type="text" id="v_name" class="form-control" formControlName="v_name"
+                            placeholder="Enter Name" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="v_contactno" class="form-label"><b>Contact No.</b><span class="text-danger fw-bold">
+                                *</span></label>
+                        <input type="tel" id="v_contactno" maxlength="10" class="form-control"
+                            formControlName="v_contactno" placeholder="Enter Contact No." />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="v_email" class="form-label"><b>Email ID</b></label>
+                        <input type="text" id="v_email" class="form-control" formControlName="v_email"
+                            placeholder="Enter Email ID" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="v_address" class="form-label"><b>Address</b><span class="text-danger fw-bold">
+                                *</span></label>
+                        <input type="text" id="v_address" class="form-control" formControlName="v_address"
+                            placeholder="Enter Address" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="v_arja" class="form-label"><b>Application</b></label>
+                        <input type="file" id="v_arja" class="form-control" (change)="onImageSelected($event)" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="v_problem" class="form-label"><b>Problems</b><span class="text-danger fw-bold">
+                                *</span></label>
+                        <input type="text" id="v_problem" class="form-control" formControlName="v_problem"
+                            placeholder="Enter Your Problems" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="v_date" class="form-label"><b>Today's Date</b><span class="text-danger fw-bold">
+                                *</span></label>
+                        <input type="datetime-local" id="v_date" class="form-control" formControlName="v_date" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="completion_date" class="form-label"><b>Completion Date</b><span
+                                class="text-danger fw-bold"> *</span></label>
+                        <input type="date" id="completion_date" class="form-control"
+                            formControlName="completion_date" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="v_status" class="form-label"><b>Status</b><span class="text-danger fw-bold">
+                                *</span></label>
+                        <select class="form-select" aria-label="Default select example" formControlName="v_status">
+                            <option value="" selected disabled>Select Status</option>
+                            <option value="Work In Progress">Work In Progress</option>
+                            <option value="Work Incomplete">Work Incomplete</option>
+                            <option value="Work Complete">Work Complete</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="v_comment" class="form-label"><b>Comments</b></label>
+                        <input type="text" id="v_comment" class="form-control" formControlName="v_comment"
+                            placeholder="Enter Comments" />
+                    </div>
+                    <div class="col-12">
+                        <div class="text-center my-3">
+                            <button type="submit" class="btn btn-success me-3" (click)="update()">
+                                Update
+                            </button>
+                            <button type="submit" class="btn btn-danger me-3" (click)="delete()">
+                                Delete
+                            </button>
+                            <button type="button" class="btn btn-primary" routerLink="/all-records">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </mat-card-content>
+        </div>
+    </div>
+</div>

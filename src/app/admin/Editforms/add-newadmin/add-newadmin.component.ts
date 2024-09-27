@@ -18,8 +18,6 @@ export class AddNewadminComponent implements OnInit {
   hideCPassword: boolean = false;
 
   showsubmit!: boolean;
-  showupdate!: boolean;
-  showdelete!: boolean;
   adminImageData: File | null | undefined;
 
   constructor(private service: ServiceService, private fb: FormBuilder, private route: ActivatedRoute, private router: Router, private toastr: ToastrService) { }
@@ -43,51 +41,16 @@ export class AddNewadminComponent implements OnInit {
       options: this.fb.control('', [Validators.required]),
       // pracharImage: ['']
     })
-    // Get the ID of the product from the route parameters
-    this.route.params.subscribe(val => {
-      this.AdminId = val['id']; // Assuming the parameter name is 'id'
-      // Fetch the product details using the ID and populate the form
-      this.service.getSuperAdminDetailsById(this.AdminId).subscribe({
-        next: (res) => {
-          this.onedit(res.admin_details);
-          console.log('Super Admin Details:', res.admin_details);
-        }, error: (err) => {
-          console.log(err)
-        }
-      });
-      // return this.AdminId;
-    });
 
     this.addAdminForm.reset()
     this.showsubmit = true;
-    this.showupdate = false;
-    this.showdelete = false;
   }
 
-  onedit(superAdmin: Admin_model) {
-    this.showsubmit = false;
-    this.showupdate = true;
-    this.showdelete = true;
-    this.addAdminForm.setValue({
-      // id: superAdmin.a_id,
-      adminUsername: superAdmin.a_username,
-      adminname: superAdmin.a_name,
-      contactno: superAdmin.a_contactno,
-      // passWord: superAdmin.a_name,
-      // conPassword: superAdmin.a_name,
-      smessage: superAdmin.a_message,
-      // pracharImage: superAdmin.a_image
-    })
-
-
-  }
   // for image upload
-  onImageSelected(product: any) {
-
-    const fileList: FileList = product.target.files;
+  onImageSelected(image: any) {
+    const fileList: FileList = image.target.files;
     if (fileList.length > 0) {
       this.adminImageData = fileList[0];
-      console.log('Selected image:', this.adminImageData);
     } else {
       this.adminImageData = null; // Reset file if no file is selected
     }
@@ -110,7 +73,7 @@ export class AddNewadminComponent implements OnInit {
 
     const { a_username, a_name, a_contactno, a_password, a_confirmpassword, a_message, a_typeadmin, a_files } = adminData;
 
-    if (!a_username || !a_name || !a_contactno || !a_password || !a_confirmpassword || !a_typeadmin ||!a_files || !a_message) {
+    if (!a_username || !a_name || !a_contactno || !a_password || !a_confirmpassword || !a_typeadmin || !a_files || !a_message) {
       this.toastr.error('Please fill all the fields.', 'Error');
       return;
     }
@@ -125,60 +88,23 @@ export class AddNewadminComponent implements OnInit {
       return;
     }
 
-    // const postData = { ...adminData };
-
-    console.log("Before submitting the data is", adminData);
-    // let formData2 = new FormData();
     const formData: FormData = new FormData();
     for (const [key, value] of Object.entries(adminData)) {
-      console.log(key, value);
-
       formData.append(key, value)
     }
-    console.log("the data is", formData);
 
     this.service.SuperAdminPost(formData).subscribe((res) => {
       console.log(res)
       if (res === 'success') {
-        this.toastr.success('Successfully added', 'Success');
+        this.toastr.success('Admin Data Added Successfully!', 'Success');
       } else {
-        this.toastr.success('Successfully added', 'Success');
+        this.toastr.success('Admin Data Added Successfully!', 'Success');
       }
     });
 
     // Reset the form after submitting
     this.addAdminForm.reset();
-    this.router.navigate(['/admin'])
-  }
-
-
-
-  deleteProduct(): void {
-    this.service.deleteSuperAdminById(this.AdminId).subscribe(
-      () => {
-        // console.log('Product deleted successfully');
-        this.toastr.success('Admin deleted successfully!', 'Success');
-        // Redirect the user to a different page after successful deletion
-        this.router.navigate(['/admin']);
-      },
-      error => {
-        console.error('Error deleting product:', error);
-      }
-    );
-  }
-
-  updateproduct() {
-    this.Admin_model.a_name = this.addAdminForm.value.adminUsername;
-    this.Admin_model.a_message = this.addAdminForm.value.smessage;
-    this.Admin_model.a_files = this.addAdminForm.value.pracharImage;
-
-    this.service.updateAdmminById(this.AdminId, this.Admin_model).subscribe(res => {
-      console.log(res)
-      this.toastr.success('Product Updated successfully!', 'Success');
-      // alert('updated')
-      this.addAdminForm.reset();
-      this.router.navigate(['/admin'])
-    })
+    this.router.navigate(['/superadmin-dashboard'])
   }
 
   togglePasswordVisibility(field: string) {

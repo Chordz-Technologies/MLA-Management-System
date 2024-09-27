@@ -57,12 +57,4 @@ export class DashboardComponent implements OnInit {
       console.log('Admin type or ID missing from local storage');
     }
   }
-
-  edit(id: number) {
-    this.router.navigate(['/edit_admin_text', id]);
-  }
-
-  showRecords(id: number) {
-    this.router.navigate(['/adminFiles', id]);
-  }
 }

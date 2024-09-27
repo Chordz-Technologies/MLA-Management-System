@@ -26,30 +26,29 @@ import { MatInputModule } from '@angular/material/input';
 import { ToastrModule } from 'ngx-toastr';
 import { SuperAdminComponent } from './admin/dashboard/superAdmin/superadmin.component';
 import { MatSelectModule } from '@angular/material/select';
-import { EditsuperMsgComponent } from './admin/Editforms/editsuper-msg/editsuper-msg.component';
-import { EditadminMsgComponent } from './admin/Editforms/editadmin-msg/editadmin-msg.component';
+import { EditsuperMsgComponent } from './admin/Editforms/edit-admin/editsuper-msg.component';
 import { AddNewadminComponent } from './admin/Editforms/add-newadmin/add-newadmin.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { AllRecordsComponent } from './all-records/all-records.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DatePipe } from '@angular/common';
-import { AdminFilesComponent } from './admin-files/admin-files.component';
-import { KatranPageComponent } from './admin/sidebar/katran-page/katran-page.component';
-import { EventsPageComponent } from './admin/sidebar/events-page/events-page.component';
-import { AavakJavakPageComponent } from './admin/sidebar/aavak-javak-page/aavak-javak-page.component';
-import { NivedaneComponent } from './admin/sidebar/nivedane-page/nivedane.component';
+import { KatranPageComponent } from './admin/sidebar/katrane/add-katrane/katran-page.component';
+import { EventsPageComponent } from './admin/sidebar/karykrame/add-events/events-page.component';
+import { AavakJavakPageComponent } from './admin/sidebar/aavak-javak/add-aavak-javak/aavak-javak-page.component';
+import { NivedaneComponent } from './admin/sidebar/yojaneche-arja/add-yojaneche-arja/nivedane.component';
 import { PatravyavharComponent } from './admin/sidebar/patravyavhar/patravyavhar.component';
-import { KatranImagesComponent } from './admin/sidebar/katran-images/katran-images.component';
-import { AavakJavakImagesComponent } from './admin/sidebar/aavak-javak-images/aavak-javak-images.component';
-import { NivedaneImagesComponent } from './admin/sidebar/nivedane-images/nivedane-images.component';
-import { EventsImagesComponent } from './admin/sidebar/events-images/events-images.component';
+import { KatranImagesComponent } from './admin/sidebar/katrane/all-katrane/katran-images.component';
+import { AavakJavakImagesComponent } from './admin/sidebar/aavak-javak/all-aavak-javak/aavak-javak-images.component';
+import { NivedaneImagesComponent } from './admin/sidebar/yojaneche-arja/all-yojaneche-arja/nivedane-images.component';
+import { EventsImagesComponent } from './admin/sidebar/karykrame/all-events/events-images.component';
 import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { RecordsComponent } from './admin/sidebar/records/records.component';
-import { AddRecordsComponent } from './admin/sidebar/add-records/add-records.component';
-import { NotificationsPageComponent } from './notifications-page/notifications-page.component';
+import { RecordsComponent } from './admin/sidebar/visitors/all-records/records.component';
+import { AddRecordsComponent } from './admin/sidebar/visitors/add-records/add-records.component';
+import { NotificationsPageComponent } from './admin/sidebar/visitors/notifications-page/notifications-page.component';
 import { SplashscreenComponent } from './splashscreen/splashscreen.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import { EditRecordsComponent } from './admin/sidebar/visitors/edit-records/edit-records.component';
+import { EventNotificationsComponent } from './admin/sidebar/karykrame/event-notifications/event-notifications.component';
 
 @NgModule({
   declarations: [
@@ -60,10 +59,7 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     LoginComponent,
     SuperAdminComponent,
     EditsuperMsgComponent,
-    EditadminMsgComponent,
     AddNewadminComponent,
-    AllRecordsComponent,
-    AdminFilesComponent,
     KatranPageComponent,
     EventsPageComponent,
     AavakJavakPageComponent,
@@ -78,8 +74,10 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     NotificationsPageComponent,
     SplashscreenComponent,
     ChatbotComponent,
+    EditRecordsComponent,
+    EventNotificationsComponent,
   ],
-  
+
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -114,17 +114,11 @@
           <div class="col-12">
             <!-- Full width button for all screen sizes -->
             <div class="text-center my-3">
-              <button type="submit" class="btn btn-primary me-3" *ngIf="showupdate" (click)="updateproduct()">
-                Update
-              </button>
               <button type="submit" class="btn btn-primary me-3" *ngIf="showsubmit" (click)="postSuperAdminDetails()">
                 Submit
               </button>
-              <button type="button" class="btn btn-danger" routerLink="/admin">
+              <button type="button" class="btn btn-danger" routerLink="/superadmin-dashboard">
                 Close
-              </button>
-              <button type="button" class="btn btn-danger me-3" *ngIf="showdelete" (click)="deleteProduct()">
-                Delete
               </button>
             </div>
           </div>

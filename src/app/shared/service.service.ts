@@ -38,18 +38,6 @@ export class ServiceService {
     return this.http.put<any>(`${this.url}/updateAdmin/${a_id}`, data);
   }
 
-  fetchData(userId: number, date: string): Observable<any> {
-    return this.http.get(`${this.url}/filesbydateanduser/?user_id=${userId}&upload_date=${date}`);
-  }
-
-  adminFilesDownload(a_id: number): Observable<any> {
-    return this.http.get<any>(`${this.url}/userfiles/${a_id}/`);
-  }
-
-  downloadFile(url: string, fileName: string) {
-    return this.http.get(url, { responseType: 'blob' });
-  }
-
   // sidebar options API
 
   postPaperCuttings(data: any): Observable<any> {
@@ -100,14 +88,30 @@ export class ServiceService {
     return this.http.get<any>(`${this.url}/allkaryakram/`);
   }
 
+  getEventNotifications(): Observable<any> {
+    return this.http.get<any>(`${this.url}/karyakramendingsoon/`);
+  }
+
   // Visitors data
 
   postVisitorData(data: any): Observable<any> {
     return this.http.post<any>(`${this.url}/createvisitor/`, data);
   }
 
+  updateVisitorData(v_id: number, data: any): Observable<any> {
+    return this.http.put<any>(`${this.url}/updatevisitor/${v_id}`, data);
+  }
+
   getAllVisitors(): Observable<any> {
     return this.http.get<any>(`${this.url}/allvisitors/`);
+  }
+
+  getVisitorDataById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.url}/visitordetails/${id}/`);
+  }
+
+  deleteVisitorData(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/deletevisitor/${id}/`);
   }
 
   getNotifications(): Observable<any> {
@@ -117,5 +121,4 @@ export class ServiceService {
   getVisitorsByDate(date: string): Observable<any> {
     return this.http.get(`${this.url}/visitorbydate/?v_date=${date}`);
   }
-
 }

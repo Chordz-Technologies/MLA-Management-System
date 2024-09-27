@@ -1,0 +1,100 @@
+<div class="main-div" style="padding-top: 20px">
+    <div class="py-2">
+        <div class="card me-4 px-5 py-3">
+            <mat-card-title>
+                <h2 class="py-2 border-bottom">
+                    <i class="fa-solid fa-user"></i> <b> Upload Files/Photos </b>
+                </h2>
+            </mat-card-title>
+            <mat-card-content>
+                <form [formGroup]="paperCuttingForm">
+                    <div class="row mb-3">
+                        <label for="date" class="col-sm-2 col-form-label"><b>Date</b><span class="text-danger fw-bold">
+                                *</span></label>
+                        <div class="col-sm-10">
+                            <input type="date" id="date" class="form-control" formControlName="k_date"
+                                placeholder="Enter Date" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="newspaper" class="col-sm-2 col-form-label"><b>Select Newspaper</b><span
+                                class="text-danger fw-bold">
+                                *</span></label>
+                        <div class="col-sm-10">
+                            <select class="form-select" aria-label="Default select example" formControlName="k_paper">
+                                <option value="" selected disabled>Select Newspaper</option>
+                                <option value="Sakal">Sakal</option>
+                                <option value="Lokmat">Lokmat</option>
+                                <option value="Pudhari">Pudhari</option>
+                                <option value="Prabhat">Prabhat</option>
+                                <option value="Loksatta">Loksatta</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="k_otherpaper" class="col-sm-2 col-form-label"><b>Other Newspaper Name</b></label>
+                        <div class="col-sm-10">
+                            <input type="text" id="k_otherpaper" class="form-control" formControlName="k_otherpaper"
+                                placeholder="Enter Other Newspaper Name" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="k_label" class="col-sm-2 col-form-label"><b>Katran For</b><span
+                                class="text-danger fw-bold"> *</span></label>
+                        <div class="col-sm-10">
+                            <input type="text" id="k_label" class="form-control" formControlName="k_label"
+                                placeholder="Enter Katran For" />
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="paperImage" class="col-sm-2 col-form-label"><b>Upload Files/Photos </b><span
+                                class="text-danger fw-bold"> *</span></label>
+                        <div class="col-sm-10">
+                            <input type="file" id="paperImage" class="form-control"
+                                (change)="onImageSelected($event)" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="k_newslink" class="col-sm-2 col-form-label"><b>Newspaper Link</b></label>
+                        <div class="col-sm-10">
+                            <input type="text" id="k_newslink" class="form-control" formControlName="k_newslink"
+                                placeholder="Enter Newspaper Link" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="k_medialink" class="col-sm-2 col-form-label"><b>TV Media Link</b></label>
+                        <div class="col-sm-10">
+                            <input type="text" id="k_medialink" class="form-control" formControlName="k_medialink"
+                                placeholder="Enter TV Media Link" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="k_file" class="col-sm-2 col-form-label"><b>Upload TV Media Files </b></label>
+                        <div class="col-sm-10">
+                            <input type="file" id="k_file" class="form-control" (change)="onFileSelected($event)" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="k_important" class="col-sm-2 col-form-label"><b>Mark as Important</b></label>
+                        <div class="col-sm-10">
+                            <input type="checkbox" id="k_important" class="form-check-input"
+                                formControlName="k_important" />
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="text-center my-3">
+                        <button type="submit" class="btn btn-primary me-3" (click)="postPaperCuttings()">
+                            Upload Data
+                        </button>
+                        <button type="button" class="btn btn-danger" routerLink="/सर्व-कात्रणे">
+                            Close
+                        </button>
+                    </div>
+                </form>
+            </mat-card-content>
+        </div>
+    </div>
+</div>

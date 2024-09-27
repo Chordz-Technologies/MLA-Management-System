@@ -1,22 +1,45 @@
-mat-card {
-    margin-top: 20px;
-    justify-content: center;
-    background-color: rgb(238, 238, 238);
-    width: 20%;
+.responsive-image {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
-mat-card-title {
-    margin-top: 10px;
-    margin-bottom: 15px;
-    justify-content: center;
+.dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows cards to wrap to the next line on smaller screens */
+    justify-content: space-around;
+    margin: 20px;
+    gap: 20px;
+    /* Adds spacing between cards */
+}
+
+.mybtn {
+    width: 30%;
+    padding: 25px;
+    float: right
+}
+
+.card {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
     text-align: center;
+    color: white;
     font-size: 20px;
-    color: black;
+    display: flex;
+    font-weight: bold;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    /* For a nice hover effect */
 }
 
-mat-form-field {
-    padding-top: 15px;
-
+.card:hover {
+    transform: scale(1.05);
+    /* Hover effect to slightly enlarge the card */
 }
 
 .main-div {
@@ -36,54 +59,80 @@ table {
     overflow-x: auto;
 }
 
-@media only screen and (max-width: 800px) {
-    .mat-elevation-z8 {
-        width: 95%;
-        height: 40%;
-    }
-
-    mat-card {
-        width: 50%;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    .mat-elevation-z8 {
-        width: 98%;
-        height: 45%;
-    }
-
-    mat-card {
-        width: 50%;
-    }
-}
-
-@media only screen and (max-width: 350px) {
-    .mat-elevation-z8 {
-        width: 90%;
-        height: 90%;
-    }
-
-    mat-card {
-        width: 50%;
-    }
-}
-
-// .trial-row {
-//     background-color: orange;
-// }
-
-// .active-row {
-//     background-color: green;
-// }
-
-// .expired-row {
-//     background-color: red;
-// }
-
 .spinner {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 200px;
+}
+
+/* Media Queries for Responsiveness */
+
+@media (max-width: 1200px) {
+    .dashboard-cards {
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 180px;
+        /* Reduce card width slightly for medium screens */
+    }
+}
+
+@media (max-width: 800px) {
+    .dashboard-cards {
+        justify-content: center;
+        /* Center cards on smaller screens */
+    }
+
+    .card {
+        width: 160px;
+        /* Further reduce card width for smaller screens */
+        font-size: 18px;
+        /* Adjust font size */
+    }
+
+    .mybtn {
+        padding: 25px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard-cards {
+        flex-direction: column;
+        align-items: center;
+        /* Stack cards vertically on small screens */
+    }
+
+    .card {
+        width: 100%;
+        /* Full width card on very small screens */
+        max-width: 300px;
+        /* Keep the card from being too wide */
+        height: 130px;
+        /* Adjust height */
+        font-size: 16px;
+        /* Smaller font for smaller screens */
+    }
+
+    .mybtn {
+        padding: 25px 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .dashboard-cards {
+        margin: 10px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 250px;
+        font-size: 14px;
+        /* Smaller font for mobile devices */
+    }
+
+    .mybtn {
+        padding: 25px 0;
+    }
 }

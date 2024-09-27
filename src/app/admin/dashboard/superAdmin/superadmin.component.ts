@@ -17,6 +17,10 @@ export class SuperAdminComponent {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   superAdmin: any;
+  visitorCount = 0;
+  completeWorkCount = 0;
+  incompleteWorkCount = 0;
+  inProgressWorkCount = 0;
 
   constructor(private service: ServiceService, private router: Router) { }
 
@@ -25,6 +29,17 @@ export class SuperAdminComponent {
   }
 
   getAllSuperList() {
+    this.service.getAllVisitors().subscribe((data: any) => {
+      const visitors = data.all_visitors; // Assuming the API returns data in this format
+      this.visitorCount = visitors.length; // Total visitors count
+
+      // Calculating the counts based on the v_status field
+      this.completeWorkCount = visitors.filter((visitor: any) => visitor.v_status === 'Work Complete').length;
+      this.incompleteWorkCount = visitors.filter((visitor: any) => visitor.v_status === 'Work Incomplete').length;
+      this.inProgressWorkCount = visitors.filter((visitor: any) => visitor.v_status === 'Work In Progress').length;
+    });
+  
+
     this.service.getAllSuperAdminDetails().subscribe({
       next: (res: any) => {
         this.dataLoaded = true;
@@ -53,10 +68,6 @@ export class SuperAdminComponent {
   }
 
   edit(id: number) {
-    this.router.navigate(['/edit_superadmin_text', id]);
-  }
-
-  showRecords(id: number) {
-    this.router.navigate(['/allRecords', id]);
+    this.router.navigate(['/edit_admin', id]);
   }
 }
