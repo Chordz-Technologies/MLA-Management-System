@@ -1,4 +1,4 @@
-<div>
+<div class="mydiv">
     <button class="btn btn-primary" (click)="showTemplate('शिधापत्रिका शिफारस पत्र')">शिधापत्रिका शिफारस पत्र</button>
     <button class="btn btn-primary"
         (click)="showTemplate('मुख्यमंत्री सहायता निधीतून वैद्यकीय उपचारासाठी आर्थिक मदत देणेबाबत')">मुख्यमंत्री सहायता
@@ -23,7 +23,7 @@
                     <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no1" /></p>
                 </div>
                 <div class="col-sm-6">
-                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date1" /></p>
+                    <p class="date">दिनांक : <input class="bottom-line-input" [(ngModel)]="date1" /></p>
                 </div>
                 <h1 class="text-center pt-2 pb-2"><b>शिधापत्रिका शिफारस पत्र</b></h1>
                 <p>श्री./श्रीमती/कु./सौ. <input class="bottom-line-input" [(ngModel)]="name1" /> राहणार <input
@@ -54,7 +54,7 @@
                     <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no2" /></p>
                 </div>
                 <div class="col-sm-6">
-                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date2" /></p>
+                    <p class="date">दिनांक : <input class="bottom-line-input" [(ngModel)]="date2" /></p>
                 </div>
                 <p><b>प्रति,<br> मा. मुख्यमंत्री साहेब<br> महाराष्ट्र राज्य, मंत्रालय,<br> मुंबई-३२.</b></p>
                 <h1 class="text-center pt-3 pb-3"><b>विषय : मुख्यमंत्री सहायता निधीतून वैद्यकीय उपचारासाठी आर्थिक मदत
@@ -85,7 +85,7 @@
                     <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no3" /></p>
                 </div>
                 <div class="col-sm-6">
-                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date3" /></p>
+                    <p class="date">दिनांक : <input class="bottom-line-input" [(ngModel)]="date3" /></p>
                 </div>
                 <h1 class="text-center pt-2 pb-2"><b>शिफारस पत्र</b></h1>
                 <p>श्री./श्रीमती/कु./सौ. <input class="bottom-line-input" [(ngModel)]="name2" /> राहणार <input
@@ -113,7 +113,7 @@
                     <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no4" /></p>
                 </div>
                 <div class="col-sm-6">
-                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date4" /></p>
+                    <p class="date">दिनांक : <input class="bottom-line-input" [(ngModel)]="date4" /></p>
                 </div>
                 <p>मा. डॉ. <br>यांसी, <br>महोदय, <br>
                     माझे परिचीत श्री/सौ. <input class="bottom-line-input" [(ngModel)]="name3" />
@@ -138,7 +138,7 @@
                     <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no5" /></p>
                 </div>
                 <div class="col-sm-6">
-                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date5" /></p>
+                    <p class="date">दिनांक : <input class="bottom-line-input" [(ngModel)]="date5" /></p>
                 </div>
                 <p>To, <br><b>The D.R.M./C.C.S.</b><br>Central/West. Railway <br>Pune/ Mumbai Cstm</p>
                 <h1 class="text-center pt-2 pb-2"><b>Subject: Reservation in V.I.P. Quota.</b></h1>
@@ -169,7 +169,7 @@
                     <p>जावक क्र. : <input class="bottom-line-input" [(ngModel)]="javak_no6" /></p>
                 </div>
                 <div class="col-sm-6">
-                    <p style="text-align: right;">दिनांक : <input class="bottom-line-input" [(ngModel)]="date6" /></p>
+                    <p class="date">दिनांक : <input class="bottom-line-input" [(ngModel)]="date6" /></p>
                 </div>
                 <h1 class="text-center"><b><input class="bottom-line-input" [(ngModel)]="subheading" /></b></h1>
                 <p><textarea [(ngModel)]="paragraph" class="form-control pt-2 mt-4" rows="10"></textarea></p>
@@ -191,7 +191,7 @@
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-5">
-                <p style="text-align: right;">दिनांक : {{date1}}</p>
+                <p class="date">दिनांक : {{date1}}</p>
             </div>
             <h1 class="text-center"><b>शिधापत्रिका शिफारस पत्र</b></h1>
             <p>श्री./श्रीमती/कु./सौ. {{name1}} राहणार {{address1}}
@@ -217,7 +217,7 @@
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-5">
-                <p style="text-align: right;">दिनांक : {{date2}}</p>
+                <p class="date">दिनांक : {{date2}}</p>
             </div>
             <p><b>प्रति,<br> मा. मुख्यमंत्री साहेब<br> महाराष्ट्र राज्य, मंत्रालय,<br> मुंबई-३२.</b></p>
             <h1 class="text-center"><b>विषय : मुख्यमंत्री सहायता निधीतून वैद्यकीय उपचारासाठी आर्थिक मदत
@@ -245,7 +245,7 @@
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-5">
-                <p style="text-align: right;">दिनांक : {{date3}}</p>
+                <p class="date">दिनांक : {{date3}}</p>
             </div>
             <h1 class="text-center"><b>शिफारस पत्र</b></h1>
             <p>श्री./श्रीमती/कु./सौ. {{name2}} राहणार {{address2}} यांना आम्ही गेल्या {{year2}} वर्षापासून ओळखतो.
@@ -270,7 +270,7 @@
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-5">
-                <p style="text-align: right;">दिनांक : {{date4}}</p>
+                <p class="date">दिनांक : {{date4}}</p>
             </div>
             <!-- <h1 class="text-center"><b>शिफारस पत्र</b></h1> -->
             <p>मा. डॉ. <br>यांसी, <br>महोदय, <br>
@@ -294,7 +294,7 @@
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-5">
-                <p style="text-align: right;">दिनांक : {{date5}}</p>
+                <p class="date">दिनांक : {{date5}}</p>
             </div>
             <p>Sir, <br>
                 Name : {{name4}}<br>
@@ -320,7 +320,7 @@
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-5">
-                <p style="text-align: right;">दिनांक : {{date6}}</p>
+                <p class="date">दिनांक : {{date6}}</p>
             </div>
             <h1 class="text-center"><b>{{subheading}}</b></h1>
             <p>{{paragraph}}</p>

@@ -19,6 +19,22 @@ mat-form-field {
 
 }
 
+.search {
+    width: 40%
+}
+
+.notification {
+    width: 25%;
+    padding: 25px;
+    float: right;
+}
+
+.datePicker {
+    width: 30%;
+    float: right;
+    padding-right: 20px;
+}
+
 .status-in-progress {
     color: orange;
     font-weight: bold;
@@ -67,6 +83,21 @@ table {
     mat-card {
         width: 50%;
     }
+
+    .search {
+        width: 100%
+    }
+
+    .notification {
+        width: 40%;
+        float: right;
+
+    }
+
+    .datePicker {
+        width: 55%;
+        float: left;
+    }
 }
 
 @media only screen and (max-width: 400px) {
@@ -77,6 +108,21 @@ table {
 
     mat-card {
         width: 50%;
+    }
+
+    .search {
+        width: 100%
+    }
+
+    .notification {
+        width: 40%;
+        float: right;
+
+    }
+
+    .datePicker {
+        width: 55%;
+        float: left;
     }
 }
 
@@ -89,19 +135,22 @@ table {
     mat-card {
         width: 50%;
     }
+
+    .search {
+        width: 100%
+    }
+
+    .notification {
+        width: 40%;
+        float: right;
+
+    }
+
+    .datePicker {
+        width: 55%;
+        float: left;
+    }
 }
-
-// .trial-row {
-//     background-color: orange;
-// }
-
-// .active-row {
-//     background-color: green;
-// }
-
-// .expired-row {
-//     background-color: red;
-// }
 
 .spinner {
     display: flex;

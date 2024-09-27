@@ -54,6 +54,17 @@ table {
     overflow-x: auto;
 }
 
+.search {
+    width: 45%
+}
+
+.inreports,
+.outreports {
+    width: 25%;
+    padding: 25px;
+    float: right;
+}
+
 @media only screen and (max-width: 800px) {
     .mat-elevation-z8 {
         width: 95%;
@@ -62,6 +73,24 @@ table {
 
     mat-card {
         width: 50%;
+    }
+
+    .search {
+        width: 100%
+    }
+
+    .inreports {
+        width: 45%;
+        padding: 25px 10px;
+        float: left;
+        margin-bottom: 20px;
+    }
+
+    .outreports {
+        width: 45%;
+        padding: 25px 10px;
+        float: right;
+        margin-bottom: 20px;
     }
 }
 
@@ -74,6 +103,24 @@ table {
     mat-card {
         width: 50%;
     }
+
+    .search {
+        width: 100%
+    }
+
+    .inreports {
+        width: 45%;
+        padding: 25px 10px;
+        float: left;
+        margin-bottom: 20px;
+    }
+
+    .outreports {
+        width: 45%;
+        padding: 25px 10px;
+        float: right;
+        margin-bottom: 20px;
+    }
 }
 
 @media only screen and (max-width: 350px) {
@@ -84,6 +131,24 @@ table {
 
     mat-card {
         width: 50%;
+    }
+
+    .search {
+        width: 100%
+    }
+
+    .inreports {
+        width: 45%;
+        padding: 25px 10px;
+        float: left;
+        margin-bottom: 20px;
+    }
+
+    .outreports {
+        width: 45%;
+        padding: 25px 10px;
+        float: right;
+        margin-bottom: 20px;
     }
 }
 

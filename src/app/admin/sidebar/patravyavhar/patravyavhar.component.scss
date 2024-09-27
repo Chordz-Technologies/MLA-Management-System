@@ -7,8 +7,11 @@
 }
 
 .card {
-    // margin-right: 50px;
     width: 98%;
+}
+
+.date {
+    text-align: right;
 }
 
 .button-container {
@@ -35,5 +38,70 @@ p {
     width: 30%;
     box-sizing: border-box;
     line-height: 20px;
+}
 
+@media only screen and (max-width: 800px) {
+    .card {
+        width: 95%;
+    }
+
+    .date {
+        text-align: left;
+    }
+
+    .btn {
+        width: 90%;
+    }
+
+    .mydiv {
+        text-align: center;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .card {
+        width: 95%;
+    }
+
+    .date {
+        text-align: left;
+    }
+
+    .btn {
+        width: 90%;
+    }
+
+    .mydiv {
+        text-align: center;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .card {
+        width: 95%;
+    }
+
+    .date {
+        text-align: left;
+    }
+
+    .btn {
+        width: 90%;
+    }
+
+    .mydiv {
+        text-align: center;
+    }
+
+    p {
+        font-size: 15px;
+    }
 }

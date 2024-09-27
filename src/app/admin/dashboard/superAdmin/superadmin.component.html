@@ -24,14 +24,13 @@
   <img src="../assets/Images/map.jpg" alt="logo" class="responsive-image" />
 </div>
 
-<div class="main-div pt-5 pb-5">
+<div class="main-div pt-5 pb-3">
   <mat-form-field style="width: 60%">
     <mat-label><mat-icon>search</mat-icon> Search</mat-label>
     <input matInput (keyup)="applyFilter($event)" #input />
   </mat-form-field>
 
-  <button mat-raised-button color="primary" class="mybtn float-right"
-    routerLink="/add_new_admin">
+  <button mat-raised-button color="primary" class="mybtn float-right" routerLink="/add_new_admin">
     Add New Admin
   </button>
 
