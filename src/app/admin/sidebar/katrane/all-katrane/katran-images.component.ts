@@ -22,7 +22,8 @@ export class KatranImagesComponent implements OnInit {
   ngOnInit(): void {
     this.paperCuttingForm = this.fb.group({
       k_paper: [''],
-      k_date: ['']
+      k_date: [''],
+      k_important: [false] // Add important filter to the form
     });
     this.allKatranData();
 
@@ -109,6 +110,17 @@ export class KatranImagesComponent implements OnInit {
           this.toastr.error('An error occurred while fetching the data.', 'Error');
         }
       );
+    }
+  }
+
+  filterByImportant() {
+    const isImportant = this.paperCuttingForm.get('k_important')?.value;
+    if (isImportant) {
+      const filteredData = this.dataSource.data.filter(item => item.k_important === 1);
+      this.dataSource = new MatTableDataSource<any>(filteredData);
+    } else {
+      // Re-fetch the full data if "Show Important Only" is unchecked
+      this.allKatranData();
     }
   }
 }

@@ -1,30 +1,42 @@
-<div class="dashboard-cards">
-  <div class="card" style="background-color: rgb(85, 85, 252);">
-    <h2><b>Visitor Count</b></h2>
-    <p>{{ visitorCount }}</p>
+<div class="row">
+  <div class="col-md-6">
+    <div class="dashboard-cards text-center">
+      <div class="card" style="background-color: rgb(85, 85, 252);">
+        <h2><b>Visitor Count</b></h2>
+        <p>{{ visitorCount }}</p>
+      </div>
+
+      <div class="card" style="background-color: rgb(60, 152, 60);">
+        <h2><b>Complete Work</b></h2>
+        <p>{{ completeWorkCount }}</p>
+      </div>
+
+      <div class="card" style="background-color: rgb(228, 71, 71);">
+        <h2><b>Incomplete Work</b></h2>
+        <p>{{ incompleteWorkCount }}</p>
+      </div>
+
+      <div class="card" style="background-color: rgb(255, 166, 0);">
+        <h2><b>In Progress Work</b></h2>
+        <p>{{ inProgressWorkCount }}</p>
+      </div>
+    </div>
   </div>
 
-  <div class="card" style="background-color: rgb(60, 152, 60);">
-    <h2><b>Complete Work</b></h2>
-    <p>{{ completeWorkCount }}</p>
+  <div class="col-md-5">
+    <div class="pt-4 text-center">
+      <a href="../assets/Images/map.jpg" target="_blank" height="100%">
+        <img src="../assets/Images/map.jpg" alt="logo" class="responsive-image" title="Click to view the map" />
+      </a>
+    </div>
   </div>
 
-  <div class="card" style="background-color: rgb(228, 71, 71);">
-    <h2><b>Incomplete Work</b></h2>
-    <p>{{ incompleteWorkCount }}</p>
-  </div>
-
-  <div class="card" style="background-color: rgb(255, 166, 0);">
-    <h2><b>In Progress Work</b></h2>
-    <p>{{ inProgressWorkCount }}</p>
-  </div>
 </div>
 
-<div class="pt-5 text-center">
-  <img src="../assets/Images/map.jpg" alt="logo" class="responsive-image" />
-</div>
 
-<div class="main-div pt-5 pb-3">
+
+
+<div class="main-div pt-4 pb-3">
   <mat-form-field style="width: 60%">
     <mat-label><mat-icon>search</mat-icon> Search</mat-label>
     <input matInput (keyup)="applyFilter($event)" #input />

@@ -1,39 +1,50 @@
 <div class="main-div pt-3 pb-3">
-<mat-card-content>
-  <form [formGroup]="paperCuttingForm">
-    <div class="row pt-2">
-      <label for="newspaper" class="col-sm-2 col-form-label mt-4">
-        <b>Select Newspaper</b>
-      </label>
-      <div class="col-sm-4">
-        <mat-form-field appearance="fill">
-          <mat-label>Select Newspaper</mat-label>
-          <mat-select formControlName="k_paper" (selectionChange)="filterByPaper()">
-            <mat-option value="" disabled>Select Newspaper</mat-option>
-            <mat-option value="Sakal">Sakal</mat-option>
-            <mat-option value="Lokmat">Lokmat</mat-option>
-            <mat-option value="Pudhari">Pudhari</mat-option>
-            <mat-option value="Prabhat">Prabhat</mat-option>
-            <mat-option value="Loksatta">Loksatta</mat-option>
-            <mat-option value="Other">Other</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <label for="date" class="col-sm-1 col-form-label mt-4">
-        <b>Select Date</b>
-      </label>
-      <div class="col-sm-4">
-        <mat-form-field>
-          <input matInput [matDatepicker]="picker" placeholder="Select date" formControlName="k_date"
-            (dateChange)="filterByDate()">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-      </div>
-    </div>
-  </form>
-</mat-card-content>
+  <mat-card-content>
+    <form [formGroup]="paperCuttingForm">
+      <div class="row pt-2">
+        <!-- Newspaper selection -->
+        <!-- <label for="newspaper" class="col-sm-2 col-form-label mt-4">
+          <b>Select Newspaper</b>
+        </label> -->
+        <div class="col-sm-4">
+          <mat-form-field appearance="fill">
+            <mat-label>Select Newspaper</mat-label>
+            <mat-select formControlName="k_paper" (selectionChange)="filterByPaper()">
+              <mat-option value="" disabled>Select Newspaper</mat-option>
+              <mat-option value="Sakal">Sakal</mat-option>
+              <mat-option value="Lokmat">Lokmat</mat-option>
+              <mat-option value="Pudhari">Pudhari</mat-option>
+              <mat-option value="Prabhat">Prabhat</mat-option>
+              <mat-option value="Loksatta">Loksatta</mat-option>
+              <mat-option value="Other">Other</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
 
+        <!-- Date selection -->
+        <!-- <label for="date" class="col-sm-1 col-form-label mt-4">
+          <b>Select Date</b>
+        </label> -->
+        <div class="col-sm-4">
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Select date" formControlName="k_date"
+              (dateChange)="filterByDate()">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <!-- Important filter -->
+        <!-- <label for="important" class="col-sm-1 col-form-label mt-4">
+          <b>Important</b>
+        </label> -->
+        <div class="col-sm-4 mt-3 pt-3">
+          <input type="checkbox" id="k_important" class="form-check-input" formControlName="k_important" (change)="filterByImportant()"/><span>Show Important Only</span>
+          <!-- <mat-checkbox formControlName="k_important" (change)="filterByImportant()">Show Important Only</mat-checkbox> -->
+        </div>
+      </div>
+    </form>
+  </mat-card-content>
 
   <mat-form-field>
     <mat-label><mat-icon>search</mat-icon> Search</mat-label>
@@ -109,7 +120,7 @@
           <ng-template #noMediaFile></ng-template>
         </td>
       </ng-container>
-      
+
 
       <ng-container matColumnDef="important">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>

@@ -1,8 +1,8 @@
 .responsive-image {
     max-width: 80%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    height: 230px;
+    // display: block;
+    // margin: 0 60px;
 }
 
 .dashboard-cards {
@@ -10,7 +10,7 @@
     flex-wrap: wrap;
     /* Allows cards to wrap to the next line on smaller screens */
     justify-content: space-around;
-    margin: 20px;
+    margin: 20px 0 20px 50px;
     gap: 20px;
     /* Adds spacing between cards */
 }
@@ -23,7 +23,7 @@
 
 .card {
     width: 200px;
-    height: 150px;
+    height: 100px;
     border-radius: 10px;
     text-align: center;
     color: white;
@@ -71,6 +71,8 @@ table {
 @media (max-width: 1200px) {
     .dashboard-cards {
         justify-content: space-between;
+        margin: 20px;
+
     }
 
     .card {
@@ -82,6 +84,8 @@ table {
 @media (max-width: 800px) {
     .dashboard-cards {
         justify-content: center;
+        margin: 20px;
+
         /* Center cards on smaller screens */
     }
 
@@ -101,6 +105,8 @@ table {
     .dashboard-cards {
         flex-direction: column;
         align-items: center;
+        margin: 20px;
+
         /* Stack cards vertically on small screens */
     }
 
@@ -109,7 +115,7 @@ table {
         /* Full width card on very small screens */
         max-width: 300px;
         /* Keep the card from being too wide */
-        height: 130px;
+        // height: 130px;
         /* Adjust height */
         font-size: 16px;
         /* Smaller font for smaller screens */
