@@ -68,26 +68,34 @@ export class KatranImagesComponent implements OnInit {
 
   filterByPaper() {
     const selectedPaper = this.paperCuttingForm.get('k_paper')?.value || '';
-
+  
     if (selectedPaper) {
+      // Clear existing data in the table before making the API call
+      this.dataSource = new MatTableDataSource<any>([]);
+      this.dataLoaded = false;
+  
       this.service.getKatranImagesByPaper(selectedPaper).subscribe(
         data => {
-          if (data && data.data.length > 0) {
+          // Check if data and data.data are defined and are arrays
+          if (data && Array.isArray(data.data) && data.data.length > 0) {
+            // Display the data if available
             this.dataLoaded = true;
             this.dataSource = new MatTableDataSource<any>(data.data);
           } else {
-            this.dataLoaded = false;
-            this.dataSource = new MatTableDataSource<any>([]);
-            this.toastr.error('No data found for the selected newspaper.', 'Error');
+            // No data found case
+            this.dataLoaded = true; // Set to true to show the empty table
+            this.dataSource = new MatTableDataSource<any>([]); // Clear table data
           }
         },
         error => {
-          this.dataLoaded = false;
+          // Handle API error
+          this.dataLoaded = true;
+          this.dataSource = new MatTableDataSource<any>([]); // Clear table data
           this.toastr.error('An error occurred while fetching the data.', 'Error');
         }
       );
     }
-  }
+  }  
 
   filterByDate() {
     const selectedDate = this.paperCuttingForm.get('k_date')?.value || '';

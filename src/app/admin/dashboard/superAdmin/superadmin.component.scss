@@ -21,6 +21,11 @@
     float: right
 }
 
+.link-btn {
+    width: 80%;
+    padding: 20px;
+}
+
 .card {
     width: 200px;
     height: 100px;
@@ -72,7 +77,6 @@ table {
     .dashboard-cards {
         justify-content: space-between;
         margin: 20px;
-
     }
 
     .card {
@@ -85,19 +89,20 @@ table {
     .dashboard-cards {
         justify-content: center;
         margin: 20px;
-
-        /* Center cards on smaller screens */
     }
 
     .card {
         width: 160px;
-        /* Further reduce card width for smaller screens */
         font-size: 18px;
-        /* Adjust font size */
     }
 
     .mybtn {
         padding: 25px 0;
+    }
+
+    .link-btn {
+        width: 95%;
+        padding: 20px;
     }
 }
 
@@ -106,23 +111,21 @@ table {
         flex-direction: column;
         align-items: center;
         margin: 20px;
-
-        /* Stack cards vertically on small screens */
     }
 
     .card {
         width: 100%;
-        /* Full width card on very small screens */
         max-width: 300px;
-        /* Keep the card from being too wide */
-        // height: 130px;
-        /* Adjust height */
         font-size: 16px;
-        /* Smaller font for smaller screens */
     }
 
     .mybtn {
         padding: 25px 0;
+    }
+
+    .link-btn {
+        width: 95%;
+        padding: 20px;
     }
 }
 
@@ -135,10 +138,14 @@ table {
         width: 100%;
         max-width: 250px;
         font-size: 14px;
-        /* Smaller font for mobile devices */
     }
 
     .mybtn {
         padding: 25px 0;
+    }
+
+    .link-btn {
+        width: 95%;
+        padding: 20px;
     }
 }
