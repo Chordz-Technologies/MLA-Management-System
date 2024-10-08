@@ -15,6 +15,28 @@
     /* Adds spacing between cards */
 }
 
+.highlight-text {
+    color: red;
+    /* Change the text color */
+    font-weight: bold;
+    background-color: yellow;
+    /* Add background highlight */
+    padding: 2px 4px;
+    margin-left: 5px;
+    /* Optional: adds padding around the highlighted text */
+    border-radius: 3px;
+    /* Optional: rounds the background corners */
+    animation: blink 1.5s infinite;
+    /* Optional: blinking effect */
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+
 .mybtn {
     width: 30%;
     padding: 25px;
