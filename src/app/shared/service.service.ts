@@ -121,4 +121,8 @@ export class ServiceService {
   getVisitorsByDate(date: string): Observable<any> {
     return this.http.get(`${this.url}/visitorbydate/?v_date=${date}`);
   }
+
+  textMsg(data: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/sendsms/`, data);
+  }
 }

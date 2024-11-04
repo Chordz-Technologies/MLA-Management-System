@@ -12,7 +12,7 @@ import { DatePipe } from '@angular/common';
 })
 export class RecordsComponent implements OnInit {
   dataSource!: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', 'name', 'address', 'contact_no', 'email_id', 'problems', 'date', 'completion_date', 'status', 'comment', 'arja', 'contact_now', 'action'];
+  displayedColumns: string[] = ['id', 'name', 'address', 'contact_no', 'email_id', 'problems', 'date', 'completion_date', 'status', 'comment', 'arja', 'contact_now', 'text_msg', 'action'];
 
   constructor(private service: ServiceService, private router: Router, private toastr: ToastrService, private datePipe: DatePipe) { }
 
@@ -74,5 +74,19 @@ export class RecordsComponent implements OnInit {
 
   edit(id: number) {
     this.router.navigate(['/edit-records', id]);
+  }
+
+  sendSMS(row: any) {
+    const phoneNumber = row.v_contactno;
+    const data = { phone_number: phoneNumber };
+
+    this.service.textMsg(data).subscribe(
+      response => {
+        this.toastr.success('SMS sent successfully!', 'Success');
+      },
+      error => {
+        this.toastr.error('Error sending SMS', 'Error');
+      }
+    );
   }
 }
