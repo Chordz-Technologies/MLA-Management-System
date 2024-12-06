@@ -22,12 +22,14 @@ export class AddRecordsComponent {
       v_contactno: this.fb.control('', [Validators.required]),
       v_email: this.fb.control('', [Validators.required]),
       v_address: this.fb.control('', [Validators.required]),
+      v_area: this.fb.control('', [Validators.required]),
       v_arja: this.fb.control('', [Validators.required]),
       v_problem: this.fb.control('', [Validators.required]),
       v_date: this.fb.control('', [Validators.required]),
       completion_date: this.fb.control('', [Validators.required]),
       v_comment: this.fb.control('', [Validators.required]),
       v_status: this.fb.control('', [Validators.required]),
+      office: this.fb.control('', [Validators.required]),
     })
   }
 
@@ -46,16 +48,18 @@ export class AddRecordsComponent {
       v_contactno: this.addVisitorsData.value.v_contactno,
       v_email: this.addVisitorsData.value.v_email,
       v_address: this.addVisitorsData.value.v_address,
+      v_area: this.addVisitorsData.value.v_area,
       v_problem: this.addVisitorsData.value.v_problem,
       v_date: this.addVisitorsData.value.v_date,
       completion_date: this.addVisitorsData.value.completion_date,
       v_comment: this.addVisitorsData.value.v_comment,
-      v_status: this.addVisitorsData.value.v_status
+      v_status: this.addVisitorsData.value.v_status,
+      office: this.addVisitorsData.value.office,
     };
 
-    const { v_name, v_contactno, v_address, v_problem, v_date, completion_date, v_status } = VisitorData;
+    const { v_name, v_contactno, v_address, v_area, v_problem, v_date, completion_date, v_status, office } = VisitorData;
 
-    if (!v_name || !v_contactno || !v_address || !v_problem || !v_date || !completion_date || !v_status) {
+    if (!v_name || !v_contactno || !v_address || !v_area || !v_problem || !v_date || !completion_date || !v_status || !office) {
       this.toastr.error('Please fill all the fields.', 'Error');
       return;
     }

@@ -33,6 +33,24 @@
                     </div>
 
                     <div class="col-md-6">
+                        <label for="v_area" class="form-label"><b>Area</b><span class="text-danger fw-bold">
+                                *</span></label>
+                        <input type="text" id="v_area" class="form-control" formControlName="v_area"
+                            placeholder="Enter Area" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="office" class="form-label"><b>Office</b><span class="text-danger fw-bold">
+                                *</span></label>
+                        <select class="form-select" aria-label="Default select example" formControlName="office">
+                            <option value="" selected disabled>Select Office</option>
+                            <option value="Office 1">Office 1</option>
+                            <option value="Office 2">Office 2</option>
+                            <option value="Office 3">Office 3</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
                         <label for="v_arja" class="form-label"><b>Application</b></label>
                         <input type="file" id="v_arja" class="form-control" (change)="onImageSelected($event)" />
                     </div>

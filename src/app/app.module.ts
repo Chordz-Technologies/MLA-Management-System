@@ -49,6 +49,8 @@ import { SplashscreenComponent } from './splashscreen/splashscreen.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import { EditRecordsComponent } from './admin/sidebar/visitors/edit-records/edit-records.component';
 import { EventNotificationsComponent } from './admin/sidebar/karykrame/event-notifications/event-notifications.component';
+import { ContactUsComponent } from './admin/sidebar/contact-us/contact-us.component';
+import { PrivacyPolicyComponent } from './admin/sidebar/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +78,8 @@ import { EventNotificationsComponent } from './admin/sidebar/karykrame/event-not
     ChatbotComponent,
     EditRecordsComponent,
     EventNotificationsComponent,
+    ContactUsComponent,
+    PrivacyPolicyComponent,
   ],
 
   imports: [

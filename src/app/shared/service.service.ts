@@ -125,4 +125,8 @@ export class ServiceService {
   textMsg(data: any): Observable<any> {
     return this.http.post<any>(`${this.url}/sendsms/`, data);
   }
+
+  getVisitorExcelReport(): Observable<Blob> {
+    return this.http.get(`${this.url}/visitorexcelreport/`, { responseType: 'blob' });
+  }
 }

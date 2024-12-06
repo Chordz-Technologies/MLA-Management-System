@@ -80,6 +80,14 @@
             </a>
           </div>
         </button>
+        <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/contact_us']">
+          <mat-icon>dashboard</mat-icon>
+          <span>Contact Us</span>
+        </button>
+        <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/privacy_policy']">
+          <mat-icon>dashboard</mat-icon>
+          <span>Privacy Policy</span>
+        </button>
         <button mat-button class="menu-button" (click)="logout()">
           <mat-icon>logout</mat-icon>
           <span>Logout</span>
@@ -166,6 +174,14 @@
             <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-कार्यक्रम']">सर्व कार्यक्रम
             </a>
           </div>
+        </button>
+        <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/contact_us']">
+          <mat-icon>dashboard</mat-icon>
+          <span>Contact Us</span>
+        </button>
+        <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/privacy_policy']">
+          <mat-icon>dashboard</mat-icon>
+          <span>Privacy Policy</span>
         </button>
         <button mat-button class="menu-button" (click)="logout()">
           <mat-icon>logout</mat-icon>

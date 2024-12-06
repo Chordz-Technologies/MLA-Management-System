@@ -22,6 +22,8 @@ import { NotificationsPageComponent } from './admin/sidebar/visitors/notificatio
 import { SplashscreenComponent } from './splashscreen/splashscreen.component';
 import { EditRecordsComponent } from './admin/sidebar/visitors/edit-records/edit-records.component';
 import { EventNotificationsComponent } from './admin/sidebar/karykrame/event-notifications/event-notifications.component';
+import { ContactUsComponent } from './admin/sidebar/contact-us/contact-us.component';
+import { PrivacyPolicyComponent } from './admin/sidebar/privacy-policy/privacy-policy.component';
 
 const routes: Routes = [
   { path: 'splash', component: SplashscreenComponent }, // Splash screen route
@@ -47,6 +49,8 @@ const routes: Routes = [
       { path: 'edit-records/:v_id', component: EditRecordsComponent },
       { path: 'notifications', component: NotificationsPageComponent },
       { path: 'events-notifications', component: EventNotificationsComponent },
+      { path: 'contact_us', component: ContactUsComponent },
+      { path: 'privacy_policy', component: PrivacyPolicyComponent }
     ]
   },
   { path: '**', redirectTo: 'splash' } // Redirect to splash by default

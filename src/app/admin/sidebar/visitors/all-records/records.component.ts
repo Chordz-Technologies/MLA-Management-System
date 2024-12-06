@@ -12,7 +12,7 @@ import { DatePipe } from '@angular/common';
 })
 export class RecordsComponent implements OnInit {
   dataSource!: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', 'name', 'address', 'contact_no', 'email_id', 'problems', 'date', 'completion_date', 'status', 'comment', 'arja', 'contact_now', 'text_msg', 'action'];
+  displayedColumns: string[] = ['id', 'name', 'address', 'area', 'office', 'contact_no', 'email_id', 'problems', 'date', 'completion_date', 'status', 'comment', 'arja', 'contact_now', 'text_msg', 'action'];
 
   constructor(private service: ServiceService, private router: Router, private toastr: ToastrService, private datePipe: DatePipe) { }
 
@@ -88,5 +88,16 @@ export class RecordsComponent implements OnInit {
         this.toastr.error('Error sending SMS', 'Error');
       }
     );
+  }
+
+  downloadReport() {
+    this.service.getVisitorExcelReport().subscribe((response: Blob) => {
+      const blob = new Blob([response], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      const downloadURL = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = downloadURL;
+      link.download = 'Visitor Report.xlsx';  // Set the desired file name
+      link.click();
+    });
   }
 }

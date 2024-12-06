@@ -18,10 +18,12 @@ export class Visitor_model {
     v_contactno!: string;
     v_email!: string;
     v_address!: string;
+    v_area!: string;
     v_problem!: string;
     v_arja!: File;
     v_date!: string;
     completion_date!: string;
     v_comment!: string;
     v_status!: string;
+    office!: string;
 }

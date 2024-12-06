@@ -1,8 +1,6 @@
 <div class="main-div pt-5 pb-3">
-  <mat-form-field class="search">
-    <mat-label><mat-icon>search</mat-icon> Search</mat-label>
-    <input matInput (keyup)="applyFilter($event)" #input />
-  </mat-form-field>
+  <button mat-raised-button color="primary" class="notification mt-3"
+  (click)="downloadReport()"><b>Download Report</b></button>
 
   <button mat-raised-button color="primary" class="notification mt-3"
     routerLink="/notifications"><b>Notifications</b></button>
@@ -14,6 +12,11 @@
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   </div>
+
+  <mat-form-field class="search">
+    <mat-label><mat-icon>search</mat-icon> Search</mat-label>
+    <input matInput (keyup)="applyFilter($event)" #input />
+  </mat-form-field>
 
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -30,6 +33,16 @@
       <ng-container matColumnDef="address">
         <th mat-header-cell *matHeaderCellDef><b>Address</b></th>
         <td mat-cell *matCellDef="let row"> {{row.v_address}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="area">
+        <th mat-header-cell *matHeaderCellDef><b>Area</b></th>
+        <td mat-cell *matCellDef="let row"> {{row.v_area}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="office">
+        <th mat-header-cell *matHeaderCellDef><b>Office</b></th>
+        <td mat-cell *matCellDef="let row"> {{row.office}} </td>
       </ng-container>
 
       <ng-container matColumnDef="contact_no">
@@ -102,7 +115,7 @@
             <i class="fas fa-sms" style="font-size: 25px; color: #007bff;"></i>
           </button>
         </td>
-      </ng-container>      
+      </ng-container>
 
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef><b>Action</b></th>

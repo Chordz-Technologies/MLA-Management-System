@@ -20,18 +20,17 @@ mat-form-field {
 }
 
 .search {
-    width: 40%
+    width: 100%
 }
 
 .notification {
-    width: 25%;
+    width: 30%;
     padding: 25px;
     float: right;
 }
 
 .datePicker {
-    width: 30%;
-    float: right;
+    width: 38%;
     padding-right: 20px;
 }
 
@@ -89,14 +88,14 @@ table {
     }
 
     .notification {
-        width: 40%;
-        float: right;
+        width: 46%;
+        // float: right;
 
     }
 
     .datePicker {
-        width: 55%;
-        float: left;
+        width: 100%;
+        padding-right: 0;
     }
 }
 
@@ -115,14 +114,14 @@ table {
     }
 
     .notification {
-        width: 40%;
-        float: right;
-
+        width: 46%;
+        float: 0;
     }
 
     .datePicker {
-        width: 55%;
-        float: left;
+        width: 100%;
+        padding-right: 0;
+
     }
 }
 
@@ -141,14 +140,14 @@ table {
     }
 
     .notification {
-        width: 40%;
-        float: right;
+        width: 46%;
+        // float: right;
 
     }
 
     .datePicker {
-        width: 55%;
-        float: left;
+        width: 100%;
+        padding-right: 0;
     }
 }
 

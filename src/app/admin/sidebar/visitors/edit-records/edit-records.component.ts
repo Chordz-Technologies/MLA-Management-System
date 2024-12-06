@@ -24,11 +24,13 @@ export class EditRecordsComponent implements OnInit {
       v_contactno: [''],
       v_email: [''],
       v_address: [''],
+      v_area: [''],
       v_problem: [''],
       v_date: [''],
       completion_date: [''],
       v_comment: [''],
-      v_status: ['']
+      v_status: [''],
+      office: ['']
     });
 
     this.activatedRoute.params.subscribe(val => {
@@ -62,11 +64,13 @@ export class EditRecordsComponent implements OnInit {
       v_contactno: visitor.v_contactno,
       v_email: visitor.v_email,
       v_address: visitor.v_address,
+      v_area:visitor.v_area,
       v_problem: visitor.v_problem,
       v_date: localDateTime,  // Use the formatted date here
       completion_date: visitor.completion_date,
       v_comment: visitor.v_comment,
       v_status: visitor.v_status,
+      office:visitor.office
     })
   }
 
@@ -76,11 +80,13 @@ export class EditRecordsComponent implements OnInit {
       v_contactno: this.editVisitorsForm.value.v_contactno,
       v_email: this.editVisitorsForm.value.v_email,
       v_address: this.editVisitorsForm.value.v_address,
+      v_area: this.editVisitorsForm.value.v_area,
       v_problem: this.editVisitorsForm.value.v_problem,
       v_date: this.editVisitorsForm.value.v_date,
       completion_date: this.editVisitorsForm.value.completion_date,
       v_comment: this.editVisitorsForm.value.v_comment,
       v_status: this.editVisitorsForm.value.v_status,
+      office: this.editVisitorsForm.value.office,
       ...(this.applicationImg ? { v_arja: this.applicationImg } : {})      // aphotos: this.artistForm.value.artist_photos || '',
     };
 
