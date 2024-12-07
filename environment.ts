@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://mla.beatsacademy.in',
+    apiUrl: 'https://api.viksitbharatinnovate.com',
 };
