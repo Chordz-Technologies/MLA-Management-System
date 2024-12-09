@@ -104,7 +104,8 @@
                 <button type="button" class="btn btn-success me-3" routerLink="/superadmin-dashboard">
                   Close
                 </button>
-                <button type="button" class="btn btn-danger me-3" *ngIf="showdelete" (click)="deleteSuperAdmin()">
+                <button type="button" class="btn btn-danger me-3" *ngIf="superAdminForm.value.id !== 1001"
+                  (click)="deleteSuperAdmin()">
                   Delete
                 </button>
               </div>

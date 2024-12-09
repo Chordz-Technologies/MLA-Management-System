@@ -43,7 +43,7 @@ export class SuperAdminComponent {
     this.service.getAllSuperAdminDetails().subscribe({
       next: (res: any) => {
         this.dataLoaded = true;
-        this.superAdmin = res.all_admins.filter((admin: any) => admin.a_typesuperadmin !== 1 && admin.a_typesupersuperadmin !== 1);
+        this.superAdmin = res.all_admins;
         this.dataSource = new MatTableDataSource(this.superAdmin);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
