@@ -18,10 +18,10 @@ export class SplashscreenComponent implements OnInit {
       if (userType === 'Admin') {
         this.router.navigate(['/admin-dashboard']);
       } else if (userType === 'Superadmin') {
-        this.router.navigate(['/superadmin-dashboard']);
+        this.router.navigate(['/होम']);
       } else {
         this.router.navigate(['/admin-dashboard']); // Default route
       }
-    }, 3000); // Adjust the delay time (3000ms = 3 seconds) as needed
+    }, 5000); // Adjust the delay time (5000ms = 5 seconds) as needed
   }
 }

@@ -90,7 +90,7 @@ export class EditsuperMsgComponent implements OnInit {
     this.service.deleteSuperAdminById(this.superAdminId).subscribe(
       () => {
         this.toastr.success('Admin Data Deleted Successfully!', 'Success');
-        this.router.navigate(['/superadmin-dashboard']);
+        this.router.navigate(['/होम']);
       },
       error => {
         console.error('Error deleting:', error);
@@ -131,7 +131,7 @@ export class EditsuperMsgComponent implements OnInit {
     this.service.updateAdmminById(this.superAdminId, formData).subscribe(res => {
       this.toastr.success('Admin Data Updated Successfully!', 'Success');
       this.superAdminForm.reset();
-      this.router.navigate(['/superadmin-dashboard'])
+      this.router.navigate(['/होम'])
     })
   }
 

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AavakJavakImagesComponent } from './aavak-javak-images.component';
+import { AllAavakComponent } from './all-aavak.component';
 
 describe('AavakJavakImagesComponent', () => {
-  let component: AavakJavakImagesComponent;
-  let fixture: ComponentFixture<AavakJavakImagesComponent>;
+  let component: AllAavakComponent;
+  let fixture: ComponentFixture<AllAavakComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AavakJavakImagesComponent]
+      declarations: [AllAavakComponent]
     });
-    fixture = TestBed.createComponent(AavakJavakImagesComponent);
+    fixture = TestBed.createComponent(AllAavakComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

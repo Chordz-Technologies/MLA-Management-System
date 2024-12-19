@@ -12,7 +12,7 @@ import { DatePipe } from '@angular/common';
 })
 export class RecordsComponent implements OnInit {
   dataSource!: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', 'name', 'address', 'area', 'office', 'contact_no', 'email_id', 'problems', 'date', 'completion_date', 'status', 'comment', 'arja', 'contact_now', 'text_msg', 'action'];
+  displayedColumns: string[] = ['id', 'name', 'address', 'area', 'office', 'contact_no', 'dob', 'votingno', 'problems', 'date', 'completion_date', 'status', 'comment', 'arja', 'contact_now', 'text_msg', 'action'];
 
   constructor(private service: ServiceService, private router: Router, private toastr: ToastrService, private datePipe: DatePipe) { }
 

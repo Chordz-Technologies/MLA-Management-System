@@ -20,6 +20,7 @@ export class EventsPageComponent implements OnInit {
       k_date: this.fb.control(''),
       k_time: this.fb.control(''),
       k_location: this.fb.control(''),
+      k_subject: this.fb.control(''),
       comments: this.fb.control('')
     })
   }
@@ -38,6 +39,7 @@ export class EventsPageComponent implements OnInit {
       k_date: this.eventsForm.value.k_date,
       k_time: this.eventsForm.value.k_time,
       k_location: this.eventsForm.value.k_location,
+      k_subject: this.eventsForm.value.k_subject,
       comments: this.eventsForm.value.comments
     };
 

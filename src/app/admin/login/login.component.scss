@@ -1,13 +1,15 @@
 mat-card {
     margin-top: 60px;
-    background-color: lightgray;
+    background-color: rgb(222, 220, 220);
 
+}
+
+.form-check-input {
+    border: 1px solid black;
 }
 
 img {
     margin: 20px 45px 30px 0px;
-    // margin-right: 45px;
-    // margin-bottom: 40px;
     width: 200px;
     height: 100px;
 }

@@ -42,12 +42,12 @@ mat-icon {
 
     .mail {
         margin-top: -16px;
-        color: #8997ac;
+        color: white;
     }
 }
 
 .menu-head {
-    color: #adb4cc;
+    color: white;
     text-align: center;
     text-transform: uppercase;
     font-weight: 900;
@@ -56,23 +56,24 @@ mat-icon {
 }
 
 .menu-item {
-    margin: 0 10px 0 10px;
+    // margin: 0 10px 0 10px;
 
     .menu-button {
         display: block;
-        width: 100%;
+        width: 95%;
         position: relative;
         display: flex;
-        padding-left: 30px;
-        padding-right: 20px;
+        padding-left: 20px;
+        // padding-right: 20px;
         margin-bottom: 10px;
         justify-content: flex-start;
-        background-color: #003f10;
+        background-color: #26860e;
     }
 
     .menu-button span {
         margin-left: 20px;
         color: white;
+        font-weight: bold;
     }
 
     .menu-button:hover {

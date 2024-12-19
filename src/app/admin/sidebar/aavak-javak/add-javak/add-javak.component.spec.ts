@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NivedaneComponent } from './nivedane.component';
+import { AddJavakComponent } from './add-javak.component';
 
-describe('NivedaneComponent', () => {
-  let component: NivedaneComponent;
-  let fixture: ComponentFixture<NivedaneComponent>;
+describe('AddJavakComponent', () => {
+  let component: AddJavakComponent;
+  let fixture: ComponentFixture<AddJavakComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NivedaneComponent]
+      declarations: [AddJavakComponent]
     });
-    fixture = TestBed.createComponent(NivedaneComponent);
+    fixture = TestBed.createComponent(AddJavakComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

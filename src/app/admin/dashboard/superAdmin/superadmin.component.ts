@@ -34,9 +34,9 @@ export class SuperAdminComponent {
       this.visitorCount = visitors.length; // Total visitors count
 
       // Calculating the counts based on the v_status field
-      this.completeWorkCount = visitors.filter((visitor: any) => visitor.v_status === 'Work Complete').length;
-      this.incompleteWorkCount = visitors.filter((visitor: any) => visitor.v_status === 'Work Incomplete').length;
-      this.inProgressWorkCount = visitors.filter((visitor: any) => visitor.v_status === 'Work In Progress').length;
+      this.completeWorkCount = visitors.filter((visitor: any) => visitor.v_status === 'काम पूर्ण').length;
+      this.incompleteWorkCount = visitors.filter((visitor: any) => visitor.v_status === 'काम अपूर्ण').length;
+      this.inProgressWorkCount = visitors.filter((visitor: any) => visitor.v_status === 'काम चालु').length;
     });
   
 

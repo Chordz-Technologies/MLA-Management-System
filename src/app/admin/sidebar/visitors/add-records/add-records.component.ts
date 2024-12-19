@@ -20,7 +20,8 @@ export class AddRecordsComponent {
       id: [''],
       v_name: this.fb.control('', [Validators.required]),
       v_contactno: this.fb.control('', [Validators.required]),
-      v_email: this.fb.control('', [Validators.required]),
+      v_birthdate: this.fb.control('', [Validators.required]),
+      v_votingno: this.fb.control('', [Validators.required]),
       v_address: this.fb.control('', [Validators.required]),
       v_area: this.fb.control('', [Validators.required]),
       v_arja: this.fb.control('', [Validators.required]),
@@ -29,7 +30,7 @@ export class AddRecordsComponent {
       completion_date: this.fb.control('', [Validators.required]),
       v_comment: this.fb.control('', [Validators.required]),
       v_status: this.fb.control('', [Validators.required]),
-      office: this.fb.control('', [Validators.required]),
+      office: this.fb.control('', [Validators.required])
     })
   }
 
@@ -46,7 +47,8 @@ export class AddRecordsComponent {
     const VisitorData = {
       v_name: this.addVisitorsData.value.v_name,
       v_contactno: this.addVisitorsData.value.v_contactno,
-      v_email: this.addVisitorsData.value.v_email,
+      v_birthdate: this.addVisitorsData.value.v_birthdate,
+      v_votingno: this.addVisitorsData.value.v_votingno,
       v_address: this.addVisitorsData.value.v_address,
       v_area: this.addVisitorsData.value.v_area,
       v_problem: this.addVisitorsData.value.v_problem,

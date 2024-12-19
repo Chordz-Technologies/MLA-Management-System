@@ -2,21 +2,17 @@
   <mat-card-content>
     <form [formGroup]="paperCuttingForm">
       <div class="row pt-2">
-        <!-- Newspaper selection -->
-        <!-- <label for="newspaper" class="col-sm-2 col-form-label mt-4">
-          <b>Select Newspaper</b>
-        </label> -->
         <div class="col-sm-4">
           <mat-form-field appearance="fill">
-            <mat-label>Select Newspaper</mat-label>
+            <mat-label>न्यूज पेपर निवडा</mat-label>
             <mat-select formControlName="k_paper" (selectionChange)="filterByPaper()">
-              <mat-option value="" disabled>Select Newspaper</mat-option>
-              <mat-option value="Sakal">Sakal</mat-option>
-              <mat-option value="Lokmat">Lokmat</mat-option>
-              <mat-option value="Pudhari">Pudhari</mat-option>
-              <mat-option value="Prabhat">Prabhat</mat-option>
-              <mat-option value="Loksatta">Loksatta</mat-option>
-              <mat-option value="Other">Other</mat-option>
+              <mat-option value="" disabled>न्यूज पेपर निवडा</mat-option>
+              <mat-option value="सकाळ">सकाळ</mat-option>
+              <mat-option value="लोकमत">लोकमत</mat-option>
+              <mat-option value="पुढारी">पुढारी</mat-option>
+              <mat-option value="प्रभात">प्रभात</mat-option>
+              <mat-option value="लोकसत्ता">लोकसत्ता</mat-option>
+              <mat-option value="इतर">इतर</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -27,7 +23,7 @@
         </label> -->
         <div class="col-sm-4">
           <mat-form-field>
-            <input matInput [matDatepicker]="picker" placeholder="Select date" formControlName="k_date"
+            <input matInput [matDatepicker]="picker" placeholder="तारीख निवडा" formControlName="k_date"
               (dateChange)="filterByDate()">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
@@ -40,7 +36,7 @@
         </label> -->
         <div class="col-sm-4 mt-3 pt-3">
           <input type="checkbox" id="k_important" class="form-check-input" formControlName="k_important"
-            (change)="filterByImportant()" /><span>Show Important Only</span>
+            (change)="filterByImportant()" /><span>फक्त महत्वाचे न्यूज पेपर दाखवा</span>
           <!-- <mat-checkbox formControlName="k_important" (change)="filterByImportant()">Show Important Only</mat-checkbox> -->
         </div>
       </div>
@@ -48,74 +44,74 @@
   </mat-card-content>
 
   <mat-form-field>
-    <mat-label><mat-icon>search</mat-icon> Search</mat-label>
+    <mat-label><mat-icon>search</mat-icon> शोधा</mat-label>
     <input matInput (keyup)="applyFilter($event)" #input />
   </mat-form-field>
 
   <div *ngIf="dataLoaded" class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header><b>ID</b></th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header><b>क्र.</b></th>
         <td mat-cell *matCellDef="let row">{{ row.k_id }}</td>
       </ng-container>
 
       <ng-container matColumnDef="date">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Date</b>
+          <b>तारीख</b>
         </th>
         <td mat-cell *matCellDef="let row">{{ row.k_date | date: 'yyyy-MM-dd' }}</td>
       </ng-container>
 
       <ng-container matColumnDef="paper">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Paper</b>
+          <b>न्यूज पेपर</b>
         </th>
         <td mat-cell *matCellDef="let row">{{ row.k_paper }}</td>
       </ng-container>
 
       <ng-container matColumnDef="otherpapername">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Paper Name</b>
+          <b>इतर न्यूज पेपरचे नाव</b>
         </th>
         <td mat-cell *matCellDef="let row">{{ row.k_otherpaper }}</td>
       </ng-container>
 
       <ng-container matColumnDef="label">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Katran For</b>
+          <b>बातमीचा विषय</b>
         </th>
         <td mat-cell *matCellDef="let row">{{ row.k_label }}</td>
       </ng-container>
 
       <ng-container matColumnDef="images">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Images</b>
+          <b>फाइल्स/फोटो</b>
         </th>
-        <td mat-cell *matCellDef="let row"> <a [href]="row.k_image" target="_blank">Katran Images</a></td>
+        <td mat-cell *matCellDef="let row"> <a [href]="row.k_image" target="_blank">फाइल्स/फोटो</a></td>
       </ng-container>
 
       <ng-container matColumnDef="newslink">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Newspaper Link</b>
+          <b>न्यूज पेपरची लिंक</b>
         </th>
         <td mat-cell *matCellDef="let row"><a [href]="row.k_newslink" target="_blank">{{ row.k_newslink }}</a></td>
       </ng-container>
 
       <ng-container matColumnDef="medialink">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>TV Media Link</b>
+          <b>टीव्ही मीडिया लिंक</b>
         </th>
         <td mat-cell *matCellDef="let row"><a [href]="row.k_medialink" target="_blank">{{ row.k_medialink }}</a></td>
       </ng-container>
 
       <ng-container matColumnDef="mediafile">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>TV Media Files</b>
+          <b>टीव्ही मीडिया फाइल्स</b>
         </th>
         <td mat-cell *matCellDef="let row">
           <!-- Check if k_file exists -->
           <ng-container *ngIf="row.k_file; else noMediaFile">
-            <a [href]="row.k_file" target="_blank">TV Media Files</a>
+            <a [href]="row.k_file" target="_blank">टीव्ही मीडिया फाइल्स</a>
           </ng-container>
           <!-- Show alternative text when k_file does not exist -->
           <ng-template #noMediaFile></ng-template>
@@ -125,7 +121,7 @@
 
       <ng-container matColumnDef="important">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Important</b>
+          <b>महत्वाची बातमी</b>
         </th>
         <td mat-cell *matCellDef="let row" class="text-center">
           <span *ngIf="row.k_important === 1">✔</span>

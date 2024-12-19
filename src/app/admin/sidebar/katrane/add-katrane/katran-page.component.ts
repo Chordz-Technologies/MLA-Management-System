@@ -11,6 +11,7 @@ import { ServiceService } from 'src/app/shared/service.service';
 })
 export class KatranPageComponent implements OnInit {
   paperCuttingForm!: FormGroup;
+  isOtherSelected = false;
   paperImage: File | null | undefined;
   tvMedia: File | null | undefined;
 
@@ -26,6 +27,18 @@ export class KatranPageComponent implements OnInit {
       k_medialink: this.fb.control(''),
       k_newslink: this.fb.control(''),
     })
+  }
+
+  onPaperChange(event: Event): void {
+    const selectedValue = (event.target as HTMLSelectElement).value;
+    if (selectedValue === 'Other') {
+      this.isOtherSelected = true;
+      this.paperCuttingForm.get('k_otherpaper')?.enable();
+    } else {
+      this.isOtherSelected = false;
+      this.paperCuttingForm.get('k_otherpaper')?.disable();
+      this.paperCuttingForm.get('k_otherpaper')?.setValue(''); // Clear the field
+    }
   }
 
   onImageSelected(paper: any) {

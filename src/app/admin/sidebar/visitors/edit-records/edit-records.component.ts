@@ -22,7 +22,8 @@ export class EditRecordsComponent implements OnInit {
       v_id: [''],
       v_name: [''],
       v_contactno: [''],
-      v_email: [''],
+      v_birthdate: [''],
+      v_votingno: [''],
       v_address: [''],
       v_area: [''],
       v_problem: [''],
@@ -62,15 +63,16 @@ export class EditRecordsComponent implements OnInit {
       v_id: visitor.v_id,
       v_name: visitor.v_name,
       v_contactno: visitor.v_contactno,
-      v_email: visitor.v_email,
+      v_birthdate: visitor.v_birthdate,
+      v_votingno: visitor.v_votingno,
       v_address: visitor.v_address,
-      v_area:visitor.v_area,
+      v_area: visitor.v_area,
       v_problem: visitor.v_problem,
       v_date: localDateTime,  // Use the formatted date here
       completion_date: visitor.completion_date,
       v_comment: visitor.v_comment,
       v_status: visitor.v_status,
-      office:visitor.office
+      office: visitor.office
     })
   }
 
@@ -78,7 +80,8 @@ export class EditRecordsComponent implements OnInit {
     const VisitorData = {
       v_name: this.editVisitorsForm.value.v_name,
       v_contactno: this.editVisitorsForm.value.v_contactno,
-      v_email: this.editVisitorsForm.value.v_email,
+      v_birthdate: this.editVisitorsForm.value.v_birthdate,
+      v_votingno: this.editVisitorsForm.value.v_votingno,
       v_address: this.editVisitorsForm.value.v_address,
       v_area: this.editVisitorsForm.value.v_area,
       v_problem: this.editVisitorsForm.value.v_problem,

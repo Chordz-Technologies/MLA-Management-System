@@ -104,7 +104,7 @@ export class AddNewadminComponent implements OnInit {
 
     // Reset the form after submitting
     this.addAdminForm.reset();
-    this.router.navigate(['/superadmin-dashboard'])
+    this.router.navigate(['/होम'])
   }
 
   togglePasswordVisibility(field: string) {
@@ -114,24 +114,4 @@ export class AddNewadminComponent implements OnInit {
       this.hideCPassword = !this.hideCPassword;
     }
   }
-
-  get adminUsername(): FormControl {
-    return this.addAdminForm.get('adminUsername') as FormControl;
-  }
-  get adminFullname(): FormControl {
-    return this.addAdminForm.get('adminname') as FormControl;
-  }
-  get Password(): FormControl {
-    return this.addAdminForm.get('passWord') as FormControl;
-  }
-  get ConfirmPassword(): FormControl {
-    return this.addAdminForm.get('conPassword') as FormControl;
-  }
-  get Adminmessage(): FormControl {
-    return this.addAdminForm.get('smessage') as FormControl;
-  }
-  get ContactNo(): FormControl {
-    return this.addAdminForm.get('contactno') as FormControl;
-  }
-
 }

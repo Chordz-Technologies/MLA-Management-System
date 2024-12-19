@@ -16,7 +16,8 @@ export class Visitor_model {
     v_id!: number;
     v_name!: string;
     v_contactno!: string;
-    v_email!: string;
+    v_birthdate!: string;
+    v_votingno!: string;
     v_address!: string;
     v_area!: string;
     v_problem!: string;

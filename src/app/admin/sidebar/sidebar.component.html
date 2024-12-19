@@ -1,96 +1,101 @@
 <div class="navbar">
   <div class="user ps-5 ">
-    <img src="../../../assets/Images/bjp.jpg" alt="logo" style="border-radius: 50%;" />
+    <img src="./assets/Images/Bhimrao-Tapkir.jpg" alt="logo" style="border-radius: 50%;" />
 
     <!-- <p class="mail">admin@gmail.com</p> src="https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png"-->
   </div>
   <ng-container *ngIf="Admin">
     <div class="menu">
       <div class="menu-head text-center">
-        <span class="text-center">Admin</span>
+        <span class="text-center">मा. श्री. भिमराव अण्णा तापकीर<br>आमदार - भाजप</span>
       </div>
       <div class="menu-item pt-5">
         <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/admin-dashboard']">
           <mat-icon>dashboard</mat-icon>
-          <span>Home</span>
+          <span>होम</span>
         </button>
         <button mat-button class="menu-button" ngbDropdown>
           <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
-            <mat-icon>dashboard</mat-icon>
-            <span>Visitors &nbsp;</span>
+            <mat-icon>peoples</mat-icon>
+            <span>विजिटर्स &nbsp;</span>
           </button>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['add-records']">Add Visitor</a>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['all-records']">All Visitors</a>
-          </div>
-        </button>
-        <button mat-button class="menu-button" ngbDropdown>
-          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
-            <mat-icon>dashboard</mat-icon>
-            <span>कात्रणे &nbsp;</span>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['कात्रणे']">कात्रणे</a>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-कात्रणे']">सर्व कात्रणे</a>
-          </div>
-        </button>
-        <button mat-button class="menu-button" ngbDropdown>
-          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
-            <mat-icon>dashboard</mat-icon>
-            <span>आवक/जावक &nbsp;</span>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['आवक/जावक']">आवक/जावक
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['add-records']">विजिटर्स जोडा
             </a>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-आवक/जावक']">सर्व आवक/जावक
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['all-records']">सर्व विजिटर्स
+            </a>
+          </div>
+        </button>
+        <button mat-button class="menu-button" ngbDropdown>
+          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+            <mat-icon>assignment_ind</mat-icon>
+            <span>आवक पत्रके &nbsp;</span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['आवक']">आवक
+            </a>
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-आवक']">सर्व आवक
+            </a>
+          </div>
+        </button>
+        <button mat-button class="menu-button" ngbDropdown>
+          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+            <mat-icon>assignment_ind</mat-icon>
+            <span>जावक पत्रके &nbsp;</span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['जावक']">जावक
+            </a>
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-जावक']">सर्व जावक
+            </a>
+          </div>
+        </button>
+        <button mat-button class="menu-button" ngbDropdown>
+          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+            <mat-icon>description</mat-icon>
+            <span>न्यूज पेपर कटिंग &nbsp;</span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['कात्रणे']">न्यूज पेपर कटिंग
+            </a>
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-कात्रणे']">सर्व न्यूज पेपर
+              कटिंग
             </a>
           </div>
         </button>
         <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['पत्रव्यवहार']">
-          <mat-icon>dashboard</mat-icon>
+          <mat-icon>file_copy</mat-icon>
           <span>पत्रव्यवहार</span>
         </button>
         <button mat-button class="menu-button" ngbDropdown>
           <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
-            <mat-icon>dashboard</mat-icon>
-            <span>योजनेचे अर्ज &nbsp;</span>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['योजनेचे-अर्ज']">योजनेचे अर्ज
-            </a>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-योजनेचे-अर्ज']">सर्व योजनेचे
-              अर्ज
-            </a>
-          </div>
-        </button>
-        <button mat-button class="menu-button" ngbDropdown>
-          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
-            <mat-icon>dashboard</mat-icon>
+            <mat-icon>event</mat-icon>
             <span>कार्यक्रम &nbsp;</span>
           </button>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
             <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['कार्यक्रम']">कार्यक्रम
             </a>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-कार्यक्रम']">सर्व कार्यक्रम
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-कार्यक्रम']">कार्यक्रमांचे
+              वेळापत्रक
             </a>
           </div>
         </button>
-        <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/contact_us']">
-          <mat-icon>dashboard</mat-icon>
-          <span>Contact Us</span>
-        </button>
-        <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/privacy_policy']">
-          <mat-icon>dashboard</mat-icon>
-          <span>Privacy Policy</span>
+        <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/महत्वाचे-संपर्क']">
+          <mat-icon>phone</mat-icon>
+          <span>महत्वाचे संपर्क</span>
         </button>
         <button mat-button class="menu-button" (click)="logout()">
           <mat-icon>logout</mat-icon>
-          <span>Logout</span>
+          <span>लॉगआउट</span>
+        </button>
+        <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/VBH-Helpline']">
+          <mat-icon>contact_phone</mat-icon>
+          <span>VBH हेल्पलाइन</span>
         </button>
       </div>
     </div>
@@ -98,94 +103,95 @@
   <ng-container *ngIf="SuperAdmin">
     <div class="menu">
       <div class="menu-head text-center">
-        <span class="text-center">Super Admin</span>
+        <span class="text-center">मा. श्री. भिमराव अण्णा तापकीर<br>आमदार - भाजप</span>
       </div>
       <div class="menu-item pt-5">
-        <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/superadmin-dashboard']">
-          <mat-icon>dashboard</mat-icon>
-          <span>Home</span>
+        <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/होम']">
+          <mat-icon>home</mat-icon>
+          <span>होम</span>
         </button>
         <button mat-button class="menu-button" ngbDropdown>
           <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
-            <mat-icon>dashboard</mat-icon>
-            <span>Visitors &nbsp;</span>
+            <mat-icon>peoples</mat-icon>
+            <span>विजिटर्स &nbsp;</span>
           </button>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['add-records']">Add Visitor
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['add-records']">विजिटर्स जोडा
             </a>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['all-records']">All Visitors
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['all-records']">सर्व विजिटर्स
             </a>
           </div>
         </button>
         <button mat-button class="menu-button" ngbDropdown>
           <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
-            <mat-icon>dashboard</mat-icon>
-            <span>कात्रणे &nbsp;</span>
+            <mat-icon>assignment_ind</mat-icon>
+            <span>आवक पत्रके &nbsp;</span>
           </button>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['कात्रणे']">कात्रणे
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['आवक']">आवक
             </a>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-कात्रणे']">सर्व कात्रणे
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-आवक']">सर्व आवक
             </a>
           </div>
         </button>
         <button mat-button class="menu-button" ngbDropdown>
           <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
-            <mat-icon>dashboard</mat-icon>
-            <span>आवक/जावक &nbsp;</span>
+            <mat-icon>assignment_ind</mat-icon>
+            <span>जावक पत्रके &nbsp;</span>
           </button>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['आवक/जावक']">आवक/जावक
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['जावक']">जावक
             </a>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-आवक/जावक']">सर्व आवक/जावक
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-जावक']">सर्व जावक
+            </a>
+          </div>
+        </button>
+        <button mat-button class="menu-button" ngbDropdown>
+          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+            <mat-icon>description</mat-icon>
+            <span>न्यूज पेपर कटिंग &nbsp;</span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['कात्रणे']">न्यूज पेपर कटिंग
+            </a>
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-कात्रणे']">सर्व न्यूज पेपर
+              कटिंग
             </a>
           </div>
         </button>
         <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['पत्रव्यवहार']">
-          <mat-icon>dashboard</mat-icon>
+          <mat-icon>file_copy</mat-icon>
           <span>पत्रव्यवहार</span>
         </button>
         <button mat-button class="menu-button" ngbDropdown>
           <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
-            <mat-icon>dashboard</mat-icon>
-            <span>योजनेचे अर्ज &nbsp;</span>
-          </button>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['योजनेचे-अर्ज']">योजनेचे अर्ज
-            </a>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-योजनेचे-अर्ज']">सर्व योजनेचे
-              अर्ज
-            </a>
-          </div>
-        </button>
-        <button mat-button class="menu-button" ngbDropdown>
-          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
-            <mat-icon>dashboard</mat-icon>
-            <span>कार्यक्रम &nbsp;</span>
+            <mat-icon>event</mat-icon>
+            <span>कार्यक्रम वेळापत्रक &nbsp;</span>
           </button>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
             <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['कार्यक्रम']">कार्यक्रम
             </a>
-            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-कार्यक्रम']">सर्व कार्यक्रम
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['सर्व-कार्यक्रम']">कार्यक्रमांचे
+              वेळापत्रक
             </a>
           </div>
         </button>
-        <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/contact_us']">
-          <mat-icon>dashboard</mat-icon>
-          <span>Contact Us</span>
-        </button>
-        <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/privacy_policy']">
-          <mat-icon>dashboard</mat-icon>
-          <span>Privacy Policy</span>
+        <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/महत्वाचे-संपर्क']">
+          <mat-icon>phone</mat-icon>
+          <span>महत्वाचे संपर्क</span>
         </button>
         <button mat-button class="menu-button" (click)="logout()">
           <mat-icon>logout</mat-icon>
-          <span>Logout</span>
+          <span>लॉगआउट</span>
+        </button>
+        <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/VBH-Helpline']">
+          <mat-icon>contact_phone</mat-icon>
+          <span>VBH हेल्पलाइन</span>
         </button>
       </div>
     </div>

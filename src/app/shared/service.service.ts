@@ -44,8 +44,12 @@ export class ServiceService {
     return this.http.post<any>(`${this.url}/createkatran/`, data);
   }
 
-  postAavakJavakData(data: any): Observable<any> {
-    return this.http.post<any>(`${this.url}/createavakjavak/`, data);
+  postAavakData(data: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/createavak/`, data);
+  }
+
+  postJavakData(data: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/createjavak/`, data);
   }
 
   postNivedaneData(data: any): Observable<any> {
@@ -68,8 +72,12 @@ export class ServiceService {
     return this.http.get<any>(`${this.url}/katranbydate/?k_date=${date}`);
   }
 
-  getAllAavakJavakImages(): Observable<any> {
-    return this.http.get<any>(`${this.url}/allavakjavak/`);
+  getAllAavak(): Observable<any> {
+    return this.http.get<any>(`${this.url}/allavak/`);
+  }
+
+  getAllJavak(): Observable<any> {
+    return this.http.get<any>(`${this.url}/alljavak/`);
   }
 
   getInwardExcelReport(): Observable<Blob> {

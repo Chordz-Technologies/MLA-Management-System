@@ -3,86 +3,92 @@
         <div class="card p-3 me-4 px-md-5 py-3">
             <mat-card-title>
                 <h2 class="py-2 border-bottom">
-                    <i class="fa-solid fa-user"></i> <b> Edit Visitor Details</b>
+                    <i class="fa-solid fa-user"></i> <b> अपडेट विजिटर्सची माहिती</b>
                 </h2>
             </mat-card-title>
             <mat-card-content>
                 <form [formGroup]="editVisitorsForm" class="row g-3">
                     <div class="col-md-6">
-                        <label for="v_name" class="form-label"><b>Name</b><span class="text-danger fw-bold">
+                        <label for="v_name" class="form-label"><b>नाव</b><span class="text-danger fw-bold">
                                 *</span></label>
                         <input type="text" id="v_name" class="form-control" formControlName="v_name"
-                            placeholder="Enter Name" />
+                            placeholder="नाव लिहा" />
                     </div>
                     <div class="col-md-6">
-                        <label for="v_contactno" class="form-label"><b>Contact No.</b><span class="text-danger fw-bold">
+                        <label for="v_contactno" class="form-label"><b>संपर्क क्र.</b><span class="text-danger fw-bold">
                                 *</span></label>
                         <input type="tel" id="v_contactno" maxlength="13" class="form-control"
-                            formControlName="v_contactno" placeholder="Enter Contact No." />
+                            formControlName="v_contactno" placeholder="संपर्क क्रमांक लिहा" />
                     </div>
                     <div class="col-md-6">
-                        <label for="v_email" class="form-label"><b>Email ID</b></label>
-                        <input type="text" id="v_email" class="form-control" formControlName="v_email"
-                            placeholder="Enter Email ID" />
+                        <label for="v_birthdate" class="form-label"><b>जन्मतारीख</b></label>
+                        <input type="date" id="v_birthdate" class="form-control" formControlName="v_birthdate"
+                            placeholder="जन्मतारीख लिहा" />
                     </div>
                     <div class="col-md-6">
-                        <label for="v_address" class="form-label"><b>Address</b><span class="text-danger fw-bold">
+                        <label for="v_votingno" class="form-label"><b>मतदान कार्ड क्र.</b></label>
+                        <input type="text" id="v_votingno" class="form-control" formControlName="v_votingno"
+                            placeholder="मतदान कार्ड क्रमांक लिहा" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="v_address" class="form-label"><b>पत्ता</b><span class="text-danger fw-bold">
                                 *</span></label>
                         <input type="text" id="v_address" class="form-control" formControlName="v_address"
-                            placeholder="Enter Address" />
+                            placeholder="पत्ता लिहा" />
                     </div>
                     <div class="col-md-6">
-                        <label for="v_area" class="form-label"><b>Area</b><span class="text-danger fw-bold">
+                        <label for="v_area" class="form-label"><b>ठिकाण/क्षेत्र</b><span class="text-danger fw-bold">
                                 *</span></label>
                         <input type="text" id="v_area" class="form-control" formControlName="v_area"
-                            placeholder="Enter Area" />
+                            placeholder="ठिकाण/क्षेत्र लिहा" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="office" class="form-label"><b>ऑफिस</b><span class="text-danger fw-bold">
+                                *</span></label>
+                        <select class="form-select" aria-label="Default select example" formControlName="office">
+                            <option value="" selected disabled>ऑफिस निवडा</option>
+                            <option value="ऑफिस 1">ऑफिस 1</option>
+                            <option value="ऑफिस 2">ऑफिस 2</option>
+                            <option value="ऑफिस 3">ऑफिस 3</option>
+                        </select>
                     </div>
 
                     <div class="col-md-6">
-                        <label for="office" class="form-label"><b>Office</b><span class="text-danger fw-bold">
-                                *</span></label>
-                        <select class="form-select" aria-label="Default select example" formControlName="office">
-                            <option value="" selected disabled>Select Office</option>
-                            <option value="Office 1">Office 1</option>
-                            <option value="Office 2">Office 2</option>
-                            <option value="Office 3">Office 3</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="v_arja" class="form-label"><b>Application</b></label>
+                        <label for="v_arja" class="form-label"><b>अर्ज</b></label>
                         <input type="file" id="v_arja" class="form-control" (change)="onImageSelected($event)" />
                     </div>
+
                     <div class="col-md-6">
-                        <label for="v_problem" class="form-label"><b>Problems</b><span class="text-danger fw-bold">
+                        <label for="v_problem" class="form-label"><b>समस्या</b><span class="text-danger fw-bold">
                                 *</span></label>
                         <input type="text" id="v_problem" class="form-control" formControlName="v_problem"
-                            placeholder="Enter Your Problems" />
+                            placeholder="समस्या लिहा" />
                     </div>
                     <div class="col-md-6">
-                        <label for="v_date" class="form-label"><b>Today's Date</b><span class="text-danger fw-bold">
+                        <label for="v_date" class="form-label"><b>आजची तारीख व वेळ</b><span class="text-danger fw-bold">
                                 *</span></label>
                         <input type="datetime-local" id="v_date" class="form-control" formControlName="v_date" />
                     </div>
                     <div class="col-md-6">
-                        <label for="completion_date" class="form-label"><b>Completion Date</b><span
+                        <label for="completion_date" class="form-label"><b>काम पूर्ण होण्याची तारीख</b><span
                                 class="text-danger fw-bold"> *</span></label>
                         <input type="date" id="completion_date" class="form-control"
                             formControlName="completion_date" />
                     </div>
                     <div class="col-md-6">
-                        <label for="v_status" class="form-label"><b>Status</b><span class="text-danger fw-bold">
+                        <label for="v_status" class="form-label"><b>स्थिती</b><span class="text-danger fw-bold">
                                 *</span></label>
                         <select class="form-select" aria-label="Default select example" formControlName="v_status">
-                            <option value="" selected disabled>Select Status</option>
-                            <option value="Work In Progress">Work In Progress</option>
-                            <option value="Work Incomplete">Work Incomplete</option>
-                            <option value="Work Complete">Work Complete</option>
+                            <option value="" selected disabled>स्थिती निवडा</option>
+                            <option value="काम चालु">काम चालु</option>
+                            <option value="काम अपूर्ण">काम अपूर्ण</option>
+                            <option value="काम पूर्ण">काम पूर्ण</option>
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="v_comment" class="form-label"><b>Comments</b></label>
+                        <label for="v_comment" class="form-label"><b>कमेंट</b></label>
                         <input type="text" id="v_comment" class="form-control" formControlName="v_comment"
-                            placeholder="Enter Comments" />
+                            placeholder="कमेंट लिहा" />
                     </div>
                     <div class="col-12">
                         <div class="text-center my-3">

@@ -34,12 +34,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { DatePipe } from '@angular/common';
 import { KatranPageComponent } from './admin/sidebar/katrane/add-katrane/katran-page.component';
 import { EventsPageComponent } from './admin/sidebar/karykrame/add-events/events-page.component';
-import { AavakJavakPageComponent } from './admin/sidebar/aavak-javak/add-aavak-javak/aavak-javak-page.component';
-import { NivedaneComponent } from './admin/sidebar/yojaneche-arja/add-yojaneche-arja/nivedane.component';
+import { AavakPageComponent } from './admin/sidebar/aavak-javak/add-aavak/aavak-page.component';
 import { PatravyavharComponent } from './admin/sidebar/patravyavhar/patravyavhar.component';
 import { KatranImagesComponent } from './admin/sidebar/katrane/all-katrane/katran-images.component';
-import { AavakJavakImagesComponent } from './admin/sidebar/aavak-javak/all-aavak-javak/aavak-javak-images.component';
-import { NivedaneImagesComponent } from './admin/sidebar/yojaneche-arja/all-yojaneche-arja/nivedane-images.component';
+import { AllAavakComponent } from './admin/sidebar/aavak-javak/all-aavak/all-aavak.component';
 import { EventsImagesComponent } from './admin/sidebar/karykrame/all-events/events-images.component';
 import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RecordsComponent } from './admin/sidebar/visitors/all-records/records.component';
@@ -51,6 +49,8 @@ import { EditRecordsComponent } from './admin/sidebar/visitors/edit-records/edit
 import { EventNotificationsComponent } from './admin/sidebar/karykrame/event-notifications/event-notifications.component';
 import { ContactUsComponent } from './admin/sidebar/contact-us/contact-us.component';
 import { PrivacyPolicyComponent } from './admin/sidebar/privacy-policy/privacy-policy.component';
+import { AddJavakComponent } from './admin/sidebar/aavak-javak/add-javak/add-javak.component';
+import { AllJavakComponent } from './admin/sidebar/aavak-javak/all-javak/all-javak.component';
 
 @NgModule({
   declarations: [
@@ -64,12 +64,10 @@ import { PrivacyPolicyComponent } from './admin/sidebar/privacy-policy/privacy-p
     AddNewadminComponent,
     KatranPageComponent,
     EventsPageComponent,
-    AavakJavakPageComponent,
-    NivedaneComponent,
+    AavakPageComponent,
     PatravyavharComponent,
     KatranImagesComponent,
-    AavakJavakImagesComponent,
-    NivedaneImagesComponent,
+    AllAavakComponent,
     EventsImagesComponent,
     RecordsComponent,
     AddRecordsComponent,
@@ -80,6 +78,8 @@ import { PrivacyPolicyComponent } from './admin/sidebar/privacy-policy/privacy-p
     EventNotificationsComponent,
     ContactUsComponent,
     PrivacyPolicyComponent,
+    AddJavakComponent,
+    AllJavakComponent,
   ],
 
   imports: [

@@ -1,23 +1,23 @@
-<div class="row mx-auto">
+<div class="row mx-auto pt-3">
   <div class="col-md-6">
     <div class="dashboard-cards text-center">
       <div class="card" style="background-color: rgb(85, 85, 252);">
-        <h2><b>Visitor Count</b></h2>
+        <h2><b>एकूण विजिटर्स</b></h2>
         <p>{{ visitorCount }}</p>
       </div>
 
       <div class="card" style="background-color: rgb(60, 152, 60);">
-        <h2><b>Complete Work</b></h2>
+        <h2><b>पूर्ण कामे</b></h2>
         <p>{{ completeWorkCount }}</p>
       </div>
 
       <div class="card" style="background-color: rgb(228, 71, 71);">
-        <h2><b>Incomplete Work</b></h2>
+        <h2><b>अपूर्ण कामे</b></h2>
         <p>{{ incompleteWorkCount }}</p>
       </div>
 
       <div class="card" style="background-color: rgb(255, 166, 0);">
-        <h2><b>In Progress Work</b></h2>
+        <h2><b>चालु कामे</b></h2>
         <p>{{ inProgressWorkCount }}</p>
       </div>
     </div>
@@ -32,7 +32,7 @@
   </div>
 </div>
 
-<div class="row mt-3 mx-auto">
+<!-- <div class="row mt-3 mx-auto">
   <div class="col-lg-3">
     <a href="https://aaplesarkar.mahaonline.gov.in/" target="_blank">
       <button mat-raised-button color="primary" class="link-btn">
@@ -44,7 +44,7 @@
   <div class="col-lg-3">
     <a href="https://punepolice.gov.in/" target="_blank">
       <button mat-raised-button color="primary" class="link-btn">
-        <b>पुणे शहर पोलिस</b>
+        <b>पुणे शहर पोलीस</b>
         <span class="highlight-text">Imp Link</span>
       </button>
     </a>
@@ -73,42 +73,85 @@
       </button>
     </a>
   </div>
+  <div class="col-lg-3">
+    <a href="https://puneruralpolice.gov.in/" target="_blank">
+      <button mat-raised-button color="primary" class="link-btn">
+        <b>पुणे ग्रामीण पोलीस</b>
+        <span class="highlight-text">Imp Link</span>
+      </button>
+    </a>
+  </div>
+</div> -->
+
+<div class="my-main-div row mx-auto pt-5 pb-3 justify-content-center">
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center mb-3">
+    <a href="https://aaplesarkar.mahaonline.gov.in/" target="_blank">
+      <img src="./assets/Images/aaple-sarkar.jpg" alt="आपले सरकार" class="link-img img-fluid" />
+    </a>
+  </div>
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center mb-3">
+    <a href="https://punepolice.gov.in/" target="_blank">
+      <img src="./assets/Images/pune-police.png" alt="पुणे शहर पोलीस" class="link-img img-fluid" />
+    </a>
+  </div>
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center mb-3">
+    <a href="https://www.maharashtra.gov.in/" target="_blank">
+      <img src="./assets/Images/shasan-logo.jpg" alt="महाराष्ट्र शासन" class="link-img img-fluid" />
+    </a>
+  </div>
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center mb-3">
+    <a href="https://zppune.org/pgeHome.aspx" target="_blank">
+      <img src="./assets/Images/pune-parishad.png" alt="पुणे जिल्हा परिषद" class="link-img img-fluid" />
+    </a>
+  </div>
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center mb-3">
+    <a href="https://gr.maharashtra.gov.in/1145/Government-Resolutions" target="_blank">
+      <img src="./assets/Images/shasan-logo.jpg" alt="शासकीय निर्णय" class="link-img img-fluid" />
+    </a>
+  </div>
+  <div class="col-6 col-sm-4 col-md-3 col-lg-2 text-center mb-3">
+    <a href="https://puneruralpolice.gov.in/" target="_blank">
+      <img src="./assets/Images/police.jpg" alt="पुणे ग्रामीण पोलीस" class="link-img img-fluid" />
+    </a>
+  </div>
 </div>
+
+
 
 <div class="main-div pt-4 pb-3">
   <mat-form-field style="width: 60%">
-    <mat-label><mat-icon>search</mat-icon> Search</mat-label>
+    <mat-label><mat-icon>search</mat-icon> शोधा</mat-label>
     <input matInput (keyup)="applyFilter($event)" #input />
   </mat-form-field>
 
   <button mat-raised-button color="primary" class="mybtn float-right" routerLink="/add_new_admin">
-    Add New Admin
+    नवीन ॲडमिन जोडा
   </button>
 
   <div *ngIf="dataLoaded" class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="said">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header><b>ID</b></th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header><b>आयडी</b></th>
         <td mat-cell *matCellDef="let row; let i = index">{{ i + 1 }}</td>
       </ng-container>
 
       <ng-container matColumnDef="contactno">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Contact No.</b>
+          <b>संपर्क क्र.</b>
         </th>
         <td mat-cell *matCellDef="let row">{{ row.a_contactno }}</td>
       </ng-container>
 
       <ng-container matColumnDef="saname">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Full Name</b>
+          <b>पूर्ण नाव</b>
         </th>
         <td mat-cell *matCellDef="let row">{{ row.a_name }}</td>
       </ng-container>
 
       <ng-container matColumnDef="samessage">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Message</b>
+          <b>संदेश</b>
         </th>
         <td mat-cell *matCellDef="let row">
           {{ row.a_message }}
@@ -117,7 +160,7 @@
 
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>
-          <b>Action</b>
+          <b>कृती</b>
         </th>
         <td mat-cell *matCellDef="let row">
           <button (click)="edit(row.a_id)">

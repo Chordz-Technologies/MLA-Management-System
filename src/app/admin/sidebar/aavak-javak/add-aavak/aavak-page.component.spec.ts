@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AavakJavakPageComponent } from './aavak-javak-page.component';
+import { AavakPageComponent } from './aavak-page.component';
 
 describe('AavakJavakPageComponent', () => {
-  let component: AavakJavakPageComponent;
-  let fixture: ComponentFixture<AavakJavakPageComponent>;
+  let component: AavakPageComponent;
+  let fixture: ComponentFixture<AavakPageComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AavakJavakPageComponent]
+      declarations: [AavakPageComponent]
     });
-    fixture = TestBed.createComponent(AavakJavakPageComponent);
+    fixture = TestBed.createComponent(AavakPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
