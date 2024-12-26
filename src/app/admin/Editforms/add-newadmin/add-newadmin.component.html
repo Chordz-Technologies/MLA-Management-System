@@ -12,29 +12,25 @@
           <!-- Added grid class -->
           <div class="col-md-6">
             <!-- Adjusted column width for medium and larger screens -->
-            <label for="adminUsername" class="form-label"><b>ॲडमिनचे नाव</b><span class="text-danger fw-bold">
-                *</span></label>
+            <label for="adminUsername" class="form-label"><b>ॲडमिनचे नाव</b></label>
             <input type="text" id="adminUsername" class="form-control" formControlName="adminUsername"
               placeholder="'लॉग इन' साठी वापरणारे ॲडमिनचे नाव लिहा" />
           </div>
           <div class="col-md-6">
             <!-- Adjusted column width for medium and larger screens -->
-            <label for="adminname" class="form-label"><b>पूर्ण नाव</b><span class="text-danger fw-bold">
-                *</span></label>
+            <label for="adminname" class="form-label"><b>पूर्ण नाव</b></label>
             <input type="text" id="adminname" class="form-control" formControlName="adminname"
               placeholder="पूर्ण नाव लिहा" />
           </div>
           <div class="col-md-6">
             <!-- Adjusted column width for medium and larger screens -->
-            <label for="contactno" class="form-label"><b>संपर्क क्र.</b><span class="text-danger fw-bold">
-                *</span></label>
-            <input type="tel" id="contactno" maxlength="10" class="form-control" formControlName="contactno"
+            <label for="contactno" class="form-label"><b>संपर्क क्र.</b></label>
+            <input type="tel" id="contactno" maxlength="13" class="form-control" formControlName="contactno"
               placeholder="संपर्क क्रमांक लिहा" />
           </div>
           <div class="col-md-6 position-relative">
             <!-- Adjusted column width for medium and larger screens -->
-            <label for="passWord" class="form-label"><b>पासवर्ड</b><span class="text-danger fw-bold">
-                *</span></label>
+            <label for="passWord" class="form-label"><b>पासवर्ड</b></label>
             <input type="{{ hidePassword ? 'text' : 'password' }}" id="passWord" class="form-control"
               formControlName="passWord" placeholder="पासवर्ड लिहा" />
             <span class="position-absolute end-0 top-50 translate-middle-y"
@@ -45,8 +41,7 @@
           </div>
           <div class="col-md-6 position-relative">
             <!-- Adjusted column width for medium and larger screens -->
-            <label for="conPassword" class="form-label"><b>कन्फर्म पासवर्ड</b><span class="text-danger fw-bold">
-                *</span></label>
+            <label for="conPassword" class="form-label"><b>कन्फर्म पासवर्ड</b></label>
             <input type="{{ hideCPassword ? 'text' : 'password' }}" id="conPassword" class="form-control"
               formControlName="conPassword" placeholder="कन्फर्म पासवर्ड लिहा" />
             <span class="position-absolute end-0 top-50 translate-middle-y" style="padding-right: 25px;">
@@ -56,20 +51,19 @@
           </div>
           <div class="col-md-6">
             <!-- Adjusted column width for medium and larger screens -->
-            <label for="smessage" class="form-label"><b>संदेश</b><span class="text-danger fw-bold"> *</span></label>
+            <label for="smessage" class="form-label"><b>संदेश</b></label>
             <textarea type="text" class="form-control" formControlName="smessage"
               placeholder="ॲडमिनसाठी संदेश पाठवा"></textarea>
           </div>
           <div class="col-md-6">
-            <label for="pracharImage" class="form-label"><b>फोटो/फाइल</b><span class="text-danger fw-bold">
-                *</span></label>
+            <label for="pracharImage" class="form-label"><b>फोटो/फाइल</b></label>
             <input type="file" id="pracharImage" class="form-control" (change)="onImageSelected($event)"
               accept="image/*" />
           </div>
 
           <div class="col-md-6 pt-3">
             <!-- Adjusted column width for medium and larger screens -->
-            <label class="form-label"><b>प्रोफाइल निवडा</b><span class="text-danger fw-bold"> *</span></label>
+            <label class="form-label"><b>प्रोफाइल निवडा</b></label>
             <div class="form-check">
               <input class="form-check-input" type="radio" id="option1" name="options" formControlName="options"
                 value="1" />

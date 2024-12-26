@@ -17,6 +17,8 @@ export class EventsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.eventsForm = this.fb.group({
+      k_name: this.fb.control(''),
+      k_contactno: this.fb.control(''),
       k_date: this.fb.control(''),
       k_time: this.fb.control(''),
       k_location: this.fb.control(''),
@@ -36,19 +38,21 @@ export class EventsPageComponent implements OnInit {
 
   postEventsData() {
     const eventsData = {
-      k_date: this.eventsForm.value.k_date,
-      k_time: this.eventsForm.value.k_time,
-      k_location: this.eventsForm.value.k_location,
-      k_subject: this.eventsForm.value.k_subject,
-      comments: this.eventsForm.value.comments
+      k_name: this.eventsForm.value.k_name || '',
+      k_contactno: this.eventsForm.value.k_contactno || '',
+      k_date: this.eventsForm.value.k_date || '',
+      k_time: this.eventsForm.value.k_time || '',
+      k_location: this.eventsForm.value.k_location || '',
+      k_subject: this.eventsForm.value.k_subject || '',
+      comments: this.eventsForm.value.comments || '',
     };
 
-    const { k_date, k_time, k_location } = eventsData;
+    // const { k_date, k_time, k_location } = eventsData;
 
-    if (!k_date || !k_time || !k_location) {
-      this.toastr.error('Please fill all the fields.', 'Error');
-      return;
-    }
+    // if (!k_date || !k_time || !k_location) {
+    //   this.toastr.error('Please fill all the fields.', 'Error');
+    //   return;
+    // }
 
     const formData: FormData = new FormData();
     // Append only non-null values to the FormData
@@ -58,7 +62,7 @@ export class EventsPageComponent implements OnInit {
 
     // Check if the image (arja file) exists and append it to the FormData if present
     if (this.eventImage) {
-      formData.append('k_photos', this.eventImage);
+      formData.append('k_photos', this.eventImage || '');
     }
 
     this.service.postEventsData(formData).subscribe((res) => {

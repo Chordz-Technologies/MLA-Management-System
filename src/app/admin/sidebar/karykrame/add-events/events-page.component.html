@@ -9,34 +9,44 @@
             <mat-card-content>
                 <form [formGroup]="eventsForm">
                     <div class="row mb-3">
-                        <label for="date" class="col-sm-2 col-form-label"><b>तारीख</b><span class="text-danger fw-bold">
-                                *</span></label>
+                        <label for="name" class="col-sm-2 col-form-label"><b>नाव</b></label>
+                        <div class="col-sm-10">
+                            <input type="text" id="name" class="form-control" formControlName="k_name"
+                                placeholder="नाव लिहा" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="contactno" class="col-sm-2 col-form-label"><b>संपर्क क्र.</b></label>
+                        <div class="col-sm-10">
+                            <input type="tel" id="contactno" maxlength="13" class="form-control"
+                                formControlName="k_contactno" placeholder="संपर्क क्रमांक लिहा" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="date" class="col-sm-2 col-form-label"><b>तारीख</b></label>
                         <div class="col-sm-10">
                             <input type="date" id="date" class="form-control" formControlName="k_date"
                                 placeholder="तारीख लिहा" />
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="time" class="col-sm-2 col-form-label"><b>वेळ</b><span class="text-danger fw-bold">
-                                *</span></label>
+                        <label for="time" class="col-sm-2 col-form-label"><b>वेळ</b></label>
                         <div class="col-sm-10">
                             <input type="time" id="time" class="form-control" formControlName="k_time"
                                 placeholder="वेळ लिहा" />
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="location" class="col-sm-2 col-form-label"><b>पत्ता</b><span
-                                class="text-danger fw-bold">
-                                *</span></label>
+                        <label for="location" class="col-sm-2 col-form-label"><b>पत्ता</b></label>
                         <div class="col-sm-10">
                             <input type="text" id="location" class="form-control" formControlName="k_location"
                                 placeholder="पत्ता लिहा" />
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="location" class="col-sm-2 col-form-label"><b>कार्यक्रमाचा विषय</b></label>
+                        <label for="subject" class="col-sm-2 col-form-label"><b>कार्यक्रमाचा विषय</b></label>
                         <div class="col-sm-10">
-                            <input type="text" id="location" class="form-control" formControlName="k_subject"
+                            <input type="text" id="subject" class="form-control" formControlName="k_subject"
                                 placeholder="कार्यक्रमाचा विषय लिहा" />
                         </div>
                     </div>

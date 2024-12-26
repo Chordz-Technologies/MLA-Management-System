@@ -52,7 +52,7 @@
 
       <ng-container matColumnDef="dob">
         <th mat-header-cell *matHeaderCellDef><b>जन्मतारीख</b></th>
-        <td mat-cell *matCellDef="let row"> {{row.v_birthdate}} </td>
+        <td mat-cell *matCellDef="let row"> {{ row.v_birthdate | date: 'dd-MMM-yyyy' }} </td>
       </ng-container>
 
       <ng-container matColumnDef="votingno">
@@ -67,12 +67,12 @@
 
       <ng-container matColumnDef="date">
         <th mat-header-cell *matHeaderCellDef><b>तारीख व वेळ</b></th>
-        <td mat-cell *matCellDef="let row"> {{row.v_date}} </td>
+        <td mat-cell *matCellDef="let row"> {{ row.v_date | date: 'dd-MMM-yyyy, h:mm a' }} </td>
       </ng-container>
 
       <ng-container matColumnDef="completion_date">
         <th mat-header-cell *matHeaderCellDef><b>काम पूर्ण होण्याची तारीख</b></th>
-        <td mat-cell *matCellDef="let row"> {{row.completion_date}} </td>
+        <td mat-cell *matCellDef="let row"> {{row.completion_date | date: 'dd-MMM-yyyy'}} </td>
       </ng-container>
 
       <ng-container matColumnDef="status">
@@ -108,10 +108,11 @@
       <ng-container matColumnDef="contact_now">
         <th mat-header-cell *matHeaderCellDef><b>संपर्क करा</b></th>
         <td mat-cell *matCellDef="let row" class="text-center">
-          <a [href]="'https://api.whatsapp.com/send?phone=' + row.v_contactno" target="_blank"><i
-              class="fab fa-whatsapp" style="font-size: 25px; color: rgb(4, 216, 4);"></i></a>
+          <a [href]="'https://api.whatsapp.com/send?phone=' + row.v_contactno + '&text=' + encodeMessage(row)" target="_blank">
+            <i class="fab fa-whatsapp" style="font-size: 25px; color: rgb(4, 216, 4);"></i>
+          </a>
         </td>
-      </ng-container>
+      </ng-container>      
 
       <ng-container matColumnDef="text_msg">
         <th mat-header-cell *matHeaderCellDef><b>SMS करा</b></th>

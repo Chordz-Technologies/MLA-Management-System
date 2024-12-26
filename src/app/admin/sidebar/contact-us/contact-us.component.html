@@ -1,19 +1,48 @@
-<div class="main-div pt-3 pb-4">
-    <h1 class="text-center pt-4 pb-2"><b>महत्वाचे संपर्क</b></h1>
-    <!-- <p class="pt-4 pb-2">कोथरूड, पुणे येथील काही महत्त्वाचे सरकारी क्रमांक येथे आहेत: </p>
-    <ul>
-        <li>पुणे महानगरपालिका (PMC) : 1800-1030-222</li><br>
-        <li>पोलीस : 100</li><br>
-        <li>रुग्णवाहिका : 108</li><br>
-        <li>अग्निशमन दल : 104</li><br>
-        <li>आपत्ती व्यवस्थापन नियंत्रण कक्ष : १०७७</li><br>
-        <li>चाइल्ड हेल्पलाइन : १०९८</li><br>
-        <li>महिला हेल्पलाइन : १०९१</li><br>
-        <li>NIC सर्व्हिस डेस्क : १८००-१११-५५५</li><br>
-        <li>कोरोना व्हायरस केंद्रीय हेल्पलाइन : ०११-२३९७८०४३/४६</li><br>
-        <li>कोरोना व्हायरस महाराष्ट्र हेल्पलाइन : ०२०-२६१२७३९४</li><br>
-        <li>कोथरूड पोलीस स्टेशन : 02025391010, 2025391515</li><br>
-        <li>पुणे शहर पोलीस नियंत्रण कक्ष : 02026126296, 02026122880</li><br>
-        <li>पुणे शहर पोलीस सायबर पोलीस स्टेशन : 02029710097, 7058719371, 7058719375</li><br>
-    </ul> -->
+<div class="main-div pt-5 pb-3">
+    <mat-form-field style="width: 60%">
+        <mat-label><mat-icon>search</mat-icon> शोधा</mat-label>
+        <input matInput (keyup)="applyFilter($event)" #input />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="mybtn float-right" routerLink="/add-contacts">
+        नवीन संपर्क जोडा
+    </button>
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header><b>क्र.</b></th>
+                <td mat-cell *matCellDef="let row; let i = index">{{ i + 1 }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header><b>संपर्काचे नाव</b></th>
+                <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="contactno">
+                <th mat-header-cell *matHeaderCellDef><b>संपर्क क्रमांक</b></th>
+                <td mat-cell *matCellDef="let row"> {{ row.phone_number }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    <b>कृती</b>
+                </th>
+                <td mat-cell *matCellDef="let row">
+                    <button (click)="edit(row.id)">
+                        <mat-icon color="primary">edit</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4" style="padding: 10px">
+                    No data matching "{{ input.value }}"
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>

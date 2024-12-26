@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Admin_model } from 'src/app/models';
@@ -25,21 +25,13 @@ export class AddNewadminComponent implements OnInit {
   ngOnInit(): void {
     this.addAdminForm = this.fb.group({
       id: [''],
-      adminUsername: this.fb.control('', [Validators.required]),
-      adminname: this.fb.control('', [Validators.required]),
-      contactno: this.fb.control('', [
-        Validators.required,
-        Validators.minLength(10),
-        Validators.pattern('[0-9]*'),
-      ]),
-      passWord: this.fb.control('', [Validators.required]),
-      conPassword: this.fb.control('', [Validators.required]),
-      smessage: this.fb.control('', [
-        Validators.required,
-        Validators.maxLength(150),
-      ]),
-      options: this.fb.control('', [Validators.required]),
-      // pracharImage: ['']
+      adminUsername: this.fb.control(''),
+      adminname: this.fb.control(''),
+      contactno: this.fb.control(''),
+      passWord: this.fb.control(''),
+      conPassword: this.fb.control(''),
+      smessage: this.fb.control(''),
+      options: this.fb.control(''),
     })
 
     this.addAdminForm.reset()
@@ -59,34 +51,34 @@ export class AddNewadminComponent implements OnInit {
 
   postSuperAdminDetails() {
     const adminData = {
-      a_username: this.addAdminForm.value.adminUsername,
-      a_name: this.addAdminForm.value.adminname,
-      a_contactno: this.addAdminForm.value.contactno,
-      a_password: this.addAdminForm.value.passWord,
-      a_confirmpassword: this.addAdminForm.value.conPassword,
-      a_message: this.addAdminForm.value.smessage,
+      a_username: this.addAdminForm.value.adminUsername || '',
+      a_name: this.addAdminForm.value.adminname || '',
+      a_contactno: this.addAdminForm.value.contactno || '',
+      a_password: this.addAdminForm.value.passWord || '',
+      a_confirmpassword: this.addAdminForm.value.conPassword || '',
+      a_message: this.addAdminForm.value.smessage || '',
       a_typesuperadmin: 0,
       a_typesupersuperadmin: 0,
       a_typeadmin: this.addAdminForm.value.options === '1' ? 1 : 0,
-      a_files: this.adminImageData,
+      a_files: this.adminImageData || '',
     };
 
-    const { a_username, a_name, a_contactno, a_password, a_confirmpassword, a_message, a_typeadmin, a_files } = adminData;
+    const { a_password, a_confirmpassword } = adminData;
 
-    if (!a_username || !a_name || !a_contactno || !a_password || !a_confirmpassword || !a_typeadmin || !a_files || !a_message) {
-      this.toastr.error('Please fill all the fields.', 'Error');
-      return;
-    }
+    // if (!a_username || !a_name || !a_contactno || !a_password || !a_confirmpassword || !a_typeadmin || !a_files || !a_message) {
+    //   this.toastr.error('Please fill all the fields.', 'Error');
+    //   return;
+    // }
 
     if (a_password !== a_confirmpassword) {
       this.toastr.error('Password and Confirm Password do not match.', 'Error');
       return;
     }
 
-    if (a_message.length > 150) {
-      this.toastr.error('Message cannot be more than 150 characters.', 'Error');
-      return;
-    }
+    // if (a_message.length > 150) {
+    //   this.toastr.error('Message cannot be more than 150 characters.', 'Error');
+    //   return;
+    // }
 
     const formData: FormData = new FormData();
     for (const [key, value] of Object.entries(adminData)) {

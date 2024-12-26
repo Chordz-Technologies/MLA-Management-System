@@ -58,7 +58,22 @@ export class EditRecordsComponent implements OnInit {
   }
 
   fillFormToUpdate(visitor: Visitor_model) {
-    const localDateTime = new Date(visitor.v_date).toISOString().slice(0, 16); // Format to YYYY-MM-DDTHH:MM
+    let localDateTime = ''; // Default to blank
+
+    if (visitor.v_date) {
+      const dateObj = new Date(visitor.v_date);
+
+      // Extract local date and time components
+      const year = dateObj.getFullYear();
+      const month = String(dateObj.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+      const day = String(dateObj.getDate()).padStart(2, '0');
+      const hours = String(dateObj.getHours()).padStart(2, '0');
+      const minutes = String(dateObj.getMinutes()).padStart(2, '0');
+
+      // Format to YYYY-MM-DDTHH:MM
+      localDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
+    }
+
     this.editVisitorsForm.setValue({
       v_id: visitor.v_id,
       v_name: visitor.v_name,
@@ -68,28 +83,29 @@ export class EditRecordsComponent implements OnInit {
       v_address: visitor.v_address,
       v_area: visitor.v_area,
       v_problem: visitor.v_problem,
-      v_date: localDateTime,  // Use the formatted date here
+      v_date: localDateTime,  // Use the formatted date or blank
       completion_date: visitor.completion_date,
       v_comment: visitor.v_comment,
       v_status: visitor.v_status,
       office: visitor.office
-    })
+    });
   }
+
 
   update() {
     const VisitorData = {
-      v_name: this.editVisitorsForm.value.v_name,
-      v_contactno: this.editVisitorsForm.value.v_contactno,
-      v_birthdate: this.editVisitorsForm.value.v_birthdate,
-      v_votingno: this.editVisitorsForm.value.v_votingno,
-      v_address: this.editVisitorsForm.value.v_address,
-      v_area: this.editVisitorsForm.value.v_area,
-      v_problem: this.editVisitorsForm.value.v_problem,
-      v_date: this.editVisitorsForm.value.v_date,
-      completion_date: this.editVisitorsForm.value.completion_date,
-      v_comment: this.editVisitorsForm.value.v_comment,
-      v_status: this.editVisitorsForm.value.v_status,
-      office: this.editVisitorsForm.value.office,
+      v_name: this.editVisitorsForm.value.v_name || '',
+      v_contactno: this.editVisitorsForm.value.v_contactno || '',
+      v_birthdate: this.editVisitorsForm.value.v_birthdate || '',
+      v_votingno: this.editVisitorsForm.value.v_votingno || '',
+      v_address: this.editVisitorsForm.value.v_address || '',
+      v_area: this.editVisitorsForm.value.v_area || '',
+      v_problem: this.editVisitorsForm.value.v_problem || '',
+      v_date: this.editVisitorsForm.value.v_date || '',
+      completion_date: this.editVisitorsForm.value.completion_date || '',
+      v_comment: this.editVisitorsForm.value.v_comment || '',
+      v_status: this.editVisitorsForm.value.v_status || '',
+      office: this.editVisitorsForm.value.office || '',
       ...(this.applicationImg ? { v_arja: this.applicationImg } : {})      // aphotos: this.artistForm.value.artist_photos || '',
     };
 

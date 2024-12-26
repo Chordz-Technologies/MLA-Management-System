@@ -31,7 +31,7 @@ export class KatranPageComponent implements OnInit {
 
   onPaperChange(event: Event): void {
     const selectedValue = (event.target as HTMLSelectElement).value;
-    if (selectedValue === 'Other') {
+    if (selectedValue === 'इतर') {
       this.isOtherSelected = true;
       this.paperCuttingForm.get('k_otherpaper')?.enable();
     } else {
@@ -62,23 +62,23 @@ export class KatranPageComponent implements OnInit {
   postPaperCuttings() {
     const k_important_value = this.paperCuttingForm.value.k_important ? 1 : 0;
     const paperCuttingData = {
-      k_date: this.paperCuttingForm.value.k_date,
-      k_paper: this.paperCuttingForm.value.k_paper,
-      k_label: this.paperCuttingForm.value.k_label,
-      k_image: this.paperImage,
-      k_otherpaper: this.paperCuttingForm.value.k_otherpaper,
+      k_date: this.paperCuttingForm.value.k_date || '',
+      k_paper: this.paperCuttingForm.value.k_paper || '',
+      k_label: this.paperCuttingForm.value.k_label || '',
+      // k_image: this.paperImage,
+      k_otherpaper: this.paperCuttingForm.value.k_otherpaper || '',
       k_important: k_important_value,
-      k_medialink: this.paperCuttingForm.value.k_medialink,
-      k_newslink: this.paperCuttingForm.value.k_newslink,
-      k_file: this.tvMedia,
+      k_medialink: this.paperCuttingForm.value.k_medialink || '',
+      k_newslink: this.paperCuttingForm.value.k_newslink || '',
+      // k_file: this.tvMedia,
     };
 
-    const { k_date, k_paper, k_label, k_image } = paperCuttingData;
+    // const { k_date, k_paper, k_label, k_image } = paperCuttingData;
 
-    if (!k_date || !k_paper || !k_label || !k_image) {
-      this.toastr.error('Please fill all the fields.', 'Error');
-      return;
-    }
+    // if (!k_date || !k_paper || !k_label || !k_image) {
+    //   this.toastr.error('Please fill all the fields.', 'Error');
+    //   return;
+    // }
 
     const formData: FormData = new FormData();
 
@@ -90,12 +90,12 @@ export class KatranPageComponent implements OnInit {
 
     // Conditionally append the image if it's selected
     if (this.paperImage) {
-      formData.append('k_image', this.paperImage);
+      formData.append('k_image', this.paperImage || '');
     }
 
     // Conditionally append the media file if it's selected
     if (this.tvMedia) {
-      formData.append('k_file', this.tvMedia);
+      formData.append('k_file', this.tvMedia || '');
     }
 
     this.service.postPaperCuttings(formData).subscribe((res) => {

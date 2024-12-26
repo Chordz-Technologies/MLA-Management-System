@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ServiceService } from 'src/app/shared/service.service';
@@ -18,19 +18,19 @@ export class AddRecordsComponent {
   ngOnInit(): void {
     this.addVisitorsData = this.fb.group({
       id: [''],
-      v_name: this.fb.control('', [Validators.required]),
-      v_contactno: this.fb.control('', [Validators.required]),
-      v_birthdate: this.fb.control('', [Validators.required]),
-      v_votingno: this.fb.control('', [Validators.required]),
-      v_address: this.fb.control('', [Validators.required]),
-      v_area: this.fb.control('', [Validators.required]),
-      v_arja: this.fb.control('', [Validators.required]),
-      v_problem: this.fb.control('', [Validators.required]),
-      v_date: this.fb.control('', [Validators.required]),
-      completion_date: this.fb.control('', [Validators.required]),
-      v_comment: this.fb.control('', [Validators.required]),
-      v_status: this.fb.control('', [Validators.required]),
-      office: this.fb.control('', [Validators.required])
+      v_name: this.fb.control(''),
+      v_contactno: this.fb.control(''),
+      v_birthdate: this.fb.control(''),
+      v_votingno: this.fb.control(''),
+      v_address: this.fb.control(''),
+      v_area: this.fb.control(''),
+      v_arja: this.fb.control(''),
+      v_problem: this.fb.control(''),
+      v_date: this.fb.control(''),
+      completion_date: this.fb.control(''),
+      v_comment: this.fb.control(''),
+      v_status: this.fb.control(''),
+      office: this.fb.control('')
     })
   }
 
@@ -45,26 +45,26 @@ export class AddRecordsComponent {
 
   postSuperAdminDetails() {
     const VisitorData = {
-      v_name: this.addVisitorsData.value.v_name,
-      v_contactno: this.addVisitorsData.value.v_contactno,
-      v_birthdate: this.addVisitorsData.value.v_birthdate,
-      v_votingno: this.addVisitorsData.value.v_votingno,
-      v_address: this.addVisitorsData.value.v_address,
-      v_area: this.addVisitorsData.value.v_area,
-      v_problem: this.addVisitorsData.value.v_problem,
-      v_date: this.addVisitorsData.value.v_date,
-      completion_date: this.addVisitorsData.value.completion_date,
-      v_comment: this.addVisitorsData.value.v_comment,
-      v_status: this.addVisitorsData.value.v_status,
-      office: this.addVisitorsData.value.office,
+      v_name: this.addVisitorsData.value.v_name || '',
+      v_contactno: this.addVisitorsData.value.v_contactno || '',
+      v_birthdate: this.addVisitorsData.value.v_birthdate || '',
+      v_votingno: this.addVisitorsData.value.v_votingno || '',
+      v_address: this.addVisitorsData.value.v_address || '',
+      v_area: this.addVisitorsData.value.v_area || '',
+      v_problem: this.addVisitorsData.value.v_problem || '',
+      v_date: this.addVisitorsData.value.v_date || '',
+      completion_date: this.addVisitorsData.value.completion_date || '',
+      v_comment: this.addVisitorsData.value.v_comment || '',
+      v_status: this.addVisitorsData.value.v_status || '',
+      office: this.addVisitorsData.value.office || '',
     };
 
-    const { v_name, v_contactno, v_address, v_area, v_problem, v_date, completion_date, v_status, office } = VisitorData;
+    // const { v_name, v_contactno, v_address, v_area, v_problem, v_date, completion_date, v_status, office } = VisitorData;
 
-    if (!v_name || !v_contactno || !v_address || !v_area || !v_problem || !v_date || !completion_date || !v_status || !office) {
-      this.toastr.error('Please fill all the fields.', 'Error');
-      return;
-    }
+    // if (!v_name || !v_contactno || !v_address || !v_area || !v_problem || !v_date || !completion_date || !v_status || !office) {
+    //   this.toastr.error('Please fill all the fields.', 'Error');
+    //   return;
+    // }
 
     const formData: FormData = new FormData();
     // Append only non-null values to the FormData
@@ -74,7 +74,7 @@ export class AddRecordsComponent {
 
     // Check if the image (arja file) exists and append it to the FormData if present
     if (this.applicationImg) {
-      formData.append('v_arja', this.applicationImg);
+      formData.append('v_arja', this.applicationImg  || '');
     }
 
     this.service.postVisitorData(formData).subscribe((res) => {

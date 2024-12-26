@@ -9,14 +9,12 @@
             <mat-card-content>
                 <form [formGroup]="addVisitorsData" class="row g-3">
                     <div class="col-md-6">
-                        <label for="v_name" class="form-label"><b>नाव</b><span class="text-danger fw-bold">
-                                *</span></label>
+                        <label for="v_name" class="form-label"><b>नाव</b></label>
                         <input type="text" id="v_name" class="form-control" formControlName="v_name"
                             placeholder="नाव लिहा" />
                     </div>
                     <div class="col-md-6">
-                        <label for="v_contactno" class="form-label"><b>संपर्क क्र.</b><span class="text-danger fw-bold">
-                                *</span></label>
+                        <label for="v_contactno" class="form-label"><b>संपर्क क्र.</b></label>
                         <input type="tel" id="v_contactno" maxlength="13" class="form-control"
                             formControlName="v_contactno" placeholder="संपर्क क्रमांक लिहा" />
                     </div>
@@ -31,20 +29,17 @@
                             placeholder="मतदान कार्ड क्रमांक लिहा" />
                     </div>
                     <div class="col-md-6">
-                        <label for="v_address" class="form-label"><b>पत्ता</b><span class="text-danger fw-bold">
-                                *</span></label>
+                        <label for="v_address" class="form-label"><b>पत्ता</b></label>
                         <input type="text" id="v_address" class="form-control" formControlName="v_address"
                             placeholder="पत्ता लिहा" />
                     </div>
                     <div class="col-md-6">
-                        <label for="v_area" class="form-label"><b>ठिकाण/क्षेत्र</b><span class="text-danger fw-bold">
-                                *</span></label>
+                        <label for="v_area" class="form-label"><b>ठिकाण/क्षेत्र</b></label>
                         <input type="text" id="v_area" class="form-control" formControlName="v_area"
                             placeholder="ठिकाण/क्षेत्र लिहा" />
                     </div>
                     <div class="col-md-6">
-                        <label for="office" class="form-label"><b>ऑफिस</b><span class="text-danger fw-bold">
-                                *</span></label>
+                        <label for="office" class="form-label"><b>ऑफिस</b></label>
                         <select class="form-select" aria-label="Default select example" formControlName="office">
                             <option value="" selected disabled>ऑफिस निवडा</option>
                             <option value="ऑफिस 1">ऑफिस 1</option>
@@ -59,25 +54,21 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label for="v_problem" class="form-label"><b>समस्या</b><span class="text-danger fw-bold">
-                                *</span></label>
+                        <label for="v_problem" class="form-label"><b>समस्या</b></label>
                         <input type="text" id="v_problem" class="form-control" formControlName="v_problem"
                             placeholder="समस्या लिहा" />
                     </div>
                     <div class="col-md-6">
-                        <label for="v_date" class="form-label"><b>आजची तारीख व वेळ</b><span class="text-danger fw-bold">
-                                *</span></label>
+                        <label for="v_date" class="form-label"><b>आजची तारीख व वेळ</b></label>
                         <input type="datetime-local" id="v_date" class="form-control" formControlName="v_date" />
                     </div>
                     <div class="col-md-6">
-                        <label for="completion_date" class="form-label"><b>काम पूर्ण होण्याची तारीख</b><span
-                                class="text-danger fw-bold"> *</span></label>
+                        <label for="completion_date" class="form-label"><b>काम पूर्ण होण्याची तारीख</b></label>
                         <input type="date" id="completion_date" class="form-control"
                             formControlName="completion_date" />
                     </div>
                     <div class="col-md-6">
-                        <label for="v_status" class="form-label"><b>स्थिती</b><span class="text-danger fw-bold">
-                                *</span></label>
+                        <label for="v_status" class="form-label"><b>स्थिती</b></label>
                         <select class="form-select" aria-label="Default select example" formControlName="v_status">
                             <option value="" selected disabled>स्थिती निवडा</option>
                             <option value="काम चालु">काम चालु</option>

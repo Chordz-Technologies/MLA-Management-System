@@ -9,7 +9,7 @@ import { ServiceService } from 'src/app/shared/service.service';
 })
 export class AllAavakComponent implements OnInit {
   public dataLoaded: boolean = false;
-  displayedColumns: string[] = ['id', 'inward', 'subject', 'date', 'photos', 'comment'];
+  displayedColumns: string[] = ['id', 'name', 'contactno', 'subject', 'date', 'photos', 'comment'];
   dataSource!: MatTableDataSource<any>;
 
   constructor(private service: ServiceService) { }

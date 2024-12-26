@@ -76,6 +76,40 @@ export class RecordsComponent implements OnInit {
     this.router.navigate(['/edit-records', id]);
   }
 
+  encodeMessage(row: any): string {
+    const formattedVDate = this.datePipe.transform(row.v_date, 'dd-MMM-yyyy, h:mm a');
+    const formattedCompletionDate = this.datePipe.transform(row.completion_date, 'dd-MMM-yyyy');
+    const isComplete = row.v_status === 'काम पूर्ण';
+
+    const message = `
+नमस्कार,
+  
+*चंद्रकांत दादा पाटील यांच्या जनसंपर्क कार्यालयामध्ये आपले स्वागत आहे.*
+*आपल्या समस्यांचे निवारण करून चांगली सेवा देणे हेच आमचे प्राथमिक उद्दिष्ट आहे.*
+  
+आपण नोंदविलेल्या समस्येचे स्वरूप पुढीलप्रमाणे आहे:
+
+तिकीट क्र. : ${row.v_id}
+नाव : ${row.v_name}
+समस्या नोंद दिनांक : ${formattedVDate}
+समस्या : ${row.v_problem}
+काम पूर्ण होण्याची तारीख : ${formattedCompletionDate}
+कामाची स्थिती : ${row.v_status}
+  
+${isComplete
+        ? '*आपल्या समस्येचे निवारण झाले आहे.*'
+        : 'लवकरच आपल्या समस्येचे निवारण होईल.'
+      }
+  
+*आपली सेवा करण्याची संधी दिलीत त्याबद्दल धन्यवाद!*
+
+आपला,
+चंद्रकांत दादा पाटील
+भाजप
+  `;
+    return encodeURIComponent(message.trim());
+  }
+
   sendSMS(row: any) {
     const phoneNumber = row.v_contactno;
     const data = { phone_number: phoneNumber };

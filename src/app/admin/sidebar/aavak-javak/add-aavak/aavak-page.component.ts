@@ -35,23 +35,27 @@ export class AavakPageComponent implements OnInit {
 
   postAavakData() {
     const aavakData = {
-      a_inward: this.aavakForm.value.a_inward,
-      a_subject: this.aavakForm.value.a_subject,
-      a_date: this.aavakForm.value.a_date,
-      a_comment: this.aavakForm.value.a_comment,
-      a_photos: this.aavakForm,
+      a_inward: this.aavakForm.value.a_inward || '',
+      a_subject: this.aavakForm.value.a_subject || '',
+      a_date: this.aavakForm.value.a_date || '',
+      a_comment: this.aavakForm.value.a_comment || '',
+      // a_photos: this.aavakImage
     };
 
-    const { a_photos } = aavakData;
+    // const { a_photos } = aavakData;
 
-    if (!a_photos) {
-      this.toastr.error('Please fill all the fields.', 'Error');
-      return;
-    }
+    // if (!a_photos) {
+    //   this.toastr.error('Please fill all the fields.', 'Error');
+    //   return;
+    // }
 
     const formData: FormData = new FormData();
     for (const [key, value] of Object.entries(aavakData)) {
       formData.append(key, value)
+    }
+
+    if (this.aavakImage) {
+      formData.append('a_photos', this.aavakImage || '');
     }
 
     this.service.postAavakData(formData).subscribe((res) => {

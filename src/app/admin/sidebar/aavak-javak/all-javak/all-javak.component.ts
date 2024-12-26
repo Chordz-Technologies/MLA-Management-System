@@ -9,7 +9,7 @@ import { ServiceService } from 'src/app/shared/service.service';
 })
 export class AllJavakComponent implements OnInit {
   public dataLoaded: boolean = false;
-  displayedColumns: string[] = ['id', 'outward', 'subject', 'date', 'photos', 'comment'];
+  displayedColumns: string[] = ['id', 'name', 'contactno', 'subject', 'date', 'photos', 'comment'];
   dataSource!: MatTableDataSource<any>;
 
   constructor(private service: ServiceService) { }

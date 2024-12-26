@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class EventNotificationsComponent {
   dataSource!: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', 'date', 'time', 'location', 'subject', 'photos', 'comments', 'remaining_days'];
+  displayedColumns: string[] = ['id', 'name', 'contactno', 'date', 'time', 'location', 'subject', 'photos', 'comments', 'remaining_days'];
 
   constructor(private service: ServiceService, private router: Router) { }
 

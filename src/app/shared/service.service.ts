@@ -137,4 +137,24 @@ export class ServiceService {
   getVisitorExcelReport(): Observable<Blob> {
     return this.http.get(`${this.url}/visitorexcelreport/`, { responseType: 'blob' });
   }
+
+  getAllContactData(): Observable<any> {
+    return this.http.get<any>(`${this.url}/list/`);
+  }
+
+  postContactData(data: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/create/`, data);
+  }
+
+  getContactDataById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.url}/getbyid/${id}/`);
+  }
+
+  updateContactData(id: number, data: any): Observable<any> {
+    return this.http.put<any>(`${this.url}/update/${id}/`, data);
+  }
+
+  deleteContactData(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/delete/${id}/`);
+  }
 }

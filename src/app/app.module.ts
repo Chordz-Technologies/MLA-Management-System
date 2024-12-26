@@ -51,6 +51,7 @@ import { ContactUsComponent } from './admin/sidebar/contact-us/contact-us.compon
 import { PrivacyPolicyComponent } from './admin/sidebar/privacy-policy/privacy-policy.component';
 import { AddJavakComponent } from './admin/sidebar/aavak-javak/add-javak/add-javak.component';
 import { AllJavakComponent } from './admin/sidebar/aavak-javak/all-javak/all-javak.component';
+import { AddContactsComponent } from './admin/sidebar/contact-us/add-contacts/add-contacts.component';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { AllJavakComponent } from './admin/sidebar/aavak-javak/all-javak/all-jav
     PrivacyPolicyComponent,
     AddJavakComponent,
     AllJavakComponent,
+    AddContactsComponent,
   ],
 
   imports: [

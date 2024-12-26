@@ -1,12 +1,14 @@
 .responsive-image {
     width: 60%;
     height: 240px;
-    // display: block;
-    // margin: 0 60px;
+    border: 1px solid black;
+    padding: 3px;
 }
 
 .link-img {
     width: 70%;
+    border: 1px solid black;
+    padding: 3px;
     /* Ensures the images do not exceed their container width */
     height: 100px;
     /* Maintains the aspect ratio of the images */
@@ -168,6 +170,7 @@ table {
         width: 95%;
         padding: 25px 20px;
     }
+
     .my-main-div {
         margin-right: 20%;
     }
@@ -192,6 +195,7 @@ table {
         width: 95%;
         padding: 25px 20px;
     }
+
     .my-main-div {
         margin-right: 20%;
     }

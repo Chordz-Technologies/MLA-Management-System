@@ -30,14 +30,9 @@ export class EditsuperMsgComponent implements OnInit {
       conPassword: [''],
       fullname: [''],
       contactno: [''],
-      smessage: this.fb.control('', [
-        Validators.required,
-        Validators.maxLength(150),
-        Validators.pattern('[0-9]*'),
-      ]),
-
-      // superAdminImage: ['']
+      smessage: [''],
     })
+
     // Get the ID of the product from the route parameters
     this.route.params.subscribe(val => {
       this.superAdminId = val['id']; // Assuming the parameter name is 'id'
@@ -100,28 +95,28 @@ export class EditsuperMsgComponent implements OnInit {
 
   updateSuperAdmin() {
     const adminToUpdate = {
-      a_id: this.superAdminForm.value.id,
-      a_username: this.superAdminForm.value.adminname,
-      a_password: this.superAdminForm.value.passWord,
-      a_confirmpassword: this.superAdminForm.value.conPassword,
-      a_name: this.superAdminForm.value.fullname,
-      a_contactno: this.superAdminForm.value.contactno,
-      a_message: this.superAdminForm.value.smessage,
+      a_id: this.superAdminForm.value.id || '',
+      a_username: this.superAdminForm.value.adminname || '',
+      a_password: this.superAdminForm.value.passWord || '',
+      a_confirmpassword: this.superAdminForm.value.conPassword || '',
+      a_name: this.superAdminForm.value.fullname || '',
+      a_contactno: this.superAdminForm.value.contactno || '',
+      a_message: this.superAdminForm.value.smessage || '',
       ...(this.adminImageData ? { a_files: this.adminImageData } : {})
     }
 
 
-    const { a_id, a_username, a_password, a_confirmpassword, a_name, a_contactno, a_message } = adminToUpdate;
+    // const { a_id, a_username, a_password, a_confirmpassword, a_name, a_contactno, a_message } = adminToUpdate;
 
-    if (!a_id || !a_username || !a_password || !a_confirmpassword || !a_name || !a_contactno || !a_message) {
-      this.toastr.error('Please fill all the fields.', 'Error');
-      return;
-    }
+    // if (!a_id || !a_username || !a_password || !a_confirmpassword || !a_name || !a_contactno || !a_message) {
+    //   this.toastr.error('Please fill all the fields.', 'Error');
+    //   return;
+    // }
 
-    if (a_message.length > 150) {
-      this.toastr.error('Message cannot be more than 150 characters.', 'Error');
-      return;
-    }
+    // if (a_message.length > 150) {
+    //   this.toastr.error('Message cannot be more than 150 characters.', 'Error');
+    //   return;
+    // }
 
     const formData: FormData = new FormData();
     for (const [key, value] of Object.entries(adminToUpdate)) {

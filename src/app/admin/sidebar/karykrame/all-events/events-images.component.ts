@@ -9,7 +9,7 @@ import { ServiceService } from 'src/app/shared/service.service';
 })
 export class EventsImagesComponent implements OnInit {
   public dataLoaded: boolean = false;
-  displayedColumns: string[] = ['kid', 'kdate', 'ktime', 'klocation', 'subject', 'kphotos', 'comments'];
+  displayedColumns: string[] = ['kid', 'name', 'contactno', 'kdate', 'ktime', 'klocation', 'subject', 'kphotos', 'comments'];
   dataSource!: MatTableDataSource<any>;
 
   constructor(private service: ServiceService) { }

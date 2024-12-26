@@ -1,8 +1,67 @@
-.main-div {
-    margin-right: 5%;
+.mybtn {
+    width: 30%;
+    padding: 25px;
+    float: right
 }
 
-p,
-li {
-    font-size: 16px;
+.main-div {
+    margin-right: 4%;
+}
+
+i {
+    padding-right: 8px;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-elevation-z8 {
+    width: 100%;
+    overflow-x: auto;
+}
+
+@media only screen and (max-width: 800px) {
+    .mat-elevation-z8 {
+        width: 95%;
+        height: 40%;
+    }
+
+    .search {
+        width: 100%
+    }
+
+    .mybtn {
+        padding: 25px 0;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .mat-elevation-z8 {
+        width: 98%;
+        height: 45%;
+    }
+
+    .search {
+        width: 100%
+    }
+
+    .mybtn {
+        padding: 25px 0;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .mat-elevation-z8 {
+        width: 90%;
+        height: 90%;
+    }
+
+    .search {
+        width: 100%
+    }
+
+    .mybtn {
+        padding: 25px 0;
+    }
 }

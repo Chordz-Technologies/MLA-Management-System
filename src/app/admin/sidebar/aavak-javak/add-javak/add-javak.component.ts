@@ -35,23 +35,27 @@ export class AddJavakComponent implements OnInit {
 
   postJavakData() {
     const javakData = {
-      j_outward: this.javakForm.value.j_outward,
-      j_subject: this.javakForm.value.j_subject,
-      j_date: this.javakForm.value.j_date,
-      j_comment: this.javakForm.value.j_comment,
-      j_photos: this.javakForm,
+      j_outward: this.javakForm.value.j_outward || '',
+      j_subject: this.javakForm.value.j_subject || '',
+      j_date: this.javakForm.value.j_date || '',
+      j_comment: this.javakForm.value.j_comment || '',
+      // j_photos: this.javakImage,
     };
 
-    const { j_photos } = javakData;
+    // const { j_photos } = javakData;
 
-    if (!j_photos) {
-      this.toastr.error('Please fill all the fields.', 'Error');
-      return;
-    }
+    // if (!j_photos) {
+    //   this.toastr.error('Please fill all the fields.', 'Error');
+    //   return;
+    // }
 
     const formData: FormData = new FormData();
     for (const [key, value] of Object.entries(javakData)) {
       formData.append(key, value)
+    }
+
+    if (this.javakImage) {
+      formData.append('j_photos', this.javakImage || '');
     }
 
     this.service.postJavakData(formData).subscribe((res) => {
