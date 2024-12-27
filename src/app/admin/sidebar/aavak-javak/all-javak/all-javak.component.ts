@@ -62,7 +62,7 @@ export class AllJavakComponent implements OnInit {
       const downloadURL = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = downloadURL;
-      link.download = 'Outward Report.xlsx';  // Set the desired file name
+      link.download = 'जावक रिपोर्ट.xlsx';  // Set the desired file name
       link.click();
     });
   }

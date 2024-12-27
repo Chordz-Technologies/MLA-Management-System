@@ -81,11 +81,11 @@ export class ServiceService {
   }
 
   getInwardExcelReport(): Observable<Blob> {
-    return this.http.get(`${this.url}/inwardexcelreport/`, { responseType: 'blob' });
+    return this.http.get(`${this.url}/avakexcelreport/`, { responseType: 'blob' });
   }
 
   getOutwardExcelReport(): Observable<Blob> {
-    return this.http.get(`${this.url}/outwardexcelreport/`, { responseType: 'blob' });
+    return this.http.get(`${this.url}/javakexcelreport/`, { responseType: 'blob' });
   }
 
   getAllNivedaneImages(): Observable<any> {

@@ -62,7 +62,7 @@ export class AllAavakComponent implements OnInit {
       const downloadURL = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = downloadURL;
-      link.download = 'Inward Report.xlsx';  // Set the desired file name
+      link.download = 'आवक रिपोर्ट.xlsx';  // Set the desired file name
       link.click();
     });
   }
