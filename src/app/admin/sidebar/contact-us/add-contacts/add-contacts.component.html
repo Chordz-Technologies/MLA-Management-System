@@ -16,6 +16,13 @@
                         </div>
                     </div>
                     <div class="row mb-3">
+                        <label for="name" class="col-sm-2 col-form-label"><b>पद</b></label>
+                        <div class="col-sm-10">
+                            <input type="text" id="name" class="form-control" formControlName="designation"
+                                placeholder="पद लिहा" />
+                        </div>
+                    </div>
+                    <div class="row mb-3">
                         <label for="contactno" class="col-sm-2 col-form-label"><b>संपर्क क्र.</b></label>
                         <div class="col-sm-10">
                             <input type="tel" id="contactno" maxlength="13" class="form-control"
@@ -29,14 +36,14 @@
                             Submit
                         </button>
                         <button type="submit" class="btn btn-primary me-2 mb-2" *ngIf="selectedContactId"
-                            (click)="updateDisease()">
+                            (click)="update()">
                             Update
                         </button>
                         <button type="button" class="btn btn-success me-2 mb-2" routerLink="/महत्वाचे-संपर्क">
                             Close
                         </button>
                         <button type="button" class="btn btn-danger me-2 mb-2" *ngIf="selectedContactId"
-                            (click)="deleteDisease()">
+                            (click)="delete()">
                             Delete
                         </button>
                     </div>

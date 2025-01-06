@@ -25,6 +25,9 @@ import { PrivacyPolicyComponent } from './admin/sidebar/privacy-policy/privacy-p
 import { AddJavakComponent } from './admin/sidebar/aavak-javak/add-javak/add-javak.component';
 import { AllJavakComponent } from './admin/sidebar/aavak-javak/all-javak/all-javak.component';
 import { AddContactsComponent } from './admin/sidebar/contact-us/add-contacts/add-contacts.component';
+import { AddExistingRecordComponent } from './admin/sidebar/visitors/add-existing-record/add-existing-record.component';
+import { ImpPersonsComponent } from './admin/sidebar/imp-persons/imp-persons.component';
+import { AddImpPersonComponent } from './admin/sidebar/imp-persons/add-imp-person/add-imp-person.component';
 
 const routes: Routes = [
   { path: 'splash', component: SplashscreenComponent }, // Splash screen route
@@ -47,13 +50,17 @@ const routes: Routes = [
       { path: 'सर्व-कार्यक्रम', component: EventsImagesComponent },
       { path: 'all-records', component: RecordsComponent },
       { path: 'add-records', component: AddRecordsComponent },
+      { path: 'add-records/:v_id', component: AddExistingRecordComponent },
       { path: 'edit-records/:v_id', component: EditRecordsComponent },
       { path: 'notifications', component: NotificationsPageComponent },
       { path: 'events-notifications', component: EventNotificationsComponent },
       { path: 'महत्वाचे-संपर्क', component: ContactUsComponent },
       { path: 'add-contacts', component: AddContactsComponent },
       { path: 'edit-contacts/:id', component: AddContactsComponent },
-      { path: 'VBH-Helpline', component: PrivacyPolicyComponent }
+      { path: 'VBH-Helpline', component: PrivacyPolicyComponent },
+      { path: 'all-important-persons', component: ImpPersonsComponent },
+      { path: 'add-important-persons', component: AddImpPersonComponent },
+      { path: 'edit-important-persons/:id', component: AddImpPersonComponent },
     ]
   },
   { path: '**', redirectTo: 'splash' } // Redirect to splash by default

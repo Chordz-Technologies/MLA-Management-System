@@ -20,6 +20,11 @@
                 <td mat-cell *matCellDef="let row">{{ row.name }}</td>
             </ng-container>
 
+            <ng-container matColumnDef="designation">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header><b>पद</b></th>
+                <td mat-cell *matCellDef="let row">{{ row.designation }}</td>
+            </ng-container>
+
             <ng-container matColumnDef="contactno">
                 <th mat-header-cell *matHeaderCellDef><b>संपर्क क्रमांक</b></th>
                 <td mat-cell *matCellDef="let row"> {{ row.phone_number }} </td>

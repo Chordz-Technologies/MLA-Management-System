@@ -30,6 +30,19 @@
         <button mat-button class="menu-button" ngbDropdown>
           <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+            <mat-icon>peoples</mat-icon>
+            <span>महत्वाच्या व्यक्ती &nbsp;</span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['add-important-persons']">महत्वाच्या
+              व्यक्ती</a>
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['all-important-persons']">सर्व
+              महत्वाच्या व्यक्ती</a>
+          </div>
+        </button>
+        <button mat-button class="menu-button" ngbDropdown>
+          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
             <mat-icon>assignment_ind</mat-icon>
             <span>आवक पत्रके &nbsp;</span>
           </button>
@@ -121,6 +134,19 @@
             </a>
             <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['all-records']">सर्व विजिटर्स
             </a>
+          </div>
+        </button>
+        <button mat-button class="menu-button" ngbDropdown>
+          <button class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
+            <mat-icon>peoples</mat-icon>
+            <span>महत्वाच्या व्यक्ती &nbsp;</span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" ngbDropdownMenu>
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['add-important-persons']">महत्वाच्या
+              व्यक्ती</a>
+            <a class="dropdown-item" [routerLinkActive]="['active']" [routerLink]="['all-important-persons']">सर्व
+              महत्वाच्या व्यक्ती</a>
           </div>
         </button>
         <button mat-button class="menu-button" ngbDropdown>

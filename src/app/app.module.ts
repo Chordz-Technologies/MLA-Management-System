@@ -52,6 +52,9 @@ import { PrivacyPolicyComponent } from './admin/sidebar/privacy-policy/privacy-p
 import { AddJavakComponent } from './admin/sidebar/aavak-javak/add-javak/add-javak.component';
 import { AllJavakComponent } from './admin/sidebar/aavak-javak/all-javak/all-javak.component';
 import { AddContactsComponent } from './admin/sidebar/contact-us/add-contacts/add-contacts.component';
+import { AddExistingRecordComponent } from './admin/sidebar/visitors/add-existing-record/add-existing-record.component';
+import { ImpPersonsComponent } from './admin/sidebar/imp-persons/imp-persons.component';
+import { AddImpPersonComponent } from './admin/sidebar/imp-persons/add-imp-person/add-imp-person.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +85,9 @@ import { AddContactsComponent } from './admin/sidebar/contact-us/add-contacts/ad
     AddJavakComponent,
     AllJavakComponent,
     AddContactsComponent,
+    AddExistingRecordComponent,
+    ImpPersonsComponent,
+    AddImpPersonComponent,
   ],
 
   imports: [

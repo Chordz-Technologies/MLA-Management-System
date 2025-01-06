@@ -38,7 +38,7 @@ export class SuperAdminComponent {
       this.incompleteWorkCount = visitors.filter((visitor: any) => visitor.v_status === 'काम अपूर्ण').length;
       this.inProgressWorkCount = visitors.filter((visitor: any) => visitor.v_status === 'काम चालु').length;
     });
-  
+
 
     this.service.getAllSuperAdminDetails().subscribe({
       next: (res: any) => {
@@ -62,7 +62,7 @@ export class SuperAdminComponent {
       this.dataSource.paginator.firstPage();
     }
   }
-  
+
   onChange(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }

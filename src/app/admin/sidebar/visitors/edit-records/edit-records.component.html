@@ -59,8 +59,8 @@
                             placeholder="समस्या लिहा" />
                     </div>
                     <div class="col-md-6">
-                        <label for="v_date" class="form-label"><b>आजची तारीख व वेळ</b></label>
-                        <input type="datetime-local" id="v_date" class="form-control" formControlName="v_date" />
+                        <label for="v_date" class="form-label"><b>आजची तारीख</b></label>
+                        <input type="date" id="v_date" class="form-control" formControlName="v_date" />
                     </div>
                     <div class="col-md-6">
                         <label for="completion_date" class="form-label"><b>काम पूर्ण होण्याची तारीख</b></label>
@@ -86,7 +86,7 @@
                             <button type="submit" class="btn btn-success me-3" (click)="update()">
                                 Update
                             </button>
-                            <button type="submit" class="btn btn-danger me-3" (click)="delete()">
+                            <button type="submit" class="btn btn-danger me-3" (click)="delete()" *ngIf="adminType !== 'Admin'">
                                 Delete
                             </button>
                             <button type="button" class="btn btn-primary" routerLink="/all-records">

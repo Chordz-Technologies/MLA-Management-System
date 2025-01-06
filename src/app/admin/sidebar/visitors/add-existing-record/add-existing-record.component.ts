@@ -6,15 +6,14 @@ import { ToastrService } from 'ngx-toastr';
 import { Visitor_model } from 'src/app/models';
 
 @Component({
-  selector: 'app-edit-records',
-  templateUrl: './edit-records.component.html',
-  styleUrls: ['./edit-records.component.scss']
+  selector: 'app-add-existing-record',
+  templateUrl: './add-existing-record.component.html',
+  styleUrls: ['./add-existing-record.component.scss']
 })
-export class EditRecordsComponent implements OnInit {
+export class AddExistingRecordComponent implements OnInit {
   editVisitorsForm!: FormGroup;
   public visitorId!: number;
   applicationImg: File | null | undefined;
-  adminType = localStorage.getItem('adminType');
 
   constructor(private fb: FormBuilder, private service: ServiceService, private activatedRoute: ActivatedRoute, private router: Router, private toastr: ToastrService) { }
 
@@ -76,8 +75,7 @@ export class EditRecordsComponent implements OnInit {
     });
   }
 
-
-  update() {
+  add() {
     const VisitorData = {
       v_name: this.editVisitorsForm.value.v_name || '',
       v_contactno: this.editVisitorsForm.value.v_contactno || '',
@@ -99,19 +97,14 @@ export class EditRecordsComponent implements OnInit {
       formData.append(key, value)
     }
 
-    this.service.updateVisitorData(this.visitorId, formData)
-      .subscribe(res => {
-        this.toastr.success('Visitor Data Updated Successfully!', 'Success');
-        this.router.navigate(['/all-records']);
+    this.service.postVisitorData(formData).subscribe((res) => {
+      if (res === 'success') {
+        this.toastr.success('Visitor Data Added Successfully!', 'Success');
+      } else {
+        this.toastr.success('Visitor Data Added Successfully!', 'Success');
+        this.router.navigate(['/all-records'], { state: { newVisitor: VisitorData } });
         this.editVisitorsForm.reset();
-      });
-  }
-
-  delete() {
-    this.service.deleteVisitorData(this.visitorId)
-      .subscribe(res => {
-        this.toastr.success('Visitor Data Deleted Successfully!', 'Success');
-        this.router.navigate(['/all-records']);
-      });
+      }
+    });
   }
 }

@@ -14,147 +14,174 @@ export class ServiceService {
 
   // Login API
   loginpost(data: any): Observable<any> {
-    return this.http.post<any>(`${this.url}/adminLogin/`, data);
+    return this.http.post<any>(`${this.url}/adminmla/adminLogin/`, data);
   }
 
   //UserDetails API
   getAllSuperAdminDetails(): Observable<any> {
-    return this.http.get<any>(`${this.url}/allAdmins/`);
+    return this.http.get<any>(`${this.url}/adminmla/allAdmins/`);
   }
 
   getSuperAdminDetailsById(a_id: number): Observable<any> {
-    return this.http.get<any>(`${this.url}/adminDetails/${a_id}/`);
+    return this.http.get<any>(`${this.url}/adminmla/adminDetails/${a_id}/`);
   }
 
   SuperAdminPost(data: any): Observable<any> {
-    return this.http.post<any>(`${this.url}/createAdmin/`, data);
+    return this.http.post<any>(`${this.url}/adminmla/createAdmin/`, data);
   }
 
   deleteSuperAdminById(a_id: number): Observable<any> {
-    return this.http.delete(`${this.url}/deleteAdmin/${a_id}/`);
+    return this.http.delete(`${this.url}/adminmla/deleteAdmin/${a_id}/`);
   }
 
   updateAdmminById(a_id: number, data: any): Observable<any> {
-    return this.http.put<any>(`${this.url}/updateAdmin/${a_id}`, data);
+    return this.http.put<any>(`${this.url}/adminmla/updateAdmin/${a_id}`, data);
   }
 
-  // sidebar options API
-
-  postPaperCuttings(data: any): Observable<any> {
-    return this.http.post<any>(`${this.url}/createkatran/`, data);
-  }
-
-  postAavakData(data: any): Observable<any> {
-    return this.http.post<any>(`${this.url}/createavak/`, data);
-  }
-
-  postJavakData(data: any): Observable<any> {
-    return this.http.post<any>(`${this.url}/createjavak/`, data);
-  }
-
-  postNivedaneData(data: any): Observable<any> {
-    return this.http.post<any>(`${this.url}/createnivedan/`, data);
-  }
-
-  postEventsData(data: any): Observable<any> {
-    return this.http.post<any>(`${this.url}/createkaryakram/`, data);
-  }
-
-  getAllKatrans(): Observable<any> {
-    return this.http.get<any>(`${this.url}/allkatrans/`);
-  }
-
-  getKatranImagesByPaper(paper: string): Observable<any> {
-    return this.http.get<any>(`${this.url}/katranfilter/${paper}/`);
-  }
-
-  getKatranImagesByDate(date: string): Observable<any> {
-    return this.http.get<any>(`${this.url}/katranbydate/?k_date=${date}`);
-  }
-
-  getAllAavak(): Observable<any> {
-    return this.http.get<any>(`${this.url}/allavak/`);
-  }
-
-  getAllJavak(): Observable<any> {
-    return this.http.get<any>(`${this.url}/alljavak/`);
-  }
-
-  getInwardExcelReport(): Observable<Blob> {
-    return this.http.get(`${this.url}/avakexcelreport/`, { responseType: 'blob' });
-  }
-
-  getOutwardExcelReport(): Observable<Blob> {
-    return this.http.get(`${this.url}/javakexcelreport/`, { responseType: 'blob' });
-  }
-
-  getAllNivedaneImages(): Observable<any> {
-    return this.http.get<any>(`${this.url}/allnivedan/`);
-  }
-
-  getAllKarykramImages(): Observable<any> {
-    return this.http.get<any>(`${this.url}/allkaryakram/`);
-  }
-
-  getEventNotifications(): Observable<any> {
-    return this.http.get<any>(`${this.url}/karyakramendingsoon/`);
-  }
-
-  // Visitors data
-
+  // Visitors API
   postVisitorData(data: any): Observable<any> {
-    return this.http.post<any>(`${this.url}/createvisitor/`, data);
+    return this.http.post<any>(`${this.url}/visitors/createvisitor/`, data);
   }
 
   updateVisitorData(v_id: number, data: any): Observable<any> {
-    return this.http.put<any>(`${this.url}/updatevisitor/${v_id}`, data);
+    return this.http.put<any>(`${this.url}/visitors/updatevisitor/${v_id}`, data);
   }
 
   getAllVisitors(): Observable<any> {
-    return this.http.get<any>(`${this.url}/allvisitors/`);
+    return this.http.get<any>(`${this.url}/visitors/allvisitors/`);
   }
 
   getVisitorDataById(id: number): Observable<any> {
-    return this.http.get<any>(`${this.url}/visitordetails/${id}/`);
+    return this.http.get<any>(`${this.url}/visitors/visitordetails/${id}/`);
   }
 
   deleteVisitorData(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.url}/deletevisitor/${id}/`);
+    return this.http.delete<any>(`${this.url}/visitors/deletevisitor/${id}/`);
   }
 
   getNotifications(): Observable<any> {
-    return this.http.get<any>(`${this.url}/workendingsoon/`);
+    return this.http.get<any>(`${this.url}/visitors/workendingsoon/`);
   }
 
   getVisitorsByDate(date: string): Observable<any> {
-    return this.http.get(`${this.url}/visitorbydate/?v_date=${date}`);
+    return this.http.get(`${this.url}/visitors/visitorbydate/?v_date=${date}`);
   }
 
   textMsg(data: any): Observable<any> {
-    return this.http.post<any>(`${this.url}/sendsms/`, data);
+    return this.http.post<any>(`${this.url}/visitors/sendsms/`, data);
   }
 
   getVisitorExcelReport(): Observable<Blob> {
-    return this.http.get(`${this.url}/visitorexcelreport/`, { responseType: 'blob' });
+    return this.http.get(`${this.url}/visitors/visitorexcelreport/`, { responseType: 'blob' });
   }
 
+  getVisitorHistory(mobileno: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/visitors/searchvisitor/?search_term=${mobileno}`);
+  }
+
+  // Newspaper Cutting API
+  postPaperCuttings(data: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/katran/createkatran/`, data);
+  }
+
+  getAllKatrans(): Observable<any> {
+    return this.http.get<any>(`${this.url}/katran/allkatrans/`);
+  }
+
+  getKatranImagesByPaper(paper: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/katran/searchkatran/?search_term=${paper}`);
+  }
+
+  getKatranImagesByDate(date: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/katran/katranbydate/?k_date=${date}`);
+  }
+
+  deleteKatran(k_id: number): Observable<any> {
+    return this.http.delete(`${this.url}/katran/deletekatran/${k_id}/`);
+  }
+
+  // Aavak API
+  postAavakData(data: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/avak/createavak/`, data);
+  }
+
+  getAllAavak(): Observable<any> {
+    return this.http.get<any>(`${this.url}/avak/allavak/`);
+  }
+
+  getInwardExcelReport(): Observable<Blob> {
+    return this.http.get(`${this.url}/avak/avakexcelreport/`, { responseType: 'blob' });
+  }
+
+  // Javak API
+  postJavakData(data: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/javak/createjavak/`, data);
+  }
+
+  getAllJavak(): Observable<any> {
+    return this.http.get<any>(`${this.url}/javak/alljavak/`);
+  }
+
+  getOutwardExcelReport(): Observable<Blob> {
+    return this.http.get(`${this.url}/javak/javakexcelreport/`, { responseType: 'blob' });
+  }
+
+  // Event API
+  postEventsData(data: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/karyakram/createkaryakram/`, data);
+  }
+
+  getAllKarykramImages(): Observable<any> {
+    return this.http.get<any>(`${this.url}/karyakram/allkaryakram/`);
+  }
+
+  getEventNotifications(): Observable<any> {
+    return this.http.get<any>(`${this.url}/karyakram/karyakramendingsoon/`);
+  }
+
+  // Important contact api
   getAllContactData(): Observable<any> {
-    return this.http.get<any>(`${this.url}/list/`);
+    return this.http.get<any>(`${this.url}/impcontacts/list/`);
   }
 
   postContactData(data: any): Observable<any> {
-    return this.http.post<any>(`${this.url}/create/`, data);
+    return this.http.post<any>(`${this.url}/impcontacts/create/`, data);
   }
 
   getContactDataById(id: number): Observable<any> {
-    return this.http.get<any>(`${this.url}/getbyid/${id}/`);
+    return this.http.get<any>(`${this.url}/impcontacts/getbyid/${id}/`);
   }
 
   updateContactData(id: number, data: any): Observable<any> {
-    return this.http.put<any>(`${this.url}/update/${id}/`, data);
+    return this.http.put<any>(`${this.url}/impcontacts/update/${id}/`, data);
   }
 
   deleteContactData(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.url}/delete/${id}/`);
+    return this.http.delete<any>(`${this.url}/impcontacts/delete/${id}/`);
   }
+
+  // Important person api
+  getAllPersonData(): Observable<any> {
+    return this.http.get<any>(`${this.url}/vippersons/allpersons/`);
+  }
+
+  postPersonData(data: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/vippersons/addperson/`, data);
+  }
+
+  getPersonDataById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.url}/vippersons/persondetails/${id}/`);
+  }
+
+  updatePersonData(id: number, data: any): Observable<any> {
+    return this.http.put<any>(`${this.url}/vippersons/updateperson/${id}/`, data);
+  }
+
+  deletePersonData(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/vippersons/deleteperson/${id}/`);
+  }
+
+  personExcelReport(): Observable<Blob> {
+    return this.http.get(`${this.url}/vippersons/vipreport/`, { responseType: 'blob' });
+  } 
 }

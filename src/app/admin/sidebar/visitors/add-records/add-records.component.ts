@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ServiceService } from 'src/app/shared/service.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-add-records',
@@ -12,6 +13,9 @@ import { ServiceService } from 'src/app/shared/service.service';
 export class AddRecordsComponent {
   addVisitorsData!: FormGroup;
   applicationImg: File | null | undefined;
+  displayedColumns: string[] = ['id', 'name', 'contactno', 'problems', 'action'];
+  searchMobileNo: string = '';
+  dataSource!: MatTableDataSource<any>;
 
   constructor(private service: ServiceService, private fb: FormBuilder, private route: ActivatedRoute, private router: Router, private toastr: ToastrService) { }
 
@@ -26,12 +30,17 @@ export class AddRecordsComponent {
       v_area: this.fb.control(''),
       v_arja: this.fb.control(''),
       v_problem: this.fb.control(''),
-      v_date: this.fb.control(''),
+      v_date: [this.getTodayDate()],
       completion_date: this.fb.control(''),
       v_comment: this.fb.control(''),
       v_status: this.fb.control(''),
       office: this.fb.control('')
     })
+  }
+
+  getTodayDate(): string {
+    const today = new Date();
+    return today.toISOString().split('T')[0]; // Format as 'YYYY-MM-DD'
   }
 
   onImageSelected(image: any) {
@@ -74,7 +83,7 @@ export class AddRecordsComponent {
 
     // Check if the image (arja file) exists and append it to the FormData if present
     if (this.applicationImg) {
-      formData.append('v_arja', this.applicationImg  || '');
+      formData.append('v_arja', this.applicationImg || '');
     }
 
     this.service.postVisitorData(formData).subscribe((res) => {
@@ -86,5 +95,34 @@ export class AddRecordsComponent {
         this.addVisitorsData.reset();
       }
     });
+  }
+
+  fetchVisitorHistory(mobileNo: string): void {
+    this.service.getVisitorHistory(mobileNo).subscribe({
+      next: (res: any) => {
+        if (res && res.status === 'success' && res.data) {
+  
+          // Convert the single object to an array
+          const dataArray = Array.isArray(res.data) ? res.data : [res.data];
+  
+          this.dataSource = new MatTableDataSource(dataArray);
+        } else {
+          this.toastr.error('No visitor found with the given mobile number', 'Error');
+        }
+      },
+      error: (err) => {
+        this.toastr.error('Failed to fetch visitor history.', 'Error');
+        console.error('Error fetching visitor history:', err);
+      }
+    });
+  }  
+
+  // Function triggered when the search button is clicked
+  onSearch(): void {
+    this.fetchVisitorHistory(this.searchMobileNo.trim());
+  }
+
+  edit(id: number) {
+    this.router.navigate(['/add-records', id]);
   }
 }

@@ -77,14 +77,14 @@ export class RecordsComponent implements OnInit {
   }
 
   encodeMessage(row: any): string {
-    const formattedVDate = this.datePipe.transform(row.v_date, 'dd-MMM-yyyy, h:mm a');
+    const formattedVDate = this.datePipe.transform(row.v_date, 'dd-MMM-yyyy');
     const formattedCompletionDate = this.datePipe.transform(row.completion_date, 'dd-MMM-yyyy');
     const isComplete = row.v_status === 'काम पूर्ण';
 
     const message = `
 नमस्कार,
   
-*चंद्रकांत दादा पाटील यांच्या जनसंपर्क कार्यालयामध्ये आपले स्वागत आहे.*
+*भिमराव अण्णा तापकीर यांच्या जनसंपर्क कार्यालयामध्ये आपले स्वागत आहे.*
 *आपल्या समस्यांचे निवारण करून चांगली सेवा देणे हेच आमचे प्राथमिक उद्दिष्ट आहे.*
   
 आपण नोंदविलेल्या समस्येचे स्वरूप पुढीलप्रमाणे आहे:
@@ -104,7 +104,7 @@ ${isComplete
 *आपली सेवा करण्याची संधी दिलीत त्याबद्दल धन्यवाद!*
 
 आपला,
-चंद्रकांत दादा पाटील
+भिमराव अण्णा तापकीर
 भाजप
   `;
     return encodeURIComponent(message.trim());

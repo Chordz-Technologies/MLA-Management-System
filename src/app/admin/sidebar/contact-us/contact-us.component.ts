@@ -9,7 +9,7 @@ import { ServiceService } from 'src/app/shared/service.service';
   styleUrls: ['./contact-us.component.scss']
 })
 export class ContactUsComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'contactno', 'action'];
+  displayedColumns: string[] = ['id', 'name', 'designation', 'contactno', 'action'];
   dataSource!: MatTableDataSource<any>;
 
   constructor(private service: ServiceService, private router: Router) { }

@@ -13,9 +13,10 @@ import { ToastrService } from 'ngx-toastr';
 
 export class KatranImagesComponent implements OnInit {
   paperCuttingForm!: FormGroup;
-  displayedColumns: string[] = ['id', 'date', 'paper', 'otherpapername', 'label', 'images', 'newslink', 'medialink', 'mediafile', 'important'];
+  displayedColumns: string[] = [];
   dataSource = new MatTableDataSource<any>([]);
   dataLoaded = false;
+  adminType = localStorage.getItem('adminType');
 
   constructor(private fb: FormBuilder, private service: ServiceService, private datePipe: DatePipe, private toastr: ToastrService) { }
 
@@ -30,6 +31,12 @@ export class KatranImagesComponent implements OnInit {
     const state = history.state;
     if (state && state.newpaperCuttingData) {
       this.addNewKatranData(state.newpaperCuttingData);
+    }
+
+    if (this.adminType === 'Admin') {
+      this.displayedColumns = ['id', 'date', 'paper', 'otherpapername', 'label', 'images', 'newslink', 'medialink', 'mediafile', 'important'];
+    } else {
+      this.displayedColumns = ['id', 'date', 'paper', 'otherpapername', 'label', 'images', 'newslink', 'medialink', 'mediafile', 'important', 'action'];
     }
   }
 
@@ -68,12 +75,12 @@ export class KatranImagesComponent implements OnInit {
 
   filterByPaper() {
     const selectedPaper = this.paperCuttingForm.get('k_paper')?.value || '';
-  
+
     if (selectedPaper) {
       // Clear existing data in the table before making the API call
       this.dataSource = new MatTableDataSource<any>([]);
       this.dataLoaded = false;
-  
+
       this.service.getKatranImagesByPaper(selectedPaper).subscribe(
         data => {
           // Check if data and data.data are defined and are arrays
@@ -95,7 +102,7 @@ export class KatranImagesComponent implements OnInit {
         }
       );
     }
-  }  
+  }
 
   filterByDate() {
     const selectedDate = this.paperCuttingForm.get('k_date')?.value || '';
@@ -130,5 +137,19 @@ export class KatranImagesComponent implements OnInit {
       // Re-fetch the full data if "Show Important Only" is unchecked
       this.allKatranData();
     }
+  }
+
+  deleteKatran(k_id: number): void {
+    this.service.deleteKatran(k_id).subscribe({
+      next: () => {
+        // Filter the data array within MatTableDataSource
+        this.dataSource.data = this.dataSource.data.filter((item: any) => item.k_id !== k_id);
+        this.toastr.success('Newspaper Data Deleted Successfully!', 'Success');
+      },
+      error: (err) => {
+        this.toastr.error('Failed to delete the newspaper data. Please try again.');
+        console.error(err);
+      }
+    });
   }
 }

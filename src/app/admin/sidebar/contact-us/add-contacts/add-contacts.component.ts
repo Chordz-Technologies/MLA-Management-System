@@ -20,6 +20,7 @@ export class AddContactsComponent implements OnInit {
     // Initialize the form
     this.contactForm = this.fb.group({
       name: [''],
+      designation:[''],
       phone_number: ['']
     });
 
@@ -51,7 +52,7 @@ export class AddContactsComponent implements OnInit {
     }
   }
 
-  updateDisease(): void {
+  update(): void {
     if (this.contactForm.valid && this.selectedContactId) {
       const contactData = this.contactForm.value;
       this.service.updateContactData(this.selectedContactId, contactData).subscribe(
@@ -69,7 +70,7 @@ export class AddContactsComponent implements OnInit {
     }
   }
 
-  deleteDisease(): void {
+  delete(): void {
     if (this.selectedContactId) {
       this.service.deleteContactData(this.selectedContactId).subscribe(
         () => {

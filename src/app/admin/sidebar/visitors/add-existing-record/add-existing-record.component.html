@@ -1,53 +1,3 @@
-<div class="container my-4">
-    <!-- Search input and button -->
-    <div class="search-bar">
-        <mat-form-field class="example-full-width" appearance="outline">
-            <mat-label>संपर्क क्र. शोधा</mat-label>
-            <input matInput [(ngModel)]="searchMobileNo" placeholder="संपर्क क्र. शोधा" />
-        </mat-form-field>
-        <button mat-raised-button color="primary" (click)="onSearch()" class="mt-2">
-            <b>शोधा</b>
-        </button>
-    </div>
-
-    <!-- MatTable for displaying visitor history -->
-    <div class="my-div mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-            <ng-container matColumnDef="id">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header><b>तिकीट क्र.</b></th>
-                <td mat-cell *matCellDef="let row">{{ row.v_id }}</td>
-            </ng-container>
-
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef><b>नाव</b></th>
-                <td mat-cell *matCellDef="let row"> {{row.v_name}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="contactno">
-                <th mat-header-cell *matHeaderCellDef><b>संपर्क क्र.</b></th>
-                <td mat-cell *matCellDef="let row"> {{row.v_contactno}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="problems">
-                <th mat-header-cell *matHeaderCellDef><b>समस्या</b></th>
-                <td mat-cell *matCellDef="let row"> {{row.v_problem}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="action">
-                <th mat-header-cell *matHeaderCellDef><b>कृती</b></th>
-                <td mat-cell *matCellDef="let row">
-                    <button mat-raised-button color="primary" class="mybtn" (click)="edit(row.v_id)">नवीन संपर्क
-                        जोडा</button>
-                </td>
-            </ng-container>
-
-            <!-- Table Header and Row Definitions -->
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-        </table>
-    </div>
-</div>
-
 <div class="main-div" style="padding-top: 20px">
     <div class="py-2">
         <div class="card p-3 me-4 px-md-5 py-3">
@@ -57,7 +7,7 @@
                 </h2>
             </mat-card-title>
             <mat-card-content>
-                <form [formGroup]="addVisitorsData" class="row g-3">
+                <form [formGroup]="editVisitorsForm" class="row g-3">
                     <div class="col-md-6">
                         <label for="v_name" class="form-label"><b>नाव</b></label>
                         <input type="text" id="v_name" class="form-control" formControlName="v_name"
@@ -133,7 +83,7 @@
                     </div>
                     <div class="col-12">
                         <div class="text-center my-3">
-                            <button type="submit" class="btn btn-primary me-3" (click)="postSuperAdminDetails()">
+                            <button type="submit" class="btn btn-success me-3" (click)="add()">
                                 Submit
                             </button>
                             <button type="button" class="btn btn-danger" routerLink="/all-records">

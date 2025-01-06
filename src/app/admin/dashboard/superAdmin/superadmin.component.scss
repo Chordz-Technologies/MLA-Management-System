@@ -9,42 +9,31 @@
     width: 70%;
     border: 1px solid black;
     padding: 3px;
-    /* Ensures the images do not exceed their container width */
     height: 100px;
-    /* Maintains the aspect ratio of the images */
     border-radius: 8px;
-    /* Optional: Add rounded corners */
     transition: transform 0.2s ease-in-out;
 }
 
 .link-img:hover {
     transform: scale(1.1);
-    /* Optional: Adds a slight zoom effect on hover */
 }
 
 .dashboard-cards {
     display: flex;
     flex-wrap: wrap;
-    /* Allows cards to wrap to the next line on smaller screens */
     justify-content: space-around;
     margin: 20px 0 20px 50px;
     gap: 20px;
-    /* Adds spacing between cards */
 }
 
 .highlight-text {
     color: red;
-    /* Change the text color */
     font-weight: bold;
     background-color: yellow;
-    /* Add background highlight */
     padding: 2px 4px;
     margin-left: 5px;
-    /* Optional: adds padding around the highlighted text */
     border-radius: 3px;
-    /* Optional: rounds the background corners */
     animation: blink 1.5s infinite;
-    /* Optional: blinking effect */
 }
 
 @keyframes blink {
@@ -78,12 +67,10 @@
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
-    /* For a nice hover effect */
 }
 
 .card:hover {
     transform: scale(1.05);
-    /* Hover effect to slightly enlarge the card */
 }
 
 .main-div {
@@ -124,7 +111,6 @@ table {
 
     .card {
         width: 180px;
-        /* Reduce card width slightly for medium screens */
     }
 }
 
