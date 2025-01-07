@@ -46,6 +46,8 @@
 .bot-message {
     background-color: #fff3cd;
     text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .chatbot-input {

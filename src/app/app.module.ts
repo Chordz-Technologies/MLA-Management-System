@@ -55,6 +55,12 @@ import { AddContactsComponent } from './admin/sidebar/contact-us/add-contacts/ad
 import { AddExistingRecordComponent } from './admin/sidebar/visitors/add-existing-record/add-existing-record.component';
 import { ImpPersonsComponent } from './admin/sidebar/imp-persons/imp-persons.component';
 import { AddImpPersonComponent } from './admin/sidebar/imp-persons/add-imp-person/add-imp-person.component';
+import { APP_INITIALIZER } from '@angular/core';
+import { ConfigService } from './services/config.service';
+
+export function initializeApp(configService: ConfigService): () => Promise<void> {
+  return () => configService.loadConfig();
+}
 
 @NgModule({
   declarations: [
@@ -118,7 +124,13 @@ import { AddImpPersonComponent } from './admin/sidebar/imp-persons/add-imp-perso
     NgbModule,
 
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }, DatePipe],
+  providers: [{
+    provide: APP_INITIALIZER,
+    useFactory: initializeApp,
+    deps: [ConfigService],
+    multi: true,
+  },
+  { provide: LocationStrategy, useClass: HashLocationStrategy }, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

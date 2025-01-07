@@ -1,13 +1,13 @@
 <div class="navbar">
   <div class="user ps-5 ">
-    <img src="./assets/Images/Bhimrao-Tapkir.jpg" alt="logo" style="border-radius: 50%;" />
+    <img src={{sidebarImage}} alt="logo" style="border-radius: 50%;" />
 
     <!-- <p class="mail">admin@gmail.com</p> src="https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png"-->
   </div>
   <ng-container *ngIf="Admin">
     <div class="menu">
       <div class="menu-head text-center">
-        <span class="text-center">मा. श्री. भिमराव अण्णा तापकीर<br>आमदार - भाजप</span>
+        <span class="text-center" [innerHTML]="sidebarTitle">{{sidebarTitle}}</span>
       </div>
       <div class="menu-item pt-5">
         <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/admin-dashboard']">
@@ -116,7 +116,7 @@
   <ng-container *ngIf="SuperAdmin">
     <div class="menu">
       <div class="menu-head text-center">
-        <span class="text-center">मा. श्री. भिमराव अण्णा तापकीर<br>आमदार - भाजप</span>
+        <span class="text-center" [innerHTML]="sidebarTitle">{{sidebarTitle}}</span>
       </div>
       <div class="menu-item pt-5">
         <button mat-button class="menu-button" [routerLinkActive]="['active']" [routerLink]="['/होम']">

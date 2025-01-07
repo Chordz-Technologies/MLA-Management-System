@@ -1,16 +1,19 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ServiceService } from 'src/app/shared/service.service';
 import { Router } from '@angular/router';
+import { ConfigService } from 'src/app/services/config.service';
 
 @Component({
   selector: 'app-superadmin',
   templateUrl: './superadmin.component.html',
   styleUrls: ['./superadmin.component.scss']
 })
-export class SuperAdminComponent {
+export class SuperAdminComponent implements OnInit {
+  mapImage = '';
+
   public dataLoaded: boolean = false;
   displayedColumns: string[] = ['said', 'saname', 'contactno', 'samessage', 'action'];
   dataSource!: MatTableDataSource<any>;
@@ -22,10 +25,14 @@ export class SuperAdminComponent {
   incompleteWorkCount = 0;
   inProgressWorkCount = 0;
 
-  constructor(private service: ServiceService, private router: Router) { }
+  constructor(private service: ServiceService, private router: Router, private configService: ConfigService) { }
 
   ngOnInit(): void {
+    const config = this.configService.getConfig();
+    this.mapImage = config.mapImage;
+
     this.getAllSuperList();
+
   }
 
   getAllSuperList() {

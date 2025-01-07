@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ConfigService } from 'src/app/services/config.service';
 
 @Component({
   selector: 'app-splashscreen',
@@ -8,10 +9,14 @@ import { Router } from '@angular/router';
 })
 export class SplashscreenComponent implements OnInit {
   showSplashScreen = true;
+  splashTitle = '';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private configService: ConfigService) { }
 
   ngOnInit(): void {
+    const config = this.configService.getConfig();
+    this.splashTitle = config.splashTitle;
+
     setTimeout(() => {
       const userType = localStorage.getItem('adminType');
       this.showSplashScreen = false; // Hide the splash screen

@@ -1,16 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'environment';
+import { ConfigService } from 'src/app/services/config.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
 
-  private url = environment.apiUrl;
+  private url: string = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private configService: ConfigService) {
+
+    // Fetch the dynamically loaded apiUrl from ConfigService
+    this.url = this.configService.getConfig().apiUrl;
+  }
 
   // Login API
   loginpost(data: any): Observable<any> {
@@ -183,5 +187,5 @@ export class ServiceService {
 
   personExcelReport(): Observable<Blob> {
     return this.http.get(`${this.url}/vippersons/vipreport/`, { responseType: 'blob' });
-  } 
+  }
 }
