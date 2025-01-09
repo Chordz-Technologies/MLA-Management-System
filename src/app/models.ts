@@ -21,6 +21,7 @@ export class Visitor_model {
     v_address!: string;
     v_area!: string;
     v_problem!: string;
+    v_otherproblem!: string;
     v_arja!: File;
     v_date!: string;
     completion_date!: string;

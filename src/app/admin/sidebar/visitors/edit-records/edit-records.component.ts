@@ -15,6 +15,7 @@ export class EditRecordsComponent implements OnInit {
   public visitorId!: number;
   applicationImg: File | null | undefined;
   adminType = localStorage.getItem('adminType');
+  isOtherSelected = false;
 
   constructor(private fb: FormBuilder, private service: ServiceService, private activatedRoute: ActivatedRoute, private router: Router, private toastr: ToastrService) { }
 
@@ -28,6 +29,7 @@ export class EditRecordsComponent implements OnInit {
       v_address: [''],
       v_area: [''],
       v_problem: [''],
+      v_otherproblem:[''],
       v_date: [''],
       completion_date: [''],
       v_comment: [''],
@@ -49,6 +51,18 @@ export class EditRecordsComponent implements OnInit {
     })
   }
 
+  onProblemChange(event: Event): void {
+    const selectedValue = (event.target as HTMLSelectElement).value;
+    if (selectedValue === 'इतर') {
+      this.isOtherSelected = true;
+      this.editVisitorsForm.get('v_otherproblem')?.enable();
+    } else {
+      this.isOtherSelected = false;
+      this.editVisitorsForm.get('v_otherproblem')?.disable();
+      this.editVisitorsForm.get('v_otherproblem')?.setValue(''); // Clear the field
+    }
+  }
+
   onImageSelected(image: any) {
     const fileList: FileList = image.target.files;
     if (fileList.length > 0) {
@@ -68,6 +82,7 @@ export class EditRecordsComponent implements OnInit {
       v_address: visitor.v_address,
       v_area: visitor.v_area,
       v_problem: visitor.v_problem,
+      v_otherproblem: visitor.v_otherproblem,
       v_date: visitor.v_date,
       completion_date: visitor.completion_date,
       v_comment: visitor.v_comment,
@@ -86,6 +101,7 @@ export class EditRecordsComponent implements OnInit {
       v_address: this.editVisitorsForm.value.v_address || '',
       v_area: this.editVisitorsForm.value.v_area || '',
       v_problem: this.editVisitorsForm.value.v_problem || '',
+      v_otherproblem: this.editVisitorsForm.value.v_otherproblem || '',
       v_date: this.editVisitorsForm.value.v_date || '',
       completion_date: this.editVisitorsForm.value.completion_date || '',
       v_comment: this.editVisitorsForm.value.v_comment || '',

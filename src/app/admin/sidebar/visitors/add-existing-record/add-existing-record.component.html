@@ -47,16 +47,32 @@
                             <option value="ऑफिस 3">ऑफिस 3</option>
                         </select>
                     </div>
-
                     <div class="col-md-6">
                         <label for="v_arja" class="form-label"><b>अर्ज</b></label>
                         <input type="file" id="v_arja" class="form-control" (change)="onImageSelected($event)" />
                     </div>
-
                     <div class="col-md-6">
                         <label for="v_problem" class="form-label"><b>समस्या</b></label>
-                        <input type="text" id="v_problem" class="form-control" formControlName="v_problem"
-                            placeholder="समस्या लिहा" />
+                        <select class="form-select" aria-label="Default select example" formControlName="v_problem"
+                            (change)="onProblemChange($event)">
+                            <option value="" selected disabled>समस्या निवडा</option>
+                            <option value="आधार कार्ड अपडेट करणे">आधार कार्ड अपडेट करणे</option>
+                            <option value="मतदान नाव नोंदणी">मतदान नाव नोंदणी</option>
+                            <option value="पाण्याचा प्रश्न">पाण्याचा प्रश्न</option>
+                            <option value="रस्त्याचा प्रश्न">रस्त्याचा प्रश्न</option>
+                            <option value="लाईटचा प्रश्न">लाईटचा प्रश्न</option>
+                            <option value="वाहतूक समस्या">वाहतूक समस्या</option>
+                            <option value="रेशनकार्ड संबंधित समस्या">रेशनकार्ड संबंधित समस्या</option>
+                            <option value="ड्रेनेज लाईन दुरुस्ती बाबत">ड्रेनेज लाईन दुरुस्ती बाबत</option>
+                            <option value="डॉक्युमेंट अटेस्टेड साठी">डॉक्युमेंट अटेस्टेड साठी</option>
+                            <option value="वैयक्तिक कामानिमित्त">वैयक्तिक कामानिमित्त</option>
+                            <option value="इतर">इतर</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="v_problem" class="form-label"><b>इतर समस्या</b></label>
+                        <input type="text" id="v_problem" class="form-control" formControlName="v_otherproblem"
+                            placeholder="इतर समस्या लिहा" [disabled]="!isOtherSelected" />
                     </div>
                     <div class="col-md-6">
                         <label for="v_date" class="form-label"><b>आजची तारीख</b></label>

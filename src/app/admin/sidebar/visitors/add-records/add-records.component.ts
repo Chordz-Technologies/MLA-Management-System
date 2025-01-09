@@ -13,9 +13,10 @@ import { MatTableDataSource } from '@angular/material/table';
 export class AddRecordsComponent {
   addVisitorsData!: FormGroup;
   applicationImg: File | null | undefined;
-  displayedColumns: string[] = ['id', 'name', 'contactno', 'problems', 'action'];
+  displayedColumns: string[] = ['id', 'name', 'contactno', 'problems', 'otherProblems', 'action'];
   searchMobileNo: string = '';
   dataSource!: MatTableDataSource<any>;
+  isOtherSelected = false;
 
   constructor(private service: ServiceService, private fb: FormBuilder, private route: ActivatedRoute, private router: Router, private toastr: ToastrService) { }
 
@@ -30,6 +31,7 @@ export class AddRecordsComponent {
       v_area: this.fb.control(''),
       v_arja: this.fb.control(''),
       v_problem: this.fb.control(''),
+      v_otherproblem: this.fb.control(''),
       v_date: [this.getTodayDate()],
       completion_date: this.fb.control(''),
       v_comment: this.fb.control(''),
@@ -41,6 +43,18 @@ export class AddRecordsComponent {
   getTodayDate(): string {
     const today = new Date();
     return today.toISOString().split('T')[0]; // Format as 'YYYY-MM-DD'
+  }
+
+  onProblemChange(event: Event): void {
+    const selectedValue = (event.target as HTMLSelectElement).value;
+    if (selectedValue === 'इतर') {
+      this.isOtherSelected = true;
+      this.addVisitorsData.get('v_otherproblem')?.enable();
+    } else {
+      this.isOtherSelected = false;
+      this.addVisitorsData.get('v_otherproblem')?.disable();
+      this.addVisitorsData.get('v_otherproblem')?.setValue(''); // Clear the field
+    }
   }
 
   onImageSelected(image: any) {
@@ -61,6 +75,7 @@ export class AddRecordsComponent {
       v_address: this.addVisitorsData.value.v_address || '',
       v_area: this.addVisitorsData.value.v_area || '',
       v_problem: this.addVisitorsData.value.v_problem || '',
+      v_otherproblem: this.addVisitorsData.value.v_otherproblem || '',
       v_date: this.addVisitorsData.value.v_date || '',
       completion_date: this.addVisitorsData.value.completion_date || '',
       v_comment: this.addVisitorsData.value.v_comment || '',
@@ -101,10 +116,10 @@ export class AddRecordsComponent {
     this.service.getVisitorHistory(mobileNo).subscribe({
       next: (res: any) => {
         if (res && res.status === 'success' && res.data) {
-  
+
           // Convert the single object to an array
           const dataArray = Array.isArray(res.data) ? res.data : [res.data];
-  
+
           this.dataSource = new MatTableDataSource(dataArray);
         } else {
           this.toastr.error('No visitor found with the given mobile number', 'Error');
@@ -115,7 +130,7 @@ export class AddRecordsComponent {
         console.error('Error fetching visitor history:', err);
       }
     });
-  }  
+  }
 
   // Function triggered when the search button is clicked
   onSearch(): void {

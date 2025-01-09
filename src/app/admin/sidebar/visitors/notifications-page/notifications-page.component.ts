@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class NotificationsPageComponent {
   dataSource!: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', 'name', 'contact_no', 'address', 'problems', 'date', 'completion_date', 'remaining_days'];
+  displayedColumns: string[] = ['id', 'name', 'contact_no', 'address', 'problems', 'otherProblems', 'date', 'completion_date', 'remaining_days'];
 
   constructor(private service: ServiceService, private router: Router) { }
 
