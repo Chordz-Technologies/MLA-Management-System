@@ -28,6 +28,7 @@ import { AddContactsComponent } from './admin/sidebar/contact-us/add-contacts/ad
 import { AddExistingRecordComponent } from './admin/sidebar/visitors/add-existing-record/add-existing-record.component';
 import { ImpPersonsComponent } from './admin/sidebar/imp-persons/imp-persons.component';
 import { AddImpPersonComponent } from './admin/sidebar/imp-persons/add-imp-person/add-imp-person.component';
+import { BirthdayComponent } from './admin/sidebar/visitors/birthday/birthday.component';
 
 const routes: Routes = [
   { path: 'splash', component: SplashscreenComponent }, // Splash screen route
@@ -61,6 +62,7 @@ const routes: Routes = [
       { path: 'all-important-persons', component: ImpPersonsComponent },
       { path: 'add-important-persons', component: AddImpPersonComponent },
       { path: 'edit-important-persons/:id', component: AddImpPersonComponent },
+      { path: 'birthday', component: BirthdayComponent },
     ]
   },
   { path: '**', redirectTo: 'splash' } // Redirect to splash by default

@@ -83,6 +83,10 @@ export class ServiceService {
     return this.http.get<any>(`${this.url}/visitors/searchvisitor/?search_term=${mobileno}`);
   }
 
+  getBirthdayDetails(): Observable<any> {
+    return this.http.get<any>(`${this.url}/visitors/visitorbirthday/`);
+  }
+
   // Newspaper Cutting API
   postPaperCuttings(data: any): Observable<any> {
     return this.http.post<any>(`${this.url}/katran/createkatran/`, data);

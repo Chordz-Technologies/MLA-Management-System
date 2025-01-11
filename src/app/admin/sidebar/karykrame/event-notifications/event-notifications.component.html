@@ -65,6 +65,25 @@
                 <td mat-cell *matCellDef="let row"> {{ row.remaining_days }} </td>
             </ng-container>
 
+            <ng-container matColumnDef="contact_now">
+                <th mat-header-cell *matHeaderCellDef><b>संपर्क करा</b></th>
+                <td mat-cell *matCellDef="let row">
+                    <a [href]="'https://api.whatsapp.com/send?phone=7020327718&text=' + encodeMessage(row)"
+                        target="_blank">
+                        <i class="fab fa-whatsapp" style="font-size: 25px; color: rgb(4, 216, 4);"></i>
+                    </a>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="text_msg">
+                <th mat-header-cell *matHeaderCellDef><b>SMS करा</b></th>
+                <td mat-cell *matCellDef="let row" class="text-center">
+                    <button (click)="sendSMS(row)" style="background: none; border: none; cursor: pointer;">
+                        <i class="fas fa-sms" style="font-size: 25px; color: #007bff;"></i>
+                    </button>
+                </td>
+            </ng-container>
+
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 

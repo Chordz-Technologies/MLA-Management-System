@@ -19,37 +19,6 @@ mat-form-field {
 
 }
 
-// .search {
-//     width: 100%
-// }
-
-.notification {
-    width: 30%;
-    padding: 25px;
-    float: right;
-}
-
-.datePicker {
-    width: 38%;
-    padding-right: 20px;
-}
-
-.status-in-progress {
-    color: orange;
-    font-weight: bold;
-}
-
-.status-incomplete {
-    color: red;
-    font-weight: bold;
-}
-
-.status-complete {
-    color: green;
-    font-weight: bold;
-}
-
-
 .btn {
     background: #F47216;
     padding: 8px 30px 8px 30px;
@@ -82,21 +51,6 @@ table {
     mat-card {
         width: 50%;
     }
-
-    // .search {
-    //     width: 100%
-    // }
-
-    .notification {
-        width: 46%;
-        // float: right;
-
-    }
-
-    .datePicker {
-        width: 100%;
-        padding-right: 0;
-    }
 }
 
 @media only screen and (max-width: 400px) {
@@ -107,21 +61,6 @@ table {
 
     mat-card {
         width: 50%;
-    }
-
-    // .search {
-    //     width: 100%
-    // }
-
-    .notification {
-        width: 46%;
-        float: 0;
-    }
-
-    .datePicker {
-        width: 100%;
-        padding-right: 0;
-
     }
 }
 
@@ -134,26 +73,5 @@ table {
     mat-card {
         width: 50%;
     }
-
-    // .search {
-    //     width: 100%
-    // }
-
-    .notification {
-        width: 46%;
-        // float: right;
-
-    }
-
-    .datePicker {
-        width: 100%;
-        padding-right: 0;
-    }
 }
 
-.spinner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 200px;
-}

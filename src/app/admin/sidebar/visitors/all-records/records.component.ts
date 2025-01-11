@@ -4,6 +4,7 @@ import { ServiceService } from 'src/app/shared/service.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { DatePipe } from '@angular/common';
+import { ConfigService } from 'src/app/services/config.service';
 
 @Component({
   selector: 'app-records',
@@ -11,12 +12,16 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./records.component.scss']
 })
 export class RecordsComponent implements OnInit {
+  message = '';
   dataSource!: MatTableDataSource<any>;
   displayedColumns: string[] = ['id', 'name', 'address', 'area', 'office', 'contact_no', 'dob', 'votingno', 'problems', 'otherProblems', 'date', 'completion_date', 'status', 'comment', 'arja', 'contact_now', 'text_msg', 'action'];
 
-  constructor(private service: ServiceService, private router: Router, private toastr: ToastrService, private datePipe: DatePipe) { }
+  constructor(private service: ServiceService, private router: Router, private toastr: ToastrService, private datePipe: DatePipe, private configService: ConfigService) { }
 
   ngOnInit(): void {
+    const config = this.configService.getConfig();
+    this.message = config.message;
+
     this.getAllVisitors();
 
     const state = history.state;
@@ -81,10 +86,10 @@ export class RecordsComponent implements OnInit {
     const formattedCompletionDate = this.datePipe.transform(row.completion_date, 'dd-MMM-yyyy');
     const isComplete = row.v_status === 'काम पूर्ण';
 
-    const message = `
+    const wpmessage = `
 नमस्कार,
   
-*भिमराव अण्णा तापकीर यांच्या जनसंपर्क कार्यालयामध्ये आपले स्वागत आहे.*
+*${this.message} यांच्या जनसंपर्क कार्यालयामध्ये आपले स्वागत आहे.*
 *आपल्या समस्यांचे निवारण करून चांगली सेवा देणे हेच आमचे प्राथमिक उद्दिष्ट आहे.*
   
 आपण नोंदविलेल्या समस्येचे स्वरूप पुढीलप्रमाणे आहे:
@@ -104,10 +109,10 @@ ${isComplete
 *आपली सेवा करण्याची संधी दिलीत त्याबद्दल धन्यवाद!*
 
 आपला,
-भिमराव अण्णा तापकीर
+${this.message}
 भाजप
   `;
-    return encodeURIComponent(message.trim());
+    return encodeURIComponent(wpmessage.trim());
   }
 
   sendSMS(row: any) {

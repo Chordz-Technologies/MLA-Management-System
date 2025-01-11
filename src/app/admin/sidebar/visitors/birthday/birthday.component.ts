@@ -5,22 +5,22 @@ import { DatePipe } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-event-notifications',
-  templateUrl: './event-notifications.component.html',
-  styleUrls: ['./event-notifications.component.scss']
+  selector: 'app-birthday',
+  templateUrl: './birthday.component.html',
+  styleUrls: ['./birthday.component.scss']
 })
-export class EventNotificationsComponent {
+export class BirthdayComponent {
   dataSource!: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', 'name', 'contactno', 'date', 'time', 'location', 'subject', 'photos', 'comments', 'remaining_days', 'contact_now', 'text_msg'];
+  displayedColumns: string[] = ['id', 'name', 'contactno', 'date', 'contact_now', 'text_msg'];
 
   constructor(private service: ServiceService, private datePipe: DatePipe, private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.getAllEvents();
+    this.getBirthdayDetails();
   }
 
-  getAllEvents() {
-    this.service.getEventNotifications().subscribe({
+  getBirthdayDetails() {
+    this.service.getBirthdayDetails().subscribe({
       next: (res: any) => {
         this.dataSource = new MatTableDataSource(res.data);
       },
@@ -40,19 +40,13 @@ export class EventNotificationsComponent {
   }
 
   encodeMessage(row: any): string {
-    const formattedDate = this.datePipe.transform(row.date, 'dd-MMM-yyyy');
+    // const formattedDate = this.datePipe.transform(row.Birthdate, 'dd-MMM-yyyy');
 
     const message = `
 नमस्कार,
-  
-*कार्यक्रमाची माहिती :*
 
-नाव : ${row.k_name}
-संपर्क क्रमांक : ${row.k_contactno}
-तारीख व वेळ : ${formattedDate}, ${row.time}
-पत्ता : ${row.location}
-कार्यक्रमाचा विषय : ${row.k_subject}
-उरलेले दिवस : ${row.remaining_days}
+तुम्हाला वाढदिवसाच्या हार्दिक शुभेच्छा.
+
   `;
     return encodeURIComponent(message.trim());
   }

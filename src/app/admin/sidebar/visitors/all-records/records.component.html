@@ -13,10 +13,14 @@
     </mat-form-field>
   </div>
 
-  <mat-form-field class="search">
+  <mat-form-field style="width: 65%">
     <mat-label><mat-icon>search</mat-icon> शोधा</mat-label>
     <input matInput (keyup)="applyFilter($event)" #input />
   </mat-form-field>
+
+  <button mat-raised-button color="primary" class="mt-3" style="width: 30%; padding: 25px; float: right"
+    routerLink="/birthday"><b>आजचे वाढदिवस</b>
+  </button>
 
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
