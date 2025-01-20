@@ -14,9 +14,6 @@
 
 <div *ngIf="currentTemplate === 'शिधापत्रिका शिफारस पत्र'">
     <div class="card shadow p-5">
-        <!-- <h1 class="text-center"><b><input class="bottom-line-input" [(ngModel)]="heading" /></b></h1> -->
-        <!-- <h1 class="text-center"><b>आमदार भिमराव (अण्णा) धोंडिबा तापकीर</b></h1>
-        <h2 class="text-center"><b>खडकवासला विधानसभा मतदारसंघ, पुणे</b></h2> -->
         <div class="letter pt-5">
             <div class="row">
                 <div class="col-sm-6">
@@ -45,9 +42,6 @@
 
 <div *ngIf="currentTemplate === 'मुख्यमंत्री सहायता निधीतून वैद्यकीय उपचारासाठी आर्थिक मदत देणेबाबत'">
     <div class="card shadow p-5">
-        <!-- <h1 class="text-center"><b><input class="bottom-line-input" [(ngModel)]="heading" /></b></h1> -->
-        <!-- <h1 class="text-center"><b>आमदार भिमराव (अण्णा) धोंडिबा तापकीर</b></h1>
-        <h2 class="text-center"><b>खडकवासला विधानसभा मतदारसंघ, पुणे</b></h2> -->
         <div class="letter pt-5">
             <div class="row">
                 <div class="col-sm-6">
@@ -76,9 +70,6 @@
 
 <div *ngIf="currentTemplate === 'शिफारस पत्र'">
     <div class="card shadow p-5">
-        <!-- <h1 class="text-center"><b><input class="bottom-line-input" [(ngModel)]="heading" /></b></h1> -->
-        <!-- <h1 class="text-center"><b>आमदार भिमराव (अण्णा) धोंडिबा तापकीर</b></h1>
-        <h2 class="text-center"><b>खडकवासला विधानसभा मतदारसंघ, पुणे</b></h2> -->
         <div class="letter pt-5">
             <div class="row">
                 <div class="col-sm-6">
@@ -104,9 +95,6 @@
 
 <div *ngIf="currentTemplate === 'वैद्यकीय उपचार शिफारस पत्र'">
     <div class="card shadow p-5">
-        <!-- <h1 class="text-center"><b><input class="bottom-line-input" [(ngModel)]="heading" /></b></h1> -->
-        <!-- <h1 class="text-center"><b>आमदार भिमराव (अण्णा) धोंडिबा तापकीर</b></h1>
-        <h2 class="text-center"><b>खडकवासला विधानसभा मतदारसंघ, पुणे</b></h2> -->
         <div class="letter pt-5">
             <div class="row">
                 <div class="col-sm-6">
@@ -129,9 +117,6 @@
 
 <div *ngIf="currentTemplate === 'Reservation in V.I.P Quota'">
     <div class="card shadow p-5">
-        <!-- <h1 class="text-center"><b><input class="bottom-line-input" [(ngModel)]="heading" /></b></h1> -->
-        <!-- <h1 class="text-center"><b>आमदार भिमराव (अण्णा) धोंडिबा तापकीर</b></h1>
-        <h2 class="text-center"><b>खडकवासला विधानसभा मतदारसंघ, पुणे</b></h2> -->
         <div class="letter pt-5">
             <div class="row">
                 <div class="col-sm-6">
@@ -173,7 +158,6 @@
                 </div>
                 <h1 class="text-center"><b><input class="bottom-line-input" [(ngModel)]="subheading" /></b></h1>
                 <p><textarea [(ngModel)]="paragraph" class="form-control pt-2 mt-4" rows="10"></textarea></p>
-                <!-- <p><b>आपला विश्वासू</b></p> -->
             </div>
         </div>
     </div>
@@ -181,9 +165,6 @@
 
 <div id="print-section" style="display: none;">
     <div *ngIf="currentTemplate === 'शिधापत्रिका शिफारस पत्र'" class="letter card shadow p-5">
-        <!-- <h1 class="text-center"><b>{{heading}}</b></h1> -->
-        <!-- <h1 class="text-center"><b>आमदार भिमराव (अण्णा) धोंडिबा तापकीर</b></h1>
-        <h2 class="text-center"><b>खडकवासला विधानसभा मतदारसंघ, पुणे</b></h2> -->
         <br><br><br>
         <div class="row pb-5 pt-5">
             <div class="col-sm-5">
@@ -203,14 +184,9 @@
             </p>
             <p class="pt-5"><b>आपला विश्वासू</b></p>
         </div>
-        <br><br><br><br><br><br><br>
     </div>
     <div *ngIf="currentTemplate === 'मुख्यमंत्री सहायता निधीतून वैद्यकीय उपचारासाठी आर्थिक मदत देणेबाबत'"
         class="letter card shadow p-5">
-        <!-- <h1 class="text-center"><b>{{heading}}</b></h1> -->
-        <!-- <h1 class="text-center"><b>आमदार भिमराव (अण्णा) धोंडिबा तापकीर</b></h1>
-        <h2 class="text-center"><b>खडकवासला विधानसभा मतदारसंघ, पुणे</b></h2> -->
-        <br><br><br>
         <div class="row pt-5">
             <div class="col-sm-5">
                 <p>जावक क्र. : {{javak_no2}}</p>
@@ -229,15 +205,12 @@
                 ४) मोबाईल : {{patientMobileNo}}<br>
                 ५) रुग्णालयाचे नाव : {{hospitalName}}<br>
                 ६) आजाराचे स्वरूप : {{disease}}<br>
-                ७) अंदाजित खर्च : {{totalCost}}<br>
+                ७) अंदाजित खर्च : {{totalCost}}
             </p>
-            <p class="pt-5"><b>आपला विश्वासू</b></p>
+            <p><b>आपला विश्वासू</b></p>
         </div>
     </div>
     <div *ngIf="currentTemplate === 'शिफारस पत्र'" class="letter card shadow p-5">
-        <!-- <h1 class="text-center"><b>{{heading}}</b></h1> -->
-        <!-- <h1 class="text-center"><b>आमदार भिमराव (अण्णा) धोंडिबा तापकीर</b></h1>
-        <h2 class="text-center"><b>खडकवासला विधानसभा मतदारसंघ, पुणे</b></h2> -->
         <br><br><br>
         <div class="row pb-5 pt-5">
             <div class="col-sm-5">
@@ -257,12 +230,8 @@
             </p>
             <p class="pt-5"><b>आपला विश्वासू</b></p>
         </div>
-        <br><br><br><br><br><br>
     </div>
     <div *ngIf="currentTemplate === 'वैद्यकीय उपचार शिफारस पत्र'" class="letter card shadow p-5">
-        <!-- <h1 class="text-center"><b>{{heading}}</b></h1> -->
-        <!-- <h1 class="text-center"><b>आमदार भिमराव (अण्णा) धोंडिबा तापकीर</b></h1>
-        <h2 class="text-center"><b>खडकवासला विधानसभा मतदारसंघ, पुणे</b></h2> -->
         <br><br><br>
         <div class="row pb-5 pt-5">
             <div class="col-sm-5">
@@ -272,7 +241,6 @@
             <div class="col-sm-5">
                 <p class="date">दिनांक : {{date4}}</p>
             </div>
-            <!-- <h1 class="text-center"><b>शिफारस पत्र</b></h1> -->
             <p>मा. डॉ. <br>यांसी, <br>महोदय, <br>
                 माझे परिचीत श्री/सौ. {{name3}}
                 रा. {{address3}} हे/ह्या
@@ -281,12 +249,8 @@
             </p>
             <p class="pt-5"><b>आपला विश्वासू</b></p>
         </div>
-        <br><br><br><br><br><br>
     </div>
     <div *ngIf="currentTemplate === 'Reservation in V.I.P Quota'" class="letter card shadow p-5">
-        <!-- <h1 class="text-center"><b>{{heading}}</b></h1> -->
-        <!-- <h1 class="text-center"><b>आमदार भिमराव (अण्णा) धोंडिबा तापकीर</b></h1>
-        <h2 class="text-center"><b>खडकवासला विधानसभा मतदारसंघ, पुणे</b></h2> -->
         <br><br><br>
         <div class="row pb-5 pt-5">
             <div class="col-sm-5">
@@ -308,9 +272,8 @@
                 Respected, Confirm the berth (S) in V.I.P. Quota.<br>
                 Thanking you!
             </p>
-            <p class="pt-5"><b>आपला विश्वासू</b></p>
+            <p class="pt-3"><b>आपला विश्वासू</b></p>
         </div>
-        <br><br>
     </div>
     <div *ngIf="currentTemplate === 'Templates'" class="letter card shadow p-5">
         <h1 class="text-center"><b>{{heading}}</b></h1>
@@ -324,10 +287,8 @@
             </div>
             <h1 class="text-center"><b>{{subheading}}</b></h1>
             <p>{{paragraph}}</p>
-            <!-- <p><b>आपला विश्वासू</b></p> -->
         </div>
     </div>
-    <br><br><br><br><br><br>
 </div>
 
 <div class="button-container">

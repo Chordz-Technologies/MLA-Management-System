@@ -9,7 +9,7 @@ import { ServiceService } from 'src/app/shared/service.service';
 })
 export class AllJavakComponent implements OnInit {
   public dataLoaded: boolean = false;
-  displayedColumns: string[] = ['id', 'name', 'contactno', 'subject', 'date', 'photos', 'comment'];
+  displayedColumns: string[] = ['id', 'number', 'name', 'contactno', 'subject', 'date', 'photos', 'comment'];
   dataSource!: MatTableDataSource<any>;
 
   constructor(private service: ServiceService) { }
@@ -35,7 +35,7 @@ export class AllJavakComponent implements OnInit {
     this.service.getAllJavak().subscribe({
       next: (res: any) => {
         this.dataLoaded = true;
-        this.dataSource = new MatTableDataSource(res.all_avak);
+        this.dataSource = new MatTableDataSource(res.all_javak);
       },
       error: (err: any) => {
         console.log(err);

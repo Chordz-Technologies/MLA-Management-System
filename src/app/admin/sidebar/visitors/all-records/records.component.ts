@@ -97,7 +97,7 @@ export class RecordsComponent implements OnInit {
 तिकीट क्र. : ${row.v_id}
 नाव : ${row.v_name}
 समस्या नोंद दिनांक : ${formattedVDate}
-समस्या : ${row.v_problem}
+समस्या : ${row.v_problem} ${row.v_otherproblem ? ', ' + row.v_otherproblem : ''}
 काम पूर्ण होण्याची तारीख : ${formattedCompletionDate}
 कामाची स्थिती : ${row.v_status}
   

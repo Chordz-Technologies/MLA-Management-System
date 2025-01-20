@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/shared/service.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-imp-persons',
@@ -10,10 +11,10 @@ import { ServiceService } from 'src/app/shared/service.service';
   styleUrls: ['./imp-persons.component.scss']
 })
 export class ImpPersonsComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'contactno', 'subject', 'date', 'area', 'contact_now', 'action'];
+  displayedColumns: string[] = ['id', 'name', 'contactno', 'subject', 'date', 'area', 'contact_now', 'text_msg', 'action'];
   dataSource!: MatTableDataSource<any>;
 
-  constructor(private service: ServiceService, private router: Router, private datePipe: DatePipe) { }
+  constructor(private service: ServiceService, private router: Router, private datePipe: DatePipe, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.allPersonData();
@@ -82,6 +83,20 @@ export class ImpPersonsComponent implements OnInit {
       link.download = 'महत्त्वाच्या व्यक्ती रिपोर्ट.xlsx';  // Set the desired file name
       link.click();
     });
+  }
+
+  sendSMS(row: any) {
+    const phoneNumber = row.v_contactno;
+    const data = { phone_number: phoneNumber };
+
+    this.service.textMsg(data).subscribe(
+      response => {
+        this.toastr.success('SMS sent successfully!', 'Success');
+      },
+      error => {
+        this.toastr.error('Error sending SMS', 'Error');
+      }
+    );
   }
 
   edit(id: number) {
