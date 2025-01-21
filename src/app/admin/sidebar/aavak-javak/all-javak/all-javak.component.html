@@ -27,7 +27,7 @@
 
             <ng-container matColumnDef="contactno">
                 <th mat-header-cell *matHeaderCellDef><b>संपर्क क्र.</b></th>
-                <td mat-cell *matCellDef="let row"> {{ row.k_contactno }} </td>
+                <td mat-cell *matCellDef="let row"> {{ row.j_contactno }} </td>
             </ng-container>
 
             <ng-container matColumnDef="subject">
@@ -55,6 +55,17 @@
             <ng-container matColumnDef="comment">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header><b>कमेंट</b></th>
                 <td mat-cell *matCellDef="let row">{{ row.j_comment }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                    <b>कृती</b>
+                </th>
+                <td mat-cell *matCellDef="let row">
+                    <button (click)="edit(row.j_id)">
+                        <mat-icon color="primary">edit</mat-icon>
+                    </button>
+                </td>
             </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

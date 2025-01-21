@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { ServiceService } from 'src/app/shared/service.service';
 
 @Component({
@@ -9,10 +10,10 @@ import { ServiceService } from 'src/app/shared/service.service';
 })
 export class AllJavakComponent implements OnInit {
   public dataLoaded: boolean = false;
-  displayedColumns: string[] = ['id', 'number', 'name', 'contactno', 'subject', 'date', 'photos', 'comment'];
+  displayedColumns: string[] = ['id', 'number', 'name', 'contactno', 'subject', 'date', 'photos', 'comment', 'action'];
   dataSource!: MatTableDataSource<any>;
 
-  constructor(private service: ServiceService) { }
+  constructor(private service: ServiceService, private router: Router) { }
 
   ngOnInit(): void {
     this.allJavakData();
@@ -65,5 +66,9 @@ export class AllJavakComponent implements OnInit {
       link.download = 'जावक रिपोर्ट.xlsx';  // Set the desired file name
       link.click();
     });
+  }
+
+  edit(id: number) {
+    this.router.navigate(['/edit-javak', id]);
   }
 }

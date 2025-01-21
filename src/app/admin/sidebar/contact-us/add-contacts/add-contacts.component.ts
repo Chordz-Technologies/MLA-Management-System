@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ServiceService } from 'src/app/shared/service.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -20,7 +20,7 @@ export class AddContactsComponent implements OnInit {
     // Initialize the form
     this.contactForm = this.fb.group({
       name: [''],
-      designation:[''],
+      designation: [''],
       phone_number: ['']
     });
 

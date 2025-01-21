@@ -43,6 +43,7 @@ const routes: Routes = [
       { path: 'कात्रणे', component: KatranPageComponent },
       { path: 'आवक', component: AavakPageComponent },
       { path: 'जावक', component: AddJavakComponent },
+      { path: 'edit-javak/:id', component: AddJavakComponent },
       { path: 'पत्रव्यवहार', component: PatravyavharComponent },
       { path: 'कार्यक्रम', component: EventsPageComponent },
       { path: 'सर्व-कात्रणे', component: KatranImagesComponent },

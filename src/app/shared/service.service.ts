@@ -130,6 +130,14 @@ export class ServiceService {
     return this.http.get<any>(`${this.url}/javak/alljavak/`);
   }
 
+  getJavakDataById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.url}/javak/javakdetails/${id}/`);
+  }
+
+  updateJavakData(id: number, data: any): Observable<any> {
+    return this.http.put<any>(`${this.url}/javak/updatejavak/${id}/`, data);
+  }
+
   getOutwardExcelReport(): Observable<Blob> {
     return this.http.get(`${this.url}/javak/javakexcelreport/`, { responseType: 'blob' });
   }
