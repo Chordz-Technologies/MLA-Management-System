@@ -30,9 +30,7 @@ export class SuperAdminComponent implements OnInit {
   ngOnInit(): void {
     const config = this.configService.getConfig();
     this.mapImage = config.mapImage;
-
     this.getAllSuperList();
-
   }
 
   getAllSuperList() {

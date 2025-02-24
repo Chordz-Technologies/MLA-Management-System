@@ -117,7 +117,7 @@
       <ng-container matColumnDef="contact_now">
         <th mat-header-cell *matHeaderCellDef><b>संपर्क करा</b></th>
         <td mat-cell *matCellDef="let row" class="text-center">
-          <a [href]="'https://api.whatsapp.com/send?phone=' + row.v_contactno + '&text=' + encodeMessage(row)"
+          <a [href]="'https://api.whatsapp.com/send?phone=' + convertNumbers(row.v_contactno) + '&text=' + encodeMessage(row)"
             target="_blank">
             <i class="fab fa-whatsapp" style="font-size: 25px; color: rgb(4, 216, 4);"></i>
           </a>

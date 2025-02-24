@@ -81,6 +81,18 @@ export class RecordsComponent implements OnInit {
     this.router.navigate(['/edit-records', id]);
   }
 
+  convertNumbers(value: string): string {
+    const marathiNumbers = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
+    const englishNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+    let convertedValue = value;
+    for (let i = 0; i < marathiNumbers.length; i++) {
+      const regex = new RegExp(marathiNumbers[i], 'g');
+      convertedValue = convertedValue.replace(regex, englishNumbers[i]);
+    }
+    return convertedValue;
+  }
+
   encodeMessage(row: any): string {
     const formattedVDate = this.datePipe.transform(row.v_date, 'dd-MMM-yyyy');
     const formattedCompletionDate = this.datePipe.transform(row.completion_date, 'dd-MMM-yyyy');

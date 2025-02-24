@@ -148,5 +148,30 @@
         "allEvents": "https://demo.viksitbharatinnovate.com/#/सर्व-कार्यक्रम",
         "contact": "https://demo.viksitbharatinnovate.com/#/महत्वाचे-संपर्क",
         "helpline": "https://demo.viksitbharatinnovate.com/#/VBH-Helpline"
+    },
+    "mlaanilsawant": {
+        "apiUrl": "https://mlass.beatsacademy.in",
+        "title": "अनिल सुभाष सावंत - जनसंपर्क कार्यालय (राष्ट्रवादी काँग्रेस पार्टी - शरदचंद्र पवार)",
+        "sidebarImage": "../assets/Images/Anil-Sawant.jpeg",
+        "sidebarTitle": "मा. श्री. अनिल सुभाष सावंत <br> राष्ट्रवादी काँग्रेस पार्टी - <br> शरदचंद्र पवार",
+        "homeTitle": "पंढरपूर विधानसभा मतदारसंघ - जनसंपर्क कार्यालय",
+        "splashTitle": "अनिल सुभाष सावंत - जनसंपर्क कार्यालय (राष्ट्रवादी काँग्रेस पार्टी - शरदचंद्र पवार)",
+        "mapImage": "../assets/Images/as-map.jpg",
+        "message": "अनिल सुभाष सावंत",
+        "addVisitors": "https://mlaanilsawant.beatsacademy.in/#/add-records",
+        "allVisitors": "https://mlaanilsawant.beatsacademy.in/#/records",
+        "addImpPerson": "https://mlaanilsawant.beatsacademy.in/#/add-important-persons",
+        "allImpPerson": "https://mlaanilsawant.beatsacademy.in/#/all-important-persons",
+        "addPaperCutting": "https://mlaanilsawant.beatsacademy.in/#/कात्रणे",
+        "allPaperCutting": "https://mlaanilsawant.beatsacademy.in/#/सर्व-कात्रणे",
+        "addAavak": "https://mlaanilsawant.beatsacademy.in/#/आवक",
+        "allAavak": "https://mlaanilsawant.beatsacademy.in/#/सर्व-आवक",
+        "addJavak": "https://mlaanilsawant.beatsacademy.in/#/जावक",
+        "allJavak": "https://mlaanilsawant.beatsacademy.in/#/सर्व-जावक",
+        "patravyavhar": "https://mlaanilsawant.beatsacademy.in/#/पत्रव्यवहार",
+        "addEvents": "https://mlaanilsawant.beatsacademy.in/#/कार्यक्रम",
+        "allEvents": "https://mlaanilsawant.beatsacademy.in/#/सर्व-कार्यक्रम",
+        "contact": "https://mlaanilsawant.beatsacademy.in/#/महत्वाचे-संपर्क",
+        "helpline": "https://mlaanilsawant.beatsacademy.in/#/VBH-Helpline"
     }
 }
