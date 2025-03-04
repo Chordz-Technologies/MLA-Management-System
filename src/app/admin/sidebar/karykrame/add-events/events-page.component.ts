@@ -36,6 +36,33 @@ export class EventsPageComponent implements OnInit {
     }
   }
 
+  scheduleEvent() {
+    const eventName = this.eventsForm.get('k_name')?.value || 'New Event';
+    const eventDate = this.eventsForm.get('k_date')?.value;
+    const eventTime = this.eventsForm.get('k_time')?.value;
+    const location = this.eventsForm.get('k_location')?.value || '';
+    const details = this.eventsForm.get('k_subject')?.value || '';
+
+    if (!eventDate || !eventTime) {
+      this.toastr.error('कृपया तारीख आणि वेळ प्रविष्ट करा.', 'Error');
+      return;
+    }
+
+    const startDateTime = new Date(`${eventDate}T${eventTime}:00`);
+    const endDateTime = new Date(startDateTime.getTime() + 60 * 60 * 1000); // Adds 1 hour
+
+    const startDateTimeUTC = startDateTime.toISOString().replace(/-|:|\.\d+/g, '');
+    const endDateTimeUTC = endDateTime.toISOString().replace(/-|:|\.\d+/g, '');
+
+    const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+      eventName
+    )}&dates=${startDateTimeUTC}/${endDateTimeUTC}&details=${encodeURIComponent(
+      details
+    )}&location=${encodeURIComponent(location)}`;
+
+    window.open(googleCalendarUrl, '_blank');
+  }
+
   postEventsData() {
     const eventsData = {
       k_name: this.eventsForm.value.k_name || '',
