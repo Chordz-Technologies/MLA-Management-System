@@ -155,6 +155,14 @@ export class ServiceService {
     return this.http.get<any>(`${this.url}/karyakram/karyakramendingsoon/`);
   }
 
+  eventTextMsg(data: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/karyakram/sendsms/`, data);
+  }
+
+  getEventsByDate(date: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/karyakram/eventbydate/?k_date=${date}`);
+  }
+
   // Important contact api
   getAllContactData(): Observable<any> {
     return this.http.get<any>(`${this.url}/impcontacts/list/`);
@@ -195,6 +203,10 @@ export class ServiceService {
 
   deletePersonData(id: number): Observable<any> {
     return this.http.delete<any>(`${this.url}/vippersons/deleteperson/${id}/`);
+  }
+
+  personTextMsg(data: any): Observable<any> {
+    return this.http.post<any>(`${this.url}/vippersons/sendsms/`, data);
   }
 
   personExcelReport(): Observable<Blob> {

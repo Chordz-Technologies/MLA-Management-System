@@ -129,7 +129,7 @@ ${this.message}
 
   sendSMS(row: any) {
     const phoneNumber = row.v_contactno;
-    const data = { phone_number: phoneNumber };
+    const data = { v_contactno: phoneNumber };
 
     this.service.textMsg(data).subscribe(
       response => {

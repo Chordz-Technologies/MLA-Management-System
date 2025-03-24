@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { ServiceService } from 'src/app/shared/service.service';
+import { ToastrService } from 'ngx-toastr';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-events-images',
@@ -9,10 +11,10 @@ import { ServiceService } from 'src/app/shared/service.service';
 })
 export class EventsImagesComponent implements OnInit {
   public dataLoaded: boolean = false;
-  displayedColumns: string[] = ['kid', 'name', 'contactno', 'kdate', 'ktime', 'klocation', 'subject', 'kphotos', 'comments'];
+  displayedColumns: string[] = ['kid', 'kdate', 'ktime', 'name', 'contactno', 'klocation', 'subject', 'kphotos', 'comments'];
   dataSource!: MatTableDataSource<any>;
 
-  constructor(private service: ServiceService) { }
+  constructor(private service: ServiceService, private toastr: ToastrService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     this.allKarykramData();
@@ -39,6 +41,25 @@ export class EventsImagesComponent implements OnInit {
       },
       error: (err: any) => {
         console.log(err);
+      }
+    });
+  }
+
+  filterByDate(selectedDate: Date) {
+    const formattedDate = this.datePipe.transform(selectedDate, 'yyyy-MM-dd') || '';
+
+    this.service.getEventsByDate(formattedDate).subscribe({
+      next: (res: any) => {
+        if (res.filtered_event && res.filtered_event.length > 0) {
+          this.dataSource = new MatTableDataSource(res.filtered_event);
+        } else {
+          this.dataSource = new MatTableDataSource(res.filtered_event);
+          this.toastr.error('No data found for the selected date.', 'Error');
+        }
+      },
+      error: (err: any) => {
+        console.log(err);
+        this.toastr.error('An error occurred while fetching data.', 'Error');
       }
     });
   }

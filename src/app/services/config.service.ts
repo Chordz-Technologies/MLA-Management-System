@@ -15,7 +15,7 @@ export class ConfigService {
       .get(`assets/config/project-config.json`)
       .toPromise()
       .then((data: any) => {
-        this.config = data[hostname] || data['default'];
+        this.config = data[hostname] || data['mlamedhakulkarni'];
       });
   }
 

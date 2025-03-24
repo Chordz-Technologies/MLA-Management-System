@@ -58,10 +58,10 @@ export class EventNotificationsComponent {
   }
 
   sendSMS(row: any) {
-    const phoneNumber = row.v_contactno;
+    const phoneNumber = '+917020327718';
     const data = { phone_number: phoneNumber };
 
-    this.service.textMsg(data).subscribe(
+    this.service.eventTextMsg(data).subscribe(
       response => {
         this.toastr.success('SMS sent successfully!', 'Success');
       },

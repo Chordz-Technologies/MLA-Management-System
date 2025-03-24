@@ -86,10 +86,10 @@ export class ImpPersonsComponent implements OnInit {
   }
 
   sendSMS(row: any) {
-    const phoneNumber = row.v_contactno;
+    const phoneNumber = '+917020327718';
     const data = { phone_number: phoneNumber };
 
-    this.service.textMsg(data).subscribe(
+    this.service.personTextMsg(data).subscribe(
       response => {
         this.toastr.success('SMS sent successfully!', 'Success');
       },

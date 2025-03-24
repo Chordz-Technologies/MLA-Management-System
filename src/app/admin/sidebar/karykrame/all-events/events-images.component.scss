@@ -42,6 +42,43 @@ table {
     overflow-x: auto;
 }
 
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.search-field {
+    flex: 40%;
+}
+
+.date-field {
+    flex: 30%;
+}
+
+.notification-btn {
+    height: 56px;
+    flex: 30%;
+
+}
+
+/* Mobile Responsive: Adjust layout for small screens */
+@media (max-width: 768px) {
+    .filter-container {
+        flex-wrap: wrap;
+    }
+
+    .search-field {
+        flex: 100%;
+    }
+
+    .date-field,
+    .notification-btn {
+        flex: 50%;
+    }
+}
+
 @media only screen and (max-width: 800px) {
     .mat-elevation-z8 {
         width: 95%;
