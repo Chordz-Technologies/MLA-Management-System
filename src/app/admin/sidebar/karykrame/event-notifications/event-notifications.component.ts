@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class EventNotificationsComponent {
   dataSource!: MatTableDataSource<any>;
-  displayedColumns: string[] = ['id', 'name', 'contactno', 'date', 'time', 'location', 'subject', 'photos', 'comments', 'remaining_days', 'contact_now', 'text_msg'];
+  displayedColumns: string[] = ['id', 'name', 'contactno', 'date', 'time', 'location', 'subject', 'photos', 'comments', 'remaining_days', 'contact_now'];
 
   constructor(private service: ServiceService, private datePipe: DatePipe, private toastr: ToastrService) { }
 
@@ -57,17 +57,17 @@ export class EventNotificationsComponent {
     return encodeURIComponent(message.trim());
   }
 
-  sendSMS(row: any) {
-    const phoneNumber = '+917020327718';
-    const data = { phone_number: phoneNumber };
+  // sendSMS(row: any) {
+  //   const phoneNumber = '+917020327718';
+  //   const data = { phone_number: phoneNumber };
 
-    this.service.eventTextMsg(data).subscribe(
-      response => {
-        this.toastr.success('SMS sent successfully!', 'Success');
-      },
-      error => {
-        this.toastr.error('Error sending SMS', 'Error');
-      }
-    );
-  }
+  //   this.service.eventTextMsg(data).subscribe(
+  //     response => {
+  //       this.toastr.success('SMS sent successfully!', 'Success');
+  //     },
+  //     error => {
+  //       this.toastr.error('Error sending SMS', 'Error');
+  //     }
+  //   );
+  // }
 }

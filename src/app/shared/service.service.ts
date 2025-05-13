@@ -155,9 +155,9 @@ export class ServiceService {
     return this.http.get<any>(`${this.url}/karyakram/karyakramendingsoon/`);
   }
 
-  eventTextMsg(data: any): Observable<any> {
-    return this.http.post<any>(`${this.url}/karyakram/sendsms/`, data);
-  }
+  // eventTextMsg(data: any): Observable<any> {
+  //   return this.http.post<any>(`${this.url}/karyakram/sendsms/`, data);
+  // }
 
   getEventsByDate(date: string): Observable<any> {
     return this.http.get<any>(`${this.url}/karyakram/eventbydate/?k_date=${date}`);
