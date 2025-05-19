@@ -29,6 +29,7 @@ import { AddExistingRecordComponent } from './admin/sidebar/visitors/add-existin
 import { ImpPersonsComponent } from './admin/sidebar/imp-persons/imp-persons.component';
 import { AddImpPersonComponent } from './admin/sidebar/imp-persons/add-imp-person/add-imp-person.component';
 import { BirthdayComponent } from './admin/sidebar/visitors/birthday/birthday.component';
+import { EditEventsComponent } from './admin/sidebar/karykrame/edit-events/edit-events.component';
 
 const routes: Routes = [
   { path: 'splash', component: SplashscreenComponent }, // Splash screen route
@@ -56,6 +57,7 @@ const routes: Routes = [
       { path: 'edit-records/:v_id', component: EditRecordsComponent },
       { path: 'notifications', component: NotificationsPageComponent },
       { path: 'events-notifications', component: EventNotificationsComponent },
+      { path: 'edit-events/:id', component: EditEventsComponent },
       { path: 'महत्वाचे-संपर्क', component: ContactUsComponent },
       { path: 'add-contacts', component: AddContactsComponent },
       { path: 'edit-contacts/:id', component: AddContactsComponent },

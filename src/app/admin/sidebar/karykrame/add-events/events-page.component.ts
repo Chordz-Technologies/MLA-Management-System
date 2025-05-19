@@ -74,13 +74,6 @@ export class EventsPageComponent implements OnInit {
       comments: this.eventsForm.value.comments || '',
     };
 
-    // const { k_date, k_time, k_location } = eventsData;
-
-    // if (!k_date || !k_time || !k_location) {
-    //   this.toastr.error('Please fill all the fields.', 'Error');
-    //   return;
-    // }
-
     const formData: FormData = new FormData();
     // Append only non-null values to the FormData
     for (const [key, value] of Object.entries(eventsData)) {

@@ -58,6 +58,7 @@ import { AddImpPersonComponent } from './admin/sidebar/imp-persons/add-imp-perso
 import { APP_INITIALIZER } from '@angular/core';
 import { ConfigService } from './services/config.service';
 import { BirthdayComponent } from './admin/sidebar/visitors/birthday/birthday.component';
+import { EditEventsComponent } from './admin/sidebar/karykrame/edit-events/edit-events.component';
 
 export function initializeApp(configService: ConfigService): () => Promise<void> {
   return () => configService.loadConfig();
@@ -96,6 +97,7 @@ export function initializeApp(configService: ConfigService): () => Promise<void>
     ImpPersonsComponent,
     AddImpPersonComponent,
     BirthdayComponent,
+    EditEventsComponent,
   ],
 
   imports: [

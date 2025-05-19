@@ -163,6 +163,14 @@ export class ServiceService {
     return this.http.get<any>(`${this.url}/karyakram/eventbydate/?k_date=${date}`);
   }
 
+  getEventDataById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.url}/karyakram/karyakramdetails/${id}/`);
+  }
+
+  updateEventData(id: number, data: any): Observable<any> {
+    return this.http.put<any>(`${this.url}/karyakram/updatekaryakram/${id}/`, data);
+  }
+
   // Important contact api
   getAllContactData(): Observable<any> {
     return this.http.get<any>(`${this.url}/impcontacts/list/`);

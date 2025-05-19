@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ServiceService } from 'src/app/shared/service.service';
 import { ToastrService } from 'ngx-toastr';
 import { DatePipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-events-images',
@@ -11,10 +12,10 @@ import { DatePipe } from '@angular/common';
 })
 export class EventsImagesComponent implements OnInit {
   public dataLoaded: boolean = false;
-  displayedColumns: string[] = ['kid', 'kdate', 'ktime', 'name', 'contactno', 'klocation', 'subject', 'kphotos', 'comments'];
+  displayedColumns: string[] = ['kid', 'kdate', 'ktime', 'name', 'contactno', 'klocation', 'subject', 'kphotos', 'comments', 'action'];
   dataSource!: MatTableDataSource<any>;
 
-  constructor(private service: ServiceService, private toastr: ToastrService, private datePipe: DatePipe) { }
+  constructor(private service: ServiceService, private router: Router, private toastr: ToastrService, private datePipe: DatePipe) { }
 
   ngOnInit(): void {
     this.allKarykramData();
@@ -76,4 +77,9 @@ export class EventsImagesComponent implements OnInit {
   onChange(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  edit(id: number) {
+    this.router.navigate(['/edit-events', id]);
+  }
+
 }
