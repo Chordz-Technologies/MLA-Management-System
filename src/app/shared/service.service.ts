@@ -79,6 +79,10 @@ export class ServiceService {
     return this.http.get(`${this.url}/visitors/visitorexcelreport/`, { responseType: 'blob' });
   }
 
+  getDatewiseVisitorExcelReport(date: string): Observable<Blob> {
+    return this.http.get(`${this.url}/visitors/visitorreport-datewise/?date=${date}`, { responseType: 'blob' });
+  }
+
   getVisitorHistory(mobileno: string): Observable<any> {
     return this.http.get<any>(`${this.url}/visitors/searchvisitor/?search_term=${mobileno}`);
   }

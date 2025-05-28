@@ -2,24 +2,27 @@
   <button mat-raised-button color="primary" class="notification mt-3" (click)="downloadReport()"><b>डाउनलोड
       रिपोर्ट</b></button>
 
-  <button mat-raised-button color="primary" class="notification mt-3"
-    routerLink="/notifications"><b>नोटिफिकेशन्स</b></button>
+  <button mat-raised-button color="primary" class="notification mt-3" (click)="downloadDatewiseReport()"><b>तारखेनुसार
+      डाउनलोड रिपोर्ट</b></button>
 
   <div class="datePicker">
     <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="तारीख निवडा" (dateChange)="filterByDate($event.value)">
+      <input matInput [matDatepicker]="picker" placeholder="तारीख निवडा" [(ngModel)]="selectedDate"
+        (dateChange)="filterByDate($event.value)">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   </div>
 
-  <mat-form-field style="width: 65%">
+  <mat-form-field class="datePicker">
     <mat-label><mat-icon>search</mat-icon> शोधा</mat-label>
     <input matInput (keyup)="applyFilter($event)" #input />
   </mat-form-field>
 
-  <button mat-raised-button color="primary" class="mt-3" style="width: 30%; padding: 25px; float: right"
-    routerLink="/birthday"><b>आजचे वाढदिवस</b>
+  <button mat-raised-button color="primary" class="notification mt-3"
+    routerLink="/notifications"><b>नोटिफिकेशन्स</b></button>
+
+  <button mat-raised-button color="primary" class="notification mt-3" routerLink="/birthday"><b>आजचे वाढदिवस</b>
   </button>
 
   <div class="mat-elevation-z8">

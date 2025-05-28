@@ -15,6 +15,7 @@ export class RecordsComponent implements OnInit {
   message = '';
   dataSource!: MatTableDataSource<any>;
   displayedColumns: string[] = ['id', 'name', 'address', 'area', 'office', 'contact_no', 'dob', 'votingno', 'problems', 'otherProblems', 'date', 'completion_date', 'status', 'comment', 'arja', 'contact_now', 'text_msg', 'action'];
+  selectedDate: Date | null = null;
 
   constructor(private service: ServiceService, private router: Router, private toastr: ToastrService, private datePipe: DatePipe, private configService: ConfigService) { }
 
@@ -147,7 +148,25 @@ ${this.message}
       const downloadURL = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = downloadURL;
-      link.download = 'Visitor Report.xlsx';  // Set the desired file name
+      link.download = 'Visitor Report.xlsx';
+      link.click();
+    });
+  }
+
+  downloadDatewiseReport() {
+    if (!this.selectedDate) {
+      this.toastr.error('कृपया तारीख निवडा');
+      return;
+    }
+
+    const formattedDate = this.datePipe.transform(this.selectedDate, 'yyyy-MM-dd') || '';
+
+    this.service.getDatewiseVisitorExcelReport(formattedDate).subscribe((response: Blob) => {
+      const blob = new Blob([response], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      const downloadURL = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = downloadURL;
+      link.download = `Visitor_Report_${formattedDate}.xlsx`;
       link.click();
     });
   }
